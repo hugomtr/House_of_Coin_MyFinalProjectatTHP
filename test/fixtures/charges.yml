@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stripe_id: MyString
+  user: one
+  order: one
+
+two:
+  stripe_id: MyString
+  user: two
+  order: two
