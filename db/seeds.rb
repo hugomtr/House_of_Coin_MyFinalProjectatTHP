@@ -5,3 +5,94 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+Charge.destroy_all
+HouseCoin.destroy_all
+Order.destroy_all
+RealEstate.destroy_all
+User.destroy_all
+
+# Faker::Config.locale = "fr"
+
+10.times do
+    user = User.new(
+        email: Faker::Internet.email,
+        password: Faker::Internet.password(min_length: 8)
+    )
+
+    if user.save
+        puts "user OK"
+    else
+        puts user.errors.messages
+    end
+end
+
+images = [
+    "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+]
+
+30.times do
+    # Geocode not added for now, maybe possible to replace by latitude/longitude
+    real = RealEstate.new(
+        name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
+        description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
+        user: User.all.sample,
+        adress: Faker::Address.street_address,
+        zipcode: Faker::Address.zip_code,
+        city: Faker::Address.city,
+        image_urls: images.sample
+    )
+
+    if real.save
+        puts "real OK"
+    else
+        puts real.errors.messages
+    end
+end
+
+30.times do
+    order = Order.new()
+    if order.save
+        puts "order OK"
+    else
+        puts order.errors.messages
+    end
+end
+
+30.times do
+    coin = HouseCoin.new(
+        order: Order.all.sample,
+        real_estate_id: RealEstate.all.sample.id,
+        coin_price: Faker::Number.number(digits: 9),
+        user_id: User.all.sample.id
+    )
+    if coin.save
+        puts "coin OK"
+    else
+        puts "coin"
+        puts coin.errors.messages
+    end
+end
+
+30.times do
+    charge = Charge.new(
+        stripe_id: Faker::Stripe.valid_token,
+        user_id: User.all.sample.id,
+        order_id: Order.all.sample.id
+    )
+    if charge.save
+        puts "charge OK"
+    else
+        puts charge.errors.messages
+    end
+end
+
+puts "*"*30
+puts 'Base de données remplie !'
+puts "*"*30
