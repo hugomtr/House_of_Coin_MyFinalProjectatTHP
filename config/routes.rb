@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'real_estates#index'
   devise_for :users
-  resources :users, only: [:show,:edit,:update]
+  root to: 'real_estates#index'
+  #resource :users, only: [:show], path: '/mon_profil'   
+  resources :users, only: [:show, :edit,:update]
   resources :real_estates
-
   # static pages
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

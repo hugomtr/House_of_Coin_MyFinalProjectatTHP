@@ -26,7 +26,7 @@ class RealEstatesController < ApplicationController
   private 
 
   def estate_find
-    RealEstate.find(params[:id])
+    RealEstate.friendly.find(params[:id])
   end
 
 end
