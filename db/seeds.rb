@@ -17,15 +17,21 @@ User.destroy_all
 # Faker::Config.locale = "fr"
 
 10.times do
-    User.create(
+    user = User.new(
         email: Faker::Internet.email,
-        encrypted_password: Faker::Internet.password(min_length: 8)
+        password: Faker::Internet.password(min_length: 8)
     )
+
+    if user.save
+        puts "user OK"
+    else
+        puts user.errors.messages
+    end
 end
 
 30.times do
     # Geocode not added for now, maybe possible to replace by latitude/longitude
-    RealEstate.create(
+    real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
         user: User.all.sample,
@@ -33,27 +39,49 @@ end
         zipcode: Faker::Address.zip_code,
         city: Faker::Address.city
     )
+
+    if real.save
+        puts "real OK"
+    else
+        puts real.errors.messages
+    end
 end
 
 30.times do
-    Order.create()
+    order = Order.new()
+    if order.save
+        puts "order OK"
+    else
+        puts order.errors.messages
+    end
 end
 
 30.times do
-    HouseCoin.create(
+    coin = HouseCoin.new(
         order: Order.all.sample,
-        real_estate_id: RealEstate.all.sample,
-        token_price: Faker::Number.number(digits: 12),
-        user_id: User.all.sample
+        real_estate_id: RealEstate.all.sample.id,
+        token_price: Faker::Number.number(digits: 9),
+        user_id: User.all.sample.id
     )
+    if coin.save
+        puts "coin OK"
+    else
+        puts "coin"
+        puts coin.errors.messages
+    end
 end
 
 30.times do
-    Charge.create(
+    charge = Charge.new(
         stripe_id: Faker::Stripe.valid_token,
-        user_id: User.all.sample,
-        order_id: Order.all.sample
+        user_id: User.all.sample.id,
+        order_id: Order.all.sample.id
     )
+    if charge.save
+        puts "charge OK"
+    else
+        puts charge.errors.messages
+    end
 end
 
 puts "*"*30
