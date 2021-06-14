@@ -3,13 +3,15 @@ class RealEstatesController < ApplicationController
     @estates = estates_all
   end
 
+  def show
+    @real_estate = estate_find
+  end
+
   def new
+    @real_estate = RealEstate.new
   end
 
   def create
-  end
-
-  def show
   end
 
   def edit

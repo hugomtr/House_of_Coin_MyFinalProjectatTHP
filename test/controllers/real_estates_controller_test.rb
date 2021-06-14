@@ -6,6 +6,11 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get show" do
+    get real_estates_show_url
+    assert_response :success
+  end
+
   test "should get new" do
     get real_estates_new_url
     assert_response :success
@@ -13,11 +18,6 @@ class RealEstatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get create" do
     get real_estates_create_url
-    assert_response :success
-  end
-
-  test "should get show" do
-    get real_estates_show_url
     assert_response :success
   end
 
