@@ -1,3 +1,17 @@
-<h1>RealEstates#show</h1>
-<p>Find me in app/views/real_estates/show.html.erb</p>
-<%= params%>
+<div class="container my-5">
+    <article class="row">
+        <div class="col-12 col-sm-6 col-md-8">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Real_estatePictureModal">
+                <img src="<%= @real_estate.image_url %>" class="img-fluid real_estate-img" alt="">
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <h1><%= @real_estate.name %></h1>
+            <h3><%= @real_estate.price %>€</h3>
+            <p><%= @real_estate.city %></p>
+        </div>
+    </article>
+</div>
+
+<!-- Modal -->
+<%= render :partial => "picture_modal_xl", :object => @real_estate %>

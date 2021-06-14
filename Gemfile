@@ -41,7 +41,6 @@ gem 'devise'
 gem 'stripe'
 
 # Manage environement variables
-gem 'dotenv'
 gem 'dotenv-rails'
 
 # Heroku compatibility
