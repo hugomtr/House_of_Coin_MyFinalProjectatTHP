@@ -1,12 +1,29 @@
 .estate-search {
-    background: url(../images/img_home.png)
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .estate-search-w {
-    max-height: 55rem;
+    max-width: 445px;
+    padding-right: 10px;
+    background-color: $light;
 }
-.card-image {
-    width: 100%;
-    height: 196px;
-    background-color: $dark;
-    overflow: hidden;
+
+.estate-list {
+    .card-title,.card-text {
+        color: $dark;
+    }
+    .card-title {
+        font-size: 21.25px;
+        overflow: hidden;
+    }
+    .card-text {
+        font-size: 17px;
+    }
+    .card-image {
+        width: 100%;
+        height: 196px;
+        background-color: $dark;
+        overflow: hidden;
+    }
 }

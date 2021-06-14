@@ -5,12 +5,16 @@
         <% end %>
     </div>
     <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title text-truncate">
             <%= @estate.name %>
         </h5>
-        <p class="card-text">
+        <p class="card-text mb-0">
             <strong class="text-primary">
-                <%= @estate.price %>
+                <% if @estate.price %>
+                    <%= @estate.price %> €
+                <% else %>
+                    --
+                <% end %>
             </strong>
         </p>
         <p class="card-text">
