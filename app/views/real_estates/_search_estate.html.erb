@@ -1,8 +1,11 @@
-<div class="estate-search">
+<div class="estate-search" 
+     style="background-image: url('<%= asset_path @image_data[:url] %>'); 
+            background-position-x: <%= @image_data[:pos_x] %>; 
+            background-position-y: <%= @image_data[:pos_y] %>">
     <div class="estate-search-w">
         <h1>Modern living for everyone</h1>
-        <p>We provide a complete service for the sale, purchase or rental of real estate. We have been operating in Madrid and Barcelona more than 15 years.</p>
-        <%#= form_tag(_path, method: "post", id: "contact-form", multipart: true )  do %>
-        <%#end%>
+        <p class="sub-title">We provide a complete service for the sale, purchase or rental of real estate. We have been operating in Madrid and Barcelona more than 15 years.</p>
     </div>
+    <%#= form_tag(_path, method: "post", id: "contact-form", multipart: true )  do %>
+    <%#end%>
 </div>

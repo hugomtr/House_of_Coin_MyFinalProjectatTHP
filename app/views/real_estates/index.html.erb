@@ -1,11 +1,12 @@
 <section class="container my-5">
-    <%= render :partial => "search_estate" %>
+    <% @image_data = {url: 'img_home.png', pos_x: 'right', pos_y: '50%'} %>
+    <%= render :partial => "search_estate", :object => @image_data %>
 </section>
 
-<section class="container my-5 text-center">
+<section class="container my-5">
     <h1>Search for an offer</h1>
-    <p>Choose from the most advantageous offers</p>
-    <ul class="row align-items-stretch align-content-stretch">
+    <p class="sub-title">Choose from the most advantageous offers</p>
+    <ul class="estate-list row align-items-stretch align-content-stretch">
         <% @estates.each do |estate| %>
             <li class="col-12 col-sm-6 col-md-4 mb-3">
                 <% @estate = estate %>
