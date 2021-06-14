@@ -1,0 +1,40 @@
+<div id="main-carousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <!-- INDICATOR BUTTONS -->
+    <div class="carousel-indicators">
+        <% @imgArr.each.with_index do |img, index| %>
+            <button type="button" 
+                    data-bs-target="#main-carousel" 
+                    data-bs-slide-to="<%= index %>" 
+                    aria-label="Slide <%= index + 1 %>" 
+                    <% if index == 0 %> aria-current="true" class="active"<% end %>></button>
+        <% end %>
+    </div>
+
+    <div class="carousel-inner">
+        <!-- BODY -->
+        <% @imgArr.each.with_index do |img, index| %>
+            <div class="carousel-item<% if index == 0 %> active<% end %>">
+                <!-- Picture -->
+                <div class="bd-placeholder-img" style="background: url('<%= img %>') center center no-repeat; background-size: cover;"></div>
+                <!-- Content -->
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                    <h1 id="h1_carousel">Le monde des chatons</h1>
+                    <p class="headline">Bienvenue dans l'univers merveilleux des boules de poils à 4 pattes.</p>
+                    <p><a class="btn btn-lg btn-primary" id="test" href="#">Tous nos produits</a></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+
+        <!-- PREV AND NEXT BUTTONS -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#main-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#main-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
