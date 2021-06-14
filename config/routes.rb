@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'real_estates/index'
-  get 'real_estates/new'
-  get 'real_estates/create'
-  get 'real_estates/show'
-  get 'real_estates/edit'
-  get 'real_estates/update'
-  get 'real_estates/destroy'
+  root to: 'real_estates#index'
+  resources :real_estates
   devise_for :users
   resources :users, only: [:show,:edit,:update]
+
   # static pages
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
