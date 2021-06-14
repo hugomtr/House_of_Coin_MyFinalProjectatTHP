@@ -1,10 +1,24 @@
-<a href="" class="card">
-    <%= image_tag @estate.image_urls, alt: 'picture' %>
+<a href="<%= real_estate_path(@estate.id) %>" class="card">
+    <div class="card-image">
+        <% if @estate.image_urls %>
+            <%= image_tag @estate.image_urls, alt: 'picture', class: 'w-auto h-100'%>
+        <% end %>
+    </div>
     <div class="card-body">
-        <h5 class="card-title"><%= @estate.name %></h5>
-        <p class="card-text">
-            <strong class="text-primary"><%= @estate.price %></strong>
+        <h5 class="card-title text-truncate">
+            <%= @estate.name %>
+        </h5>
+        <p class="card-text mb-0">
+            <strong class="text-primary">
+                <% if @estate.price %>
+                    <%= @estate.price %> €
+                <% else %>
+                    --
+                <% end %>
+            </strong>
         </p>
-        <p class="card-text"><%= @estate.city %></p>
+        <p class="card-text">
+            <%= @estate.city %>
+        </p>
     </div>
 </a>

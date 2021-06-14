@@ -1,5 +1,22 @@
+body {
+    color: $dark;
+    font-family: $font-default;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-title;
+}
+h1 {
+    font-size: 51.88px;
+}
 ul,li {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+a,a * {
+    text-decoration: none;
+}
+
+.sub-title {
+    font-size: 21.25px;
 }
