@@ -10,6 +10,7 @@ There is a solution : PROJECT_NAME
 - Github : https://github.com/Septentrion50/Lets_buy_with_crypt
 - Heroku dev : https://lets-buy-with-crypto-dev.herokuapp.com
 - Heroku prod : https://lets-buy-with-crypto.herokuapp.com/
+- Figma : https://www.figma.com/file/oBjNVeXIyvlZ3tWEj9FATx/Real-estate-web-design-(Community)?node-id=1%3A25
 
 ## Database organisation
 
