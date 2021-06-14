@@ -1,6 +1,11 @@
 <div class="container my-5">
     <article class="row">
-        <div class="col-12 col-sm-12 col-md-12">
+        <div class="col-12 col-sm-6 col-md-8">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Real_estatePictureModal">
+                <img src="<%= @real_estate.image_urls %>" class="img-fluid real_estate-img" alt="">
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
             <h1><%= @real_estate.name %></h1>
         </div>
             <div class="col-12 col-sm-8 col-md-8">
