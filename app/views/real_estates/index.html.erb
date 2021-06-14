@@ -6,11 +6,11 @@
     <h1>Search for an offer</h1>
     <p>Choose from the most advantageous offers</p>
     <ul class="row">
-        <%# @estates.each do |estate| %>
+        <% @estates.each do |estate| %>
             <li class="col-12 col-sm-6 col-md-4 align-items-stretch">
-                <%# @estate = estate %>
-                <%#= render :partial => "card_estate", :object => @estate %>
+                <% @estate = estate %>
+                <%= render :partial => "card_estate", :object => @estate %>
             </li>
-        <%# end %>
+        <% end %>
     </ul>
 </section>
