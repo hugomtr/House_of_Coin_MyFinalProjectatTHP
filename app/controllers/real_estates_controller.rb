@@ -1,11 +1,14 @@
 class RealEstatesController < ApplicationController
   def index
+    @real_estates = RealEstate.all
   end
 
   def show
+    @real_estate = estate_find
   end
 
   def new
+    @real_estate = RealEstate.new
   end
 
   def create
@@ -19,4 +22,11 @@ class RealEstatesController < ApplicationController
 
   def destroy
   end
+
+  private 
+
+  def estate_find
+    RealEstate.find(params[:id])
+  end
+
 end
