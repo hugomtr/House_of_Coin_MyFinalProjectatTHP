@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :orders ,through: :charges
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  extend FriendlyId
+  friendly_id :id, use: :slugged
 end
