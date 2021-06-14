@@ -1,12 +1,10 @@
-<li class="col-12 col-sm-6 col-md-4">
-    <a href="" class="card">
-        <%#= image_tag @estate.picture, alt: 'picture' %>
-        <div class="card-body">
-            <h5 class="card-title"><%= @estate.name %></h5>
-            <p class="card-text">
-                <strong class="text-primary"><%= @estate.price %></strong>
-            </p>
-            <p class="card-text"><%= @estate.city %></p>
-        </div>
-    </a>
-</li>
+<a href="" class="card">
+    <%= image_tag @estate.image_urls, alt: 'picture' %>
+    <div class="card-body">
+        <h5 class="card-title"><%= @estate.name %></h5>
+        <p class="card-text">
+            <strong class="text-primary"><%= @estate.price %></strong>
+        </p>
+        <p class="card-text"><%= @estate.city %></p>
+    </div>
+</a>

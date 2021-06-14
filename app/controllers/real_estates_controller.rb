@@ -25,7 +25,7 @@ class RealEstatesController < ApplicationController
 
   private
 
-  def estate_all
+  def estates_all
     RealEstate.all
   end
 
