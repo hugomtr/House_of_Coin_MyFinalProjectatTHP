@@ -1,6 +1,6 @@
 class RealEstatesController < ApplicationController
   def index
-    @real_estates = RealEstate.all
+    @estates = estates_all
   end
 
   def show
@@ -23,10 +23,13 @@ class RealEstatesController < ApplicationController
   def destroy
   end
 
-  private 
+  private
+
+  def estate_all
+    RealEstate.all
+  end
 
   def estate_find
     RealEstate.friendly.find(params[:id])
   end
-
 end
