@@ -1,17 +1,11 @@
-class RealEstatesController < ApplicationController
-  before_action :user_signed_in?, except: [:index, :show, :new]
-  before_action :authenticate_user!, :estate_creator?, except: [:index, :show, :new, :create]
+class Admin::RealEstatesController < ApplicationController
+  before_action :is_admin?, :user_signed_in?
 
   def index
     @estates = estates_all
   end
 
-  def show
-    @real_estate = estate_find
-  end
-
   def new
-    @real_estate = RealEstate.new
   end
 
   def create
@@ -39,6 +33,9 @@ class RealEstatesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
   end
 
@@ -52,16 +49,5 @@ class RealEstatesController < ApplicationController
 
   def estates_all
     RealEstate.all
-  end
-
-  def estate_find
-    RealEstate.friendly.find(params[:id])
-  end
-
-  def estate_creator?
-    unless estate_find.user == current_user
-      flash[:notice] = "This is not your property!"
-      redirect_to root_path
-    end
   end
 end
