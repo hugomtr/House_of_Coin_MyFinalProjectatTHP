@@ -9,18 +9,18 @@
             <h1><%= @real_estate.name %></h1>
         </div>
         <div class="col-12 col-sm-8 col-md-8">
-            <%= render :partial => "shared/small_carousel", :object => @imgArr %> 
-            <p><%= @real_estate.price %>€</p>
+            <%= render :partial => "shared/small_carousel", :object => @imgArr %>
+            <h3><%= @real_estate.price / 100 %>€</h3>
             <p><%= @real_estate.city %></p>
         </div>
         <div class="col-12 col-sm-8 col-md-8">
-            <%= render :partial => "shared/get_token", :object => @button %>
+            <%#= render :partial => "shared/get_token", :object => @button %>
         </div>
         <div class="col-12 col-sm-8 col-md-8">
             <p><%= @real_estate.description %></p>
         </div>
         <div class="col-12 col-sm-8 col-md-8">
-            <%= render :partial => "shared/geolocalisation", :object => @geocoding %>
+            <%#= render :partial => "shared/geolocalisation", :object => @geocoding %>
         </div>
     </article>
 </div>

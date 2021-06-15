@@ -1,9 +1,10 @@
 <div class="card h-100">
-    <% if @real_estate.picture.attached? %>
-        <%= image_tag @real_estate.picture, alt: 'picture', class: 'w-100'%>
-    <% else %>
-        <%= image_tag @real_estate.image_url, alt: 'picture', class: 'w-100'%>
-    <% end %>
+<%= image_tag "https://unsplash.com/photos/2d4lAQAlbDA" %>
+    <%# if @real_estate.picture.attached? %>
+        <%#= image_tag @real_estate.picture, alt: 'picture', class: 'w-100'%>
+    <%# else %>
+        <%#= image_tag @real_estate.image_url, alt: 'picture', class: 'w-100'%>
+    <%# end %>
     <div class="card-body">
         <h5 class="card-title"><%= @real_estate.name %></h5>
         <h6 class="card-subtitle mb-2 text-muted">Admin :</h6>
@@ -13,11 +14,6 @@
             <%= link_to "See", 
                 real_estate_path(@real_estate.id), 
                 class: "card-link btn btn-dark btn-sm me-1 my-1" %>
-            <%= button_to "Add to cart", 
-                line_items_path, 
-                method: :post, 
-                params: {real_estate_id: @real_estate.id}, 
-                class: "btn btn-outline-primary btn-sm me-1 my-1" %>
         </div>
     </div>
 </div>
