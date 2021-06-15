@@ -40,6 +40,15 @@ class RealEstatesController < ApplicationController
   end
 
   def update
+    @real_estate = estate_find
+
+    if @real_estate.update(estate_params)
+      flash[:notice] = "Real estate updated!"
+      redirect_to root_path
+    else
+      flash.now[:notice] = "Ouppps !"
+      render :edit
+    end
   end
 
   def destroy
@@ -60,5 +69,9 @@ class RealEstatesController < ApplicationController
       flash[:notice] = "This is not your property!"
       redirect_to root_path
     end
+  end
+
+  def estate_params
+      params.permit(:name, :price, :description, :adress, :zipcode, :city, :geocode)
   end
 end
