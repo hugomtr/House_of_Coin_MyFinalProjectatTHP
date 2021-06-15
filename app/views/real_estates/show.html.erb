@@ -1,34 +1,20 @@
-<div class="container my-5 p-5">
+<div class="container d-flex flex-column my-5">
+    <h1><%= @real_estate.name %></h1>
     <article class="row">
         <div class="col-12 col-sm-6 col-md-8">
-            <h1><%= @real_estate.name %></h1>
-        </div>
-        
-            <div class="col-8 col-sm-6 col-md-8">
-                <%= render :partial => "shared/small_carousel" %>
-            </div>
-            <div class="col-8 col-sm-8 col-md-8">
-                <%= render :partial => "shared/get_token", :object => @button %>
-            </div>
-            <div class="col-8 col-sm-8 col-md-8">
-                <p><%= @real_estate.description %></p>
-            </div>
-            <div class="col-8 col-sm-8 col-md-8">
-                <%#= render :partial => "shared/geolocalisation", :object => @geocoding %>
-            </div>
-    </article>
-
-    <aside class="row">
-            <div class="col-4 col-sm-8 col-md-8 order-md-last">
-                <%= render :partial => "shared/brief_characteristics", :object => @text %>
-            </div>
-        </div>
-
-        <div class="col-8 col-sm-8 col-md-8">
+            <%= render :partial => "shared/small_carousel" %>
+            <%= render :partial => "shared/picto_presentation" %>
+            <%= render :partial => "shared/get_token", :object => @button %>
+            <%= @real_estate.description %>
+            <%#= render :partial => "shared/geolocalisation", :object => @geocoding %>
             <%= render :partial => "shared/pictures_group", :object => @imgArr %>
+            <%= render :partial => "shared/newsletter" %>
         </div>
-    </aside>
-
+        <div class="col-12 col-sm-6 col-md-4">
+            <%= render :partial => "shared/brief_characteristics", :object => @text %>
+        </div>
+    </article>    
 </div>
+
 
 
