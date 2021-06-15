@@ -1,12 +1,19 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//beginning of contact
+
 *
 {
     margin: 0;
-    padding: 0;
+    padding: 0!important;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    padding-bottom: 150px!important;
 }
 
 .contact {
@@ -17,8 +24,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(modern_house.jpg);
+    background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0.5)
+    ),
+    url(modern_house.jpg);
     background-size: cover;
+    
 }
 
 .contact .content {
@@ -27,17 +40,22 @@
 }
 
 .contact .content h2 {
-    font-size: 36px;
+    font-size: 50px;
     font-weight: 500;
     color: #fff;
+    text-shadow:
+    0.03em 0 black,
 }
 
 .contact .content p {
     font-weight: 500;
     color: #fff;
+    text-shadow:
+    0.05em 0 black,
+    0 0.05em black,
 }
 
-.container {
+.container_contact {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -45,19 +63,19 @@
     margin-top: 30px;
 }
 
-.container .contactInfo {
+.container_contact .contactInfo {
     width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.container .contactInfo .box {
+.container_contact .contactInfo .box {
     position: relative;
     padding: 20px 0;
     display: flex;
 }
 
-.container .contactInfo .box .icon {
+.container_contact .contactInfo .box .icon {
     min-width: 60px;
     height: 60px;
     background: #fff;
@@ -68,25 +86,30 @@
     font-size: 22px;
 }
 
-.container .contactInfo .box .text {
+.container_contact .contactInfo .box .text {
     display: flex;
     margin-left: 20px;
     font-size: 16px;
     color: #fff;
     flex-direction: column;
     font-weight: 300;
+    text-shadow:
+    0.07em 0 black,
+    0 0.07em black,
+    -0.07em 0 black,
+    0 -0.07em black
 }
 
-.container .contactInfo .box .text h3 {
+.container_contact .contactInfo .box .text h3 {
     width: 40%;
     padding: 40px;
-    background: #fff;
 }
 
 .contactForm h2 {
     font-size: 30px;
-    color: #333;
+    color: #fff;
     font-weight: 500;
+    
 }
 
 .contactForm .inputBox {
@@ -123,7 +146,7 @@
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span
 {
-    color: #e91e63;
+    color: black;
     font-size: 12px;
     transform: translateY(-20px);
 }
@@ -143,17 +166,18 @@
     {
         padding: 50px;
     }
-    .container 
+    .container_contact
     {
         flex-direction: column;
     }
-    .container .contactInfo
+    .container_contact .contactInfo
     {
         margin-bottom: 40px;
     }
-    .container .contactInfo,
+    .container_contact .contactInfo,
     .contactForm
     {
         width: 100%;
     }
 }
+//end of contact
