@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit,:update]
   resources :real_estates
   resources :charges, only: [:new, :create]
+
+  namespace :admin do
+    resources :real_estates
+  end
+
   # static pages
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

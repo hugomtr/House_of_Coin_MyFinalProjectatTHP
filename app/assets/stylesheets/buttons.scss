@@ -7,3 +7,12 @@
         border-color: darken($primary, 10%);
     }
 }
+
+.btn-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
