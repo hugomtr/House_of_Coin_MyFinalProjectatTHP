@@ -36,6 +36,7 @@ class RealEstatesController < ApplicationController
   end
 
   def edit
+    @real_estate = estate_find
   end
 
   def update
