@@ -27,13 +27,9 @@ class RealEstatesController < ApplicationController
     )
 
     if @estate.save
-        puts "*"*40
         flash[:notice] = "Real estate created!"
-        redirect_to admin_real_estates_path
+        redirect_to root_path
     else
-      puts "+"*40
-      puts current_user
-      puts @estate.errors.messages
         flash.now[:notice] = "Ouppps !"
         render :new
     end
