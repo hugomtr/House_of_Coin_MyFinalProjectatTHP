@@ -6,8 +6,14 @@ class RealEstate < ApplicationRecord
 
   after_create :announce_validation_confirm
 
+  def coin_number
+    price_euros = self.price / 100
+    house_coins_num = price_euros / 50 # We want our house_coins to cost 50 €
+  end
+
   def coin_price
-    self.price / 50 # Arbitrary value for testing
+    price_euros = self.price / 100
+    coin_value = (price_euros / coin_number) * 100 # The returned value must be in cents
   end
 
   private

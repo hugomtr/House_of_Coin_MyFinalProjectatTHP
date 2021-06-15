@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update], :path => 'my_profile'   
   resources :real_estates
   resources :charges, only: [:new, :create], :path => 'checkout'
+  resources :house_coins, only: [:create, :update, :destroy]
 
   namespace :admin do
     resources :real_estates

@@ -1,15 +1,14 @@
 class HouseCoinsController < ApplicationController
     def create
         @order = current_order
-        @house_coin = @order.house_coins.new(
-            order_params,
-            order_id: @order.id
-        )
-        if order.save()
+        @house_coin = @order.house_coins.new(order_params)
+
+        if @order.save
             session[:order_id] = @order.id
             redirect_to root_path
         else
             puts @order.errors.messages
+            flash[:notice] = @order.errors.full_messages
             redirect_to root_path
         end
     end
@@ -31,8 +30,8 @@ class HouseCoinsController < ApplicationController
     private
 
     def order_params
-        # seller_id is the good seller, the coin property will switch
+        # user_id is the original good seller, the coin property will switch
         # to current user after payment.
-        params.permit(:real_estate_id, :coin_price, :seller_id)
+        params.permit(:real_estate_id, :coin_price, :user_id, :order_id)
     end
 end
