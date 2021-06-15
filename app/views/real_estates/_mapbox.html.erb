@@ -7,24 +7,34 @@
 <style>
 #map {width:600px; height:600px}
 </style>
-<script >
-const mapElement = document.getElementById('map');
-mapboxgl.accessToken = "<%= ENV['MAPBOX_API_KEY']%>";
+<script>
+mapboxgl.accessToken = "<%=ENV['MAPBOX_API_KEY']%>";
 
 var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [3.501873,44.517611],
-  zoom: 8,
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [3, 43],
+zoom: 5
 });
-
+ 
 let dataset_marker = document.getElementById("marker").value;
+
 const markers = JSON.parse(dataset_marker)
-  markers.forEach((marker)=> {
-    let markerPopup = new mapboxgl.Popup({offset: 25})
-    .setHTML("test");
-    new mapboxgl.setLngLat(10,10)
-    .setPopup(markerPopup)
-    .addTo(map);
-})
+console.log(markers[0]);
+markers.forEach(function (marker) {
+  var el = document.createElement('div');
+  el.className = 'marker';
+  el.style.backgroundImage =
+  'url(icon.png)';
+  el.style.width = '64px';
+  el.style.height = '64px';
+  el.style.backgroundSize = '100%';
+
+  el.addEventListener('click', function () {
+  window.alert(marker.properties.message);
+  });
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.coordinates)
+  .addTo(map);
+});
 </script>
