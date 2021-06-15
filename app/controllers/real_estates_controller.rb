@@ -2,7 +2,7 @@ class RealEstatesController < ApplicationController
   def index
     @estates = estates_all
 
-    @markers = estates_all.geocoded.map do |mark|
+    @markers = @estates.geocoded.map do |mark|
       {
         lat: mark.latitude,
         lng: mark.longitude,
