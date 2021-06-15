@@ -47,7 +47,7 @@ images = [
         zipcode: Faker::Address.zip_code,
         city: Faker::Address.city,
         image_urls: images.sample,
-        price: Faker::Number.number(digits: 9)
+        price: Faker::Number.number(digits: 8)
     )
 
     if real.save

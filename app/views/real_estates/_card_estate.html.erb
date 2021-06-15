@@ -11,7 +11,7 @@
         <p class="card-text mb-0">
             <strong class="text-primary">
                 <% if @estate.price %>
-                    <%= @estate.price %> €
+                    <%= @estate.price / 100 %> €
                 <% else %>
                     --
                 <% end %>
