@@ -16,6 +16,11 @@ ul,li {
 a,a * {
     text-decoration: none;
 }
+table {
+    &,&>:not(caption)>*>* {
+        padding: .5rem .5rem !important;
+    }
+}
 
 .sub-title {
     font-size: 21.25px;
