@@ -12,7 +12,7 @@ class RealEstate < ApplicationRecord
 
   private
 
-  def announce_validation
+  def announce_validation_confirm
     AdminMailer.announce_validation(self).deliver_now
   end
   
