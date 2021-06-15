@@ -16,7 +16,26 @@ ul,li {
 a,a * {
     text-decoration: none;
 }
+table {
+    &,&>:not(caption)>*>* {
+        padding: .5rem .5rem !important;
+    }
+}
 
 .sub-title {
     font-size: 21.25px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: $pink;
+}
+
+.mw-form {
+    width: 100%;
+    max-width: 25rem;
+}
+.custom-form {
+    padding: 15px;
+    border-radius: .25rem;
+    background-color: $pink;
 }

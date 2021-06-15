@@ -1,0 +1,33 @@
+<section class="container my-5">
+    <h1>Dashboard</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col" class="d-flex justify-content-end">
+                    <%= link_to "", 
+                        new_admin_real_estate_path, 
+                        class: "btn-circle btn-primary fas fa-plus" %>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @estates.each do |estate| %>
+                <tr>
+                    <td>
+                        <%= estate.name %>
+                    </td>
+                    <td class="d-flex justify-content-end">
+                        <%= link_to "", 
+                            edit_admin_real_estate_path(estate.id), 
+                            class: "btn-circle btn-primary fas fa-edit ms-1 my-1" %>
+                        <%= link_to "", 
+                            admin_real_estate_path(estate.id), 
+                            method: :delete,
+                            class: "btn-circle btn-danger fas fa-trash-alt ms-1 my-1" %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</section>

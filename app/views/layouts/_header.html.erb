@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
         <div class="container-fluid px-4 px-lg-5">
             <!-- TITLE -->
-            <%= link_to "Kitten World", root_path, class: "navbar-brand" %>
+            <%= link_to "House Of Coin", root_path, class: "navbar-brand" %>
             <!-- BURGER button -->
             <button class="navbar-toggler" 
                     type="button" 
@@ -18,7 +18,7 @@
                 <!-- Cart button -->
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li>
-                        <a href="<%#=wallets_path%>" class="btn btn-outline-dark">
+                        <a href="<%=carts_path%>" class="btn btn-outline-dark">
                             <i class="bi-cart-fill me-1"></i>Panier
                             <span class="badge bg-dark text-white ms-1 rounded-pill"><%#=current_order.line_items.length%></span>
                         </a>
