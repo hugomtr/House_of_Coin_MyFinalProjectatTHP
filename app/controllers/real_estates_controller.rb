@@ -1,6 +1,15 @@
 class RealEstatesController < ApplicationController
   def index
     @estates = estates_all
+
+    @markers = estates_all.geocoded.map do |mark|
+      {
+        lat: mark.latitude,
+        lng: mark.longitude,
+        adress: mark.adress,
+        price: mark.price
+      }
+    end
   end
 
   def show
