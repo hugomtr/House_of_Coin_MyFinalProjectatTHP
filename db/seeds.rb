@@ -46,7 +46,8 @@ images = [
         adress: Faker::Address.street_address,
         zipcode: Faker::Address.zip_code,
         city: Faker::Address.city,
-        image_urls: images.sample
+        image_urls: images.sample,
+        price: Faker::Number.number(digits: 9)
     )
 
     if real.save
@@ -69,7 +70,7 @@ end
     coin = HouseCoin.new(
         order: Order.all.sample,
         real_estate_id: RealEstate.all.sample.id,
-        coin_price: Faker::Number.number(digits: 9),
+        coin_price: Faker::Number.number(digits: 5),
         user_id: User.all.sample.id
     )
     if coin.save

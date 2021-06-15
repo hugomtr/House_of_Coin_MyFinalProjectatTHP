@@ -19,6 +19,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render :partial => "layouts/header" %>
+    <div class="my-5 py-5">
+      <%= yield %>
+    </div>
+    <%= render :partial => "layouts/footer" %>
   </body>
 </html>
