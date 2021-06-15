@@ -7,7 +7,7 @@ class RealEstatesController < ApplicationController
 
     @markers = @estates.geocoded.map do |mark|
       {
-        coordinates: [mark.latitude,mark.longitude ],
+        coordinates: [mark.longitude,mark.latitude],
         adress: mark.adress,
         price: mark.price
       }

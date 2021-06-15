@@ -1,33 +1,37 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
-
+<div>
+</div>
 <div id="map">
 </div>
 <input type="hidden" value="<%= @markers.to_json%>" id="marker">
+
 <style>
 #map {width:600px; height:600px}
 </style>
+
 <script>
+let dataset_marker = document.getElementById("marker").value;
+const markers = JSON.parse(dataset_marker)
+
 mapboxgl.accessToken = "<%=ENV['MAPBOX_API_KEY']%>";
 
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
-center: [3, 43],
-zoom: 5
+center: markers[0].coordinates,
+zoom: 12
 });
  
-let dataset_marker = document.getElementById("marker").value;
-
-const markers = JSON.parse(dataset_marker)
 console.log(markers[0]);
 markers.forEach(function (marker) {
-  var el = document.createElement('div');
+  let el = document.createElement('div');
+  let imgel = document.createElement('img');
+  el.appendChild(imgel);
+  imgel.src = "app/views/real_estates/icon.png";
   el.className = 'marker';
-  el.style.backgroundImage =
-  'url(icon.png)';
   el.style.width = '64px';
-  el.style.height = '64px';
+  el.style.height = '80px';
   el.style.backgroundSize = '100%';
 
   el.addEventListener('click', function () {
