@@ -9,7 +9,8 @@ class RealEstatesController < ApplicationController
       {
         coordinates: [mark.longitude,mark.latitude],
         adress: mark.adress,
-        price: mark.price
+        price: mark.price,
+        id: mark.id,
       }
     end
   end
@@ -60,6 +61,9 @@ class RealEstatesController < ApplicationController
   end
 
   def destroy
+    @real_estate = estate_find
+    @real_estate.destroy
+    redirect_to root_path
   end
 
   private

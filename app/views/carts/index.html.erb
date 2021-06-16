@@ -15,4 +15,5 @@
     <li class="list-group-item"><h5>Total</h5></li>
     <li class="list-group-item"><%=current_order.order_total / 100.0%> €</li>
   </ul>
+  <%=link_to 'Checkout', new_charge_path, class: "btn btn-success"%>
 </div>

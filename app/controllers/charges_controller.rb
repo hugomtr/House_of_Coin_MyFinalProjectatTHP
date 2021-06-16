@@ -1,10 +1,13 @@
 class ChargesController < ApplicationController
+
+    before_action :authenticate_user!
+
     def new
     end
     
     def create
         # Before the rescue, at the beginning of the method
-        @stripe_amount = 500
+        @stripe_amount = current_order.order_total
         
         begin  
             customer = Stripe::Customer.create({
@@ -24,7 +27,15 @@ class ChargesController < ApplicationController
             redirect_to new_charge_path
         end
 
-        # After the rescue, if the payment succeeded
+        update_products(current_order)
+        Charge.create(
+            stripe_id: customer,
+            user_id: current_user.id,
+            order_id: current_order.id
+        )
 
+        session[:order_id] = nil 
+        flash[:notice] = "Payment registered !"
+        redirect_to root_path
     end
 end

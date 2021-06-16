@@ -8,4 +8,13 @@ module ChargesHelper
             return total
         end
     end
+
+    def update_products(order)
+        order.house_coins.each do | hc |
+            real_estate = RealEstate.find(hc.real_estate_id)
+            estate_coin_num = real_estate.current_house_coin_number - 1
+            real_estate.update(current_house_coin_number: estate_coin_num)
+            hc.update(user: current_user)
+        end
+    end
 end
