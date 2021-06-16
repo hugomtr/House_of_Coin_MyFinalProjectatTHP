@@ -1,11 +1,13 @@
-<div class="container my-5">
+<div class="mt-5 newsletter-block">
     <div class="row">
-        <li class="col-12 col-sm-3">
-            <i class="fas fa-..."></i>
+        <li class="col-4">
+            <i class="fas fa-paper-plane fa-7x"> </i>
         </li>
-        <li class="col-12 col-sm-3">
-        <i class="fas fa-paper-plane"></i>
+        <li class="col-8">
             <h2>Subscribe to newsletter</h2>
+            <p>Get the latest advices and interesting offers and real estate</p>
+            <input type="text" id="input-newsletter" placeholder="Your e-mail address">
+            <%=button_to 'Suscribe', house_coins_path, method: :post, class: "btn btn-outline-primary"%>
         </li>
     </div>
 </div>
