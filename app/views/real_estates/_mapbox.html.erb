@@ -7,7 +7,7 @@
 <input type="hidden" value="<%= @markers.to_json%>" id="marker">
 
 <style>
-#map {width:600px; height:600px}
+#map {width:600px; height:600px;}
 </style>
 
 <script>
@@ -28,11 +28,12 @@ markers.forEach(function (marker) {
   let el = document.createElement('div');
   let imgel = document.createElement('img');
   el.appendChild(imgel);
-  imgel.src = "app/views/real_estates/icon.png";
+  imgel.src = "<%= asset_path 'icon.png' %>";
   el.className = 'marker';
   el.style.width = '64px';
   el.style.height = '80px';
   el.style.backgroundSize = '100%';
+  el.style.
 
   el.addEventListener('click', function () {
   window.alert(marker.properties.message);
