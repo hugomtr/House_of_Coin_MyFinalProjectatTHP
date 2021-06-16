@@ -7,7 +7,7 @@
 <input type="hidden" value="<%= @markers.to_json%>" id="marker">
 
 <style>
-#map {width:600px; height:600px;}
+#map {width:600px; height:600px}
 </style>
 
 <script>
@@ -33,7 +33,6 @@ markers.forEach(function (marker) {
   el.style.width = '64px';
   el.style.height = '80px';
   el.style.backgroundSize = '100%';
-  el.style.
 
   el.addEventListener('click', function () {
   window.alert(marker.properties.message);
