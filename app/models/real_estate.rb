@@ -11,7 +11,7 @@ class RealEstate < ApplicationRecord
   validates :zipcode ,presence: true
   validates :city ,presence: true
 
-  #after_create :announce_validation_confirm
+  after_create :announce_validation_confirm
 
   def price_euros
     price_euros = self.price / 100
