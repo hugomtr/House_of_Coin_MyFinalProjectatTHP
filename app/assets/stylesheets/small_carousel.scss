@@ -4,8 +4,15 @@
 }
 
 #carousel-inner {
-    width: 900px;
-    height: 450px;
+    position: absolute;
+    width: 735px;
+    height: 363px;
+    left: 160px;
+    top: 352px;
+
+/* shadow */
+    filter: drop-shadow(0px 4px 20px rgba(71, 100, 195, 0.1));
+    border-radius: 4px;
 }
 
 .carousel-inner img {
