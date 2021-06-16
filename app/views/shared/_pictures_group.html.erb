@@ -1,12 +1,13 @@
 <div class="my-5 cross-selling">
     <h2>You might be interested in</h2>
     <ul class="row">
-        <li class="col-12 col-sm-6 col-md-3">
-        <% (-1).downto(-4) do |i| %> 
-            <li class="col-12 col-sm-6 col-md-4 mb-3">
-                <%= @estates[i] %>
-            </li>
-        <% end %>
+        <li class="col-12 col-sm-6 col-md-4 mb-3">
+            <%# <% @estates.last(@estates.size * 0.5) %> 
+                <%# <% @estate = estate %>
+                <%# <%= render :partial => "card_estate", :object => @estate %>
+            <%# <% end %>
+            <%# @posts=@user.favorited.order('created_at DESC') %>
+            <%# default_scope { order ("created_at DESC")} %>
         </li> 
     </ul>
 </div>
