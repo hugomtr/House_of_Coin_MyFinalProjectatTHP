@@ -4,27 +4,32 @@
             <div id="custCarousel" class="carousel slide" align="center">
                 <!-- slides -->
                 <% if @real_estate.pictures.attached? %>
-                    <div class="carousel-inner">
+                    <ul class="carousel-inner">
+                    <%= @real_estate.pictures.length %>
                         <% @real_estate.pictures.each_with_index do |photo, i| %>
                             <% if i == 0 %>
-                                <div class="carousel-item <% if i == 0 %>active<% end %>">
+                                <li class="carousel-item active">
                                     <%= image_tag @real_estate.pictures[i], alt: 'picture' %>
-                                </div>
+                                </li>
+                            <% else %>
+                                <li class="carousel-item">
+                                    <%= image_tag @real_estate.pictures[i], alt: 'picture' %>
+                                </li>
                             <% end %>
-                            <!--<div class="carousel-item active">
+                            <!--<li class="carousel-item active">
                                 <img src="https://i.imgur.com/weXVL8M.jpg" alt="Hills">
-                            </div>
-                            <div class="carousel-item">
+                            </li>
+                            <li class="carousel-item">
                                 <img src="https://i.imgur.com/Rpxx6wU.jpg" alt="Hills">
-                            </div>
-                            <div class="carousel-item">
+                            </li>
+                            <li class="carousel-item">
                                 <img src="https://i.imgur.com/83fandJ.jpg" alt="Hills">
-                            </div>
-                            <div class="carousel-item">
+                            </li>
+                            <li class="carousel-item">
                                 <img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
-                            </div>-->
+                            </li>-->
                         <% end %>
-                    </div>
+                    </ul>
                     <!-- Left right --> 
                     <%# <a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> 
                         <span class="carousel-control-prev-icon">

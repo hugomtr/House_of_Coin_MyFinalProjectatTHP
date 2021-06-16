@@ -3,9 +3,6 @@
         <%= file_field_tag :pictures, multiple: true, class: "form-control" %>
         <%= hidden_field_tag :pictures_cache %>
     </div>
-    <div class="form-group mt-4">
-        <%= button_tag "Save pictures", type: "submit", class: "btn btn-primary me-1" %>
-    </div>
     <div class="form-group mt-3">
         <%= label_tag "Name" %>
         <%= text_field_tag :name, '', class: "form-control" %>

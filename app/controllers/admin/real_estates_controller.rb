@@ -13,7 +13,7 @@ class Admin::RealEstatesController < ApplicationController
     @estate.user = current_user
     
     puts "*"*40
-    puts params[:pictures].length
+    #puts params[:pictures].length
     puts params[:pictures]
 
     if @estate.save
@@ -72,7 +72,7 @@ class Admin::RealEstatesController < ApplicationController
         :zipcode,
         :city,
         :geocode,
-        pictures: []
+        { pictures: [] }
       )
   end
 end
