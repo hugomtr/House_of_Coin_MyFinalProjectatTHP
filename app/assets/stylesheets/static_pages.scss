@@ -4,12 +4,11 @@
 
 //beginning of contact
 
-*
+.contact *
 {
-    margin: 0;
+    margin: 25;
     padding: 0!important;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 .content {
@@ -371,3 +370,5 @@
 .card_team .info .icons_team a:hover {
     color: #f0f0f0;
 }
+
+//end of team
