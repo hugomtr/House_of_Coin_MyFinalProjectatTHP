@@ -9,21 +9,20 @@ class Admin::RealEstatesController < ApplicationController
   end
 
   def create
-    @estate = RealEstate.new(
-      user: current_user,
-      name: params[:name],
-      description: params[:description],
-      price: params[:price],
-      adress: params[:adress],
-      zipcode: params[:zipcode],
-      city: params[:city],
-      geocode: params[:geocode]
-    )
+    @estate = RealEstate.new(estate_params)
+    @estate.user = current_user
+    
+    puts "*"*40
+    #puts params[:pictures].length
+    puts params[:pictures]
 
     if @estate.save
       flash[:notice] = "Real estate created!"
+      @estate.pictures.attach(params[:pictures])
       redirect_to admin_real_estates_path
     else
+      puts "*"*40
+      puts @estate.errors.messages
       flash.now[:notice] = "Ouppps !"
       render :new
     end
@@ -65,6 +64,15 @@ class Admin::RealEstatesController < ApplicationController
   end
 
   def estate_params
-      params.permit(:name, :price, :description, :adress, :zipcode, :city, :geocode)
+      params.permit(
+        :name,
+        :price,
+        :description,
+        :adress,
+        :zipcode,
+        :city,
+        :geocode,
+        { pictures: [] }
+      )
   end
 end

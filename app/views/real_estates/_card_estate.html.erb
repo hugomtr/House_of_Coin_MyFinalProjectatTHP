@@ -1,6 +1,8 @@
 <a href="<%= real_estate_path(@estate.id) %>" class="card">
     <div class="card-image text-center">
-        <% if @estate.image_urls %>
+        <% if @estate.pictures.attached? %>
+            <%= image_tag @estate.pictures[0], alt: 'picture', class: 'w-auto h-100'%>
+        <% elsif @estate.image_urls %>
             <%= image_tag @estate.image_urls, alt: 'picture', class: 'w-auto h-100'%>
         <% end %>
     </div>
