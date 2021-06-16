@@ -9,6 +9,7 @@
 
 
 <script>
+
 let dataset_marker = document.getElementById("marker").value;
 const markers = JSON.parse(dataset_marker)
 
@@ -21,7 +22,6 @@ center: [2.213749,46.227638],
 zoom: 5
 });
  
-console.log(markers[0]);
 markers.forEach(function (marker) {
   let el = document.createElement('div');
   let imgel = document.createElement('img');
@@ -32,8 +32,6 @@ markers.forEach(function (marker) {
   el.style.height = '100px';
   el.style.marginTop = '-25px';
   el.style.backgroundSize = '50%';
-  el.addEventListener('click', function () {
-  });
 
   new mapboxgl.Marker(el)
   .setLngLat(marker.coordinates)
