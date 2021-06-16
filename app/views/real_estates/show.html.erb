@@ -6,7 +6,7 @@
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_token", :object => @button %>
             <%= @real_estate.description %>
-            <%#= render :partial => "shared/geolocalisation", :object => @geocoding %>
+            <%= render 'mapbox_show' %>
         </div>
         <div class="col-12 col-sm-6 col-md-4">
             <%= render :partial => "shared/brief_characteristics", :object => @text %>
@@ -19,5 +19,4 @@
         </div> 
     </div>
 </div>
-<%= render 'mapbox_show' %>
-<%=@marker[:coordinates]%>
+

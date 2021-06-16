@@ -2,10 +2,9 @@
     <h2>You might be interested in</h2>
     <ul class="row">
         <li class="col-12 col-sm-6 col-md-3">
-        <% (-1..-4).each do |i| %>
+        <% (-1).downto(-4) do |i| %> 
             <li class="col-12 col-sm-6 col-md-4 mb-3">
-                <% @estate = estates[i] %>
-                <%= render :partial => "card_estate", :object => @estate %>
+                <%= @estates[i] %>
             </li>
         <% end %>
         </li> 
