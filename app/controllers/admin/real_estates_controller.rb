@@ -49,6 +49,9 @@ class Admin::RealEstatesController < ApplicationController
   end
 
   def destroy
+    @real_estate = estate_find
+    @real_estate.destroy
+    redirect_to admin_real_estates_path
   end
 
   private
