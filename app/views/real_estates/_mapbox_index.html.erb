@@ -1,16 +1,15 @@
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
-<div>
-</div>
 <div id="map">
 </div>
 <input type="hidden" value="<%= @markers.to_json%>" id="marker">
+
 
 <style>
 #map {width:600px; height:600px}
 </style>
 
+
 <script>
+
 let dataset_marker = document.getElementById("marker").value;
 const markers = JSON.parse(dataset_marker)
 
@@ -23,7 +22,6 @@ center: [2.213749,46.227638],
 zoom: 5
 });
  
-console.log(markers[0]);
 markers.forEach(function (marker) {
   let el = document.createElement('div');
   let imgel = document.createElement('img');
@@ -32,9 +30,8 @@ markers.forEach(function (marker) {
   el.className = 'marker';
   el.style.width = '100px';
   el.style.height = '100px';
+  el.style.marginTop = '-25px';
   el.style.backgroundSize = '50%';
-  el.addEventListener('click', function () {
-  });
 
   new mapboxgl.Marker(el)
   .setLngLat(marker.coordinates)
@@ -42,9 +39,9 @@ markers.forEach(function (marker) {
             .setHTML(
                 "<a href=/real_estates/"+ marker.id+">"+
                   "<p> Price: " + marker.price + " $" + "</p>"+
+                  "<p> "+ marker.coordinates + "</p>"+
                 "</a>"
             ))
   .addTo(map);
 });
-
 </script>

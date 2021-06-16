@@ -16,7 +16,13 @@ class RealEstatesController < ApplicationController
   end
 
   def show
+    @estates = estates_all
     @real_estate = estate_find
+    @marker = {coordinates: [@real_estate.longitude,@real_estate.latitude],
+              adress: @real_estate.adress,          
+              price: @real_estate.price,
+              id: @real_estate.id
+    }
   end
 
   def new
