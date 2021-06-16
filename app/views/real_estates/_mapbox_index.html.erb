@@ -1,14 +1,12 @@
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
-<div>
-</div>
 <div id="map">
 </div>
 <input type="hidden" value="<%= @markers.to_json%>" id="marker">
 
+
 <style>
 #map {width:600px; height:600px}
 </style>
+
 
 <script>
 let dataset_marker = document.getElementById("marker").value;
@@ -48,5 +46,4 @@ markers.forEach(function (marker) {
             ))
   .addTo(map);
 });
-
 </script>
