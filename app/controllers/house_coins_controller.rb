@@ -25,6 +25,8 @@ class HouseCoinsController < ApplicationController
         @house_coin = @order.house_coins.find(params[:id])
         @house_coin.destroy
         @house_coins = @order.house_coins
+
+        redirect_back(fallback_location: root_path)
     end
 
     private

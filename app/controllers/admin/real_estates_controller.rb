@@ -10,22 +10,22 @@ class Admin::RealEstatesController < ApplicationController
 
   def create
     @estate = RealEstate.new(
-        user: current_user,
-        name: params[:name],
-        description: params[:description],
-        price: params[:price],
-        adress: params[:adress],
-        zipcode: params[:zipcode],
-        city: params[:city],
-        geocode: params[:geocode]
+      user: current_user,
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      adress: params[:adress],
+      zipcode: params[:zipcode],
+      city: params[:city],
+      geocode: params[:geocode]
     )
 
     if @estate.save
-        flash[:notice] = "Real estate created!"
-        redirect_to admin_real_estates_path
+      flash[:notice] = "Real estate created!"
+      redirect_to admin_real_estates_path
     else
-        flash.now[:notice] = "Ouppps !"
-        render :new
+      flash.now[:notice] = "Ouppps !"
+      render :new
     end
   end
 
@@ -33,9 +33,19 @@ class Admin::RealEstatesController < ApplicationController
   end
 
   def edit
+    @real_estate = estate_find
   end
 
   def update
+    @real_estate = estate_find
+
+    if @real_estate.update(estate_params)
+      flash[:notice] = "Real estate updated!"
+      redirect_to admin_real_estates_path
+    else
+      flash.now[:notice] = "Ouppps !"
+      render :edit
+    end
   end
 
   def destroy
@@ -45,5 +55,13 @@ class Admin::RealEstatesController < ApplicationController
 
   def estates_all
     RealEstate.all
+  end
+
+  def estate_find
+    RealEstate.friendly.find(params[:id])
+  end
+
+  def estate_params
+      params.permit(:name, :price, :description, :adress, :zipcode, :city, :geocode)
   end
 end
