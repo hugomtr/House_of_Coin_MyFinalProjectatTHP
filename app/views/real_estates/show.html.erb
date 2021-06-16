@@ -2,7 +2,7 @@
     <h1><%= @real_estate.name %></h1>
     <article class="row">
         <div class="col-12 col-sm-6 col-md-8">
-            <%= render :partial => "shared/small_carousel" %>
+            <%= render :partial => "shared/small_carousel", :object => @real_estate %>
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_token", :object => @button %>
             <%= @real_estate.description %>
@@ -10,12 +10,12 @@
         </div>
         <div class="col-12 col-sm-6 col-md-4">
             <%= render :partial => "shared/brief_characteristics", :object => @text %>
-        </div> 
+        </div>
     </article>
     <div class="row">
         <div class="col-12 col-sm-6 col-md-8">
             <%= render :partial => "shared/pictures_group", :object => @imgArr %>
             <%= render :partial => "shared/newsletter" %>
-        </div> 
+        </div>
     </div>
 </div>
