@@ -1,0 +1,11 @@
+<div class="mt-2 mb-4 get-housecoin">
+    <ul class="row">
+        <li class="d-flex flex-column col-4 col-sm-4 col-md-4">
+            <h6>Buy HouseCoin since :</h6>
+            <h4><%= @real_estate.price / 100 %>€</h4>
+        </li>
+        <li class="d-flex flex-column col-4 col-sm-4 col-md-5" id="button-housecoin">
+            <%=button_to 'Get a HouseCoin', house_coins_path, method: :post, class: "btn btn-primary"%>
+        </li>
+    </ul>
+</div>
