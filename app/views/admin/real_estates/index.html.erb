@@ -21,10 +21,14 @@
                         <%= link_to "", 
                             edit_admin_real_estate_path(estate.id), 
                             class: "btn-circle btn-primary fas fa-edit ms-1 my-1" %>
-                        <%= link_to "", 
-                            admin_real_estate_path(estate.id), 
-                            method: :delete,
-                            class: "btn-circle btn-danger fas fa-trash-alt ms-1 my-1" %>
+                        <% if estate.house_coins.length == 0 %>
+                            <%= link_to "", 
+                                admin_real_estate_path(estate.id), 
+                                method: :delete,
+                                class: "btn-circle btn-danger fas fa-trash-alt ms-1 my-1" %>
+                        <% else %>
+                            <i class="btn-circle btn-danger fas fa-trash-alt ms-1 my-1 disabled"></i>
+                        <% end %>
                     </td>
                 </tr>
             <% end %>
