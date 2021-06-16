@@ -1,0 +1,41 @@
+<div id="map">
+</div>
+<input type="hidden" value="<%= @marker.to_json%>" id="marker">
+
+<style>
+#map {width:600px; height:600px}
+</style>
+
+<script>
+let dataset_marker = document.getElementById("marker").value;
+const marker = JSON.parse(dataset_marker)
+mapboxgl.accessToken = "<%=ENV['MAPBOX_API_KEY']%>";
+
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: marker.coordinates,
+zoom: 13
+});
+
+let el = document.createElement('div');
+let imgel = document.createElement('img');
+el.appendChild(imgel);
+imgel.src = "<%= asset_path 'icon.png' %>";
+el.className = 'marker';
+el.style.width = '100px';
+el.style.height = '100px';
+el.style.marginTop = '-25px';
+el.style.backgroundSize = '50%';
+
+new mapboxgl.Marker(el)
+.setLngLat(marker.coordinates)
+.setPopup(new mapboxgl.Popup({ offset: 25 })
+          .setHTML(
+              "<a href=/real_estates/"+ marker.id+">"+
+                "<p> Price: " + marker.price + " $" + "</p>"+
+                "<p> "+ marker.coordinates + "</p>"+
+              "</a>"
+          ))
+.addTo(map);
+</script>
