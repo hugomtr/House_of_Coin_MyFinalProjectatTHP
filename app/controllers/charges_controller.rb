@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
     
     def create
         # Before the rescue, at the beginning of the method
-        @stripe_amount = 500
+        @stripe_amount = current_order.order_total
         
         begin  
             customer = Stripe::Customer.create({
