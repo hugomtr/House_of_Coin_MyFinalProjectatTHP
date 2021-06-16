@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+adress = ["115 Rue Samuel Champlain","17 rue du rivayral","1900 route de lodève","29 rue des aqueducs","9 rue Neuve","6 allée roch braz","75 Rue Nicolas Chorier","18 rue de Flacé","20 route de Brinon","70 Bis Boulevard de Stalingrad"]
+zipcode = ["17600","34725","34700","69005","19200","44510","38000","71000","58500","24000"]
+city = ["Le Gua","Saint André de sangonis","fozieres","lyon","Saint Angel","le pouliguen","Grenoble","Mâcon","Rix","Périgueux"]  
+
 require 'faker'
 
 Charge.destroy_all
@@ -37,16 +41,17 @@ images = [
     "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
 ]
 
-30.times do
+(0..8).each do |i|
     # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
         user: User.all.sample,
-        adress: Faker::Address.street_address,
-        zipcode: Faker::Address.zip_code,
-        city: Faker::Address.city,
-        image_urls: images.sample
+        adress: adress[i],
+        zipcode: zipcode[i],
+        city: city[i],
+        image_urls: images.sample,
+        price: Faker::Number.number(digits: 8)
     )
 
     if real.save
@@ -55,6 +60,7 @@ images = [
         puts real.errors.messages
     end
 end
+
 
 30.times do
     order = Order.new()
@@ -69,7 +75,7 @@ end
     coin = HouseCoin.new(
         order: Order.all.sample,
         real_estate_id: RealEstate.all.sample.id,
-        coin_price: Faker::Number.number(digits: 9),
+        coin_price: Faker::Number.number(digits: 5),
         user_id: User.all.sample.id
     )
     if coin.save

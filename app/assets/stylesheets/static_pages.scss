@@ -1,3 +1,506 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//beginning of contact
+
+.contact *
+{
+    margin: 25;
+    padding: 0!important;
+    box-sizing: border-box;
+}
+
+.content {
+    padding-bottom: 150px!important;
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0.5)
+    ),
+    url(modern_house.jpg);
+    background-size: cover;
+    
+}
+
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow:
+    0.03em 0 black,
+}
+
+.contact .content p {
+    font-weight: 500;
+    color: #fff;
+    text-shadow:
+    0.05em 0 black,
+    0 0.05em black,
+}
+
+.container_contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container_contact .contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_contact .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container_contact .contactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.container_contact .contactInfo .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+    text-shadow:
+    0.07em 0 black,
+    0 0.07em black,
+    -0.07em 0 black,
+    0 -0.07em black
+}
+
+.container_contact .contactInfo .box .text h3 {
+    width: 40%;
+    padding: 40px;
+}
+
+.contactForm h2 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+    
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    color: black;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"] {
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 991px) {
+    .contact
+    {
+        padding: 50px;
+    }
+    .container_contact
+    {
+        flex-direction: column;
+    }
+    .container_contact .contactInfo
+    {
+        margin-bottom: 40px;
+    }
+    .container_contact .contactInfo,
+    .contactForm
+    {
+        width: 100%;
+    }
+}
+
+//end of contact
+
+
+
+
+//beginning of about
+
+#about{
+    padding-top: 98px;
+    padding-bottom: 101px;
+    background: #F3F3FA;
+    font-family: tahoma;
+    text-align: justify;
+    overflow: hidden;
+}
+
+#about .about-img img{
+    position: absolute;
+    width: 95%;
+}
+
+.fa-play{
+    font-size: 100px;
+    
+}
+
+
+#about .p-first{
+    margin-bottom: 30px;
+}
+
+
+#about h2{
+    margin-bottom: 47px;
+    margin-top: 12px;
+    
+}
+
+
+#about .social-link-text{
+    margin-top: 50px;
+    margin-bottom: 25px;			
+    
+}
+
+#about .about-link{
+    padding-left: 0px;
+}
+
+#about .about-link li{
+    display: inline-block;
+}
+
+#about .about-link li a i{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #d6c6b2;
+    margin-right: 10px;
+    font-size: 22px;
+    color: black;
+    transition: all .3s;
+    
+}
+
+
+#about .about-link li a i:hover{
+    color: black;
+    background: #fff;
+    border-color: black;
+    
+}
+
+
+#about .about-img{
+    position: relative;
+}
+
+.color-3{
+    color: black;
+}
+
+
+.text-black{
+    color: black;
+}
+
+
+.p-first{
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+}
+
+.btn_about{
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+//end of about
+
+
+
+//beginning of team
+
+
+.section_team {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #F3F3FA;
+}
+
+.card_team {
+    height: 500px;
+    width: 290px;
+    margin: 20px;
+    box-shadow: 0 3px 5px #000;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card_team .bg-image img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0%, 100% 70%, 45% 100%, 0 70%);
+}
+
+.card_team .pic img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 10px solid #222;
+    margin-top: -90px;
+    position: relative;
+}
+
+.card_team .info h3 {
+    color:black;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.card_team .info span {
+    font-size: 15px;
+    color: #e74c3c;
+}
+
+.card_team .info p {
+    font-size: 13px;
+    padding: 10px 20px;
+    color: #999;
+}
+
+.card_team .info .icons_team a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #00b4d8;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+
+.card_team .info .icons_team a:hover {
+    color: #f0f0f0;
+}
+
+.h1_team {
+    text-align: center;
+}
+
+//end of team
+
+//beginning of terms_and_conditions/privacy_policy
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F3F3FA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F3F3FA;
+}
+
+
+.title-mobile {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    padding-top: 30px;
+}
+
+
+.card_terms {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height : 1950px;
+    width: 1200px;
+    border-radius: 30px;
+    background-color: #F3F3FA;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_terms .primary-heading {
+    text-align: center;
+    color: black;
+    padding-top: 50px ;
+    font-size: 4em;
+}
+
+.paragraph {
+    color: black;
+    margin-left: 50px;
+    margin-right: 25px;
+    padding-top: 50px;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    font-weight: 500;
+}
+
+
+@media only screen and (max-width: 1218px) {
+    .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height : 2050px;
+        width: 1000px;
+        border-radius: 30px;
+        background-color: #F3F3FA;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 1012px) {
+    .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height : 2350px;
+        width: 800px;
+        border-radius: 30px;
+        background-color: #F3F3FA;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 832px) {
+    .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height : 2950px;
+        width: 600px;
+        border-radius: 30px;
+        background-color: #F3F3FA;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 626px) {
+    .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height : 3850px;
+        width: 450px;
+        border-radius: 30px;
+        background-color: #F3F3FA;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card .primary-heading {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height : 5050px;
+        width: 350px;
+        border-radius: 30px;
+        background-color: #F3F3FA;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card .primary-heading {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    .card {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height : 6300px;
+        width: 290px;
+        border-radius: 30px;
+        background-color: #F3F3FA;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card .primary-heading {
+        font-size: 2em;
+    }
+}
+
+//end of terms_and_conditions/privacy_policy

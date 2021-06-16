@@ -1,37 +1,27 @@
-<div class="container my-5">
+<div class="container d-flex flex-column my-5">
+    <h1><%= @real_estate.name %></h1>
     <article class="row">
         <div class="col-12 col-sm-6 col-md-8">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#Real_estatePictureModal">
-                <img src="<%= @real_estate.image_urls %>" class="img-fluid real_estate-img" alt="">
-            </a>
+            <%= render :partial => "shared/small_carousel", :object => @real_estate %>
+            <%= render :partial => "shared/picto_presentation" %>
+            <%= render :partial => "shared/get_housecoin", :object => @button %>
+            <%= @real_estate.description %>
+            <%#= render :partial => "shared/geolocalisation", :object => @geocoding %>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <h1><%= @real_estate.name %></h1>
+        <div class="d-flex flex-column col-12 col-sm-6 col-md-4">
+            <%= render :partial => "shared/brief_characteristics", :object => @text %>
         </div>
-            <div class="col-12 col-sm-8 col-md-8">
-                <%= render :partial => "shared/small_carousel", :object => @imgArr %> 
-                <h3><%= @real_estate.price %>€</h3>
-                <p><%= @real_estate.city %></p>
-            </div>
-            <div class="col-12 col-sm-8 col-md-8">
-                <!-- <%= render :partial => "shared/get_token", :object => @button %> -->
-            </div>
-            <div class="col-12 col-sm-8 col-md-8">
-            <p><%= @real_estate.description %></p>
-            </div>
-            <div class="col-12 col-sm-8 col-md-8">
-                <!-- <%= render :partial => "shared/geolocalisation", :object => @geocoding %> -->
-            </div>
     </article>
-</div>
-
-<div class="container my-5">
-    <div class="col-12 col-sm-8 col-md-8">
-        <%= render :partial => "shared/pictures_group", :object => @ %>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-8">
+            <%= render :partial => "shared/pictures_group", :object => @imgArr %>
+        </div>
+    <div class="row">
+        <div class="">    
+            <%= render :partial => "shared/newsletter" %>
+        </div>
     </div>
 </div>
-
-
-<!-- Modal -->
-<%= render :partial => "picture_modal_xl", :object => @real_estate %>
-
+<%= render 'mapbox_show' %>
+<%=@marker[:coordinates]%>
+<!-- @estates.last(@estates.size * 0.5)  tableau pour cedric -->

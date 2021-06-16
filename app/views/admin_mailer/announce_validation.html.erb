@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>New announcement</h1>
+        <h2>Announcement n° <%= @real_estate_id %></h2>
+        <% user_id = @real_estate.user_id %>
+        <% real_estate_id = @real_estate.id %>
+        <p>Seller :      <%= User.find(user_id).email %></p>
+        <p>Price :       <%= real_estate_price = @real_estate.price %></p>
+        <p>Adress :      <%= real_estate_adress = @real_estate.adress %></p>
+        <p>Zipcode :     <%= real_estate_zipcode = @real_estate.zipcode %></p>
+        <p>City :        <%= real_estate_city = @real_estate.city %></p>
+        <p>Description : <%= real_estate_description = @real_estate.description %></p>
+    </body>
+</html>

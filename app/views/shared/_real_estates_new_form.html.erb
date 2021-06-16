@@ -1,0 +1,38 @@
+<%= form_tag(@path[:url], method: @path[:method], id: "contact-form", multipart: true )  do %>
+    <div class="form-group mt-3">
+        <%= file_field_tag :pictures, multiple: true, class: "form-control" %>
+        <%= hidden_field_tag :pictures_cache %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "Name" %>
+        <%= text_field_tag :name, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "Price" %>
+        <%= text_field_tag :price, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "Description" %>
+        <%= text_area_tag :description, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "Address" %>
+        <%= text_field_tag :adress, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "Zipcode" %>
+        <%= text_field_tag :zipcode, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "City" %>
+        <%= text_field_tag :city, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-3">
+        <%= label_tag "Geocode" %>
+        <%= text_field_tag :geocode, '', class: "form-control" %>
+    </div>
+    <div class="form-group mt-4">
+        <%= submit_tag "Save", class: "btn btn-primary me-1" %>
+        <%= link_to "Dashboard", admin_real_estates_path, class: "btn btn-secondary" %>
+    </div>
+<%end%>

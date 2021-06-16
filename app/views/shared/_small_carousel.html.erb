@@ -1,23 +1,66 @@
-<div class="card h-100">
-    <% if @real_estate.picture.attached? %>
-        <%= image_tag @real_estate.picture, alt: 'picture', class: 'w-100'%>
-    <% else %>
-        <%= image_tag @real_estate.image_url, alt: 'picture', class: 'w-100'%>
-    <% end %>
-    <div class="card-body">
-        <h5 class="card-title"><%= @real_estate.name %></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Admin :</h6>
-        <p class="card-text"> some text</p>
-        <p class="card-text"> some other text</p>
-        <div class="mb-3 text-center">
-            <%= link_to "See", 
-                real_estate_path(@real_estate.id), 
-                class: "card-link btn btn-dark btn-sm me-1 my-1" %>
-            <%= button_to "Add to cart", 
-                line_items_path, 
-                method: :post, 
-                params: {real_estate_id: @real_estate.id}, 
-                class: "btn btn-outline-primary btn-sm me-1 my-1" %>
+<div class="container-carousel">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="custCarousel" class="carousel slide" align="center">
+                <!-- slides -->
+                <% if @real_estate.pictures.attached? %>
+                    <ul class="carousel-inner">
+                    <%= @real_estate.pictures.length %>
+                        <% @real_estate.pictures.each_with_index do |photo, i| %>
+                            <% if i == 0 %>
+                                <li class="carousel-item active">
+                                    <%= image_tag @real_estate.pictures[i], alt: 'picture' %>
+                                </li>
+                            <% else %>
+                                <li class="carousel-item">
+                                    <%= image_tag @real_estate.pictures[i], alt: 'picture' %>
+                                </li>
+                            <% end %>
+                            <!--<li class="carousel-item active">
+                                <img src="https://i.imgur.com/weXVL8M.jpg" alt="Hills">
+                            </li>
+                            <li class="carousel-item">
+                                <img src="https://i.imgur.com/Rpxx6wU.jpg" alt="Hills">
+                            </li>
+                            <li class="carousel-item">
+                                <img src="https://i.imgur.com/83fandJ.jpg" alt="Hills">
+                            </li>
+                            <li class="carousel-item">
+                                <img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
+                            </li>-->
+                        <% end %>
+                    </ul>
+                    <!-- Left right --> 
+                    <%# <a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> 
+                        <span class="carousel-control-prev-icon">
+                        </span> 
+                    </a> 
+                    <a class="carousel-control-next" href="#custCarousel" data-slide="next">
+                        <span class="carousel-control-next-icon">
+                        </span> 
+                    </a>  %>
+                    <!-- Thumbnails -->
+                    <ol class="carousel-indicators list-inline">
+                        <li class="list-inline-item active"> 
+                            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel"> 
+                                <img src="https://i.imgur.com/weXVL8M.jpg" class="img-fluid"> 
+                            </a> 
+                        </li>
+                        <li class="list-inline-item"> 
+                            <a id="carousel-selector-1" data-slide-to="1" data-target="#custCarousel"> 
+                                <img src="https://i.imgur.com/Rpxx6wU.jpg" class="img-fluid"> 
+                            </a> 
+                        </li>
+                        <li class="list-inline-item"> 
+                            <a id="carousel-selector-2" data-slide-to="2" data-target="#custCarousel"> 
+                                <img src="https://i.imgur.com/83fandJ.jpg" class="img-fluid"> 
+                            </a> 
+                        </li>
+                    </ol>
+                <%else%>
+                    <p>=== There is no picture ===</p>
+                <%end%>
+            </div>
         </div>
     </div>
 </div>

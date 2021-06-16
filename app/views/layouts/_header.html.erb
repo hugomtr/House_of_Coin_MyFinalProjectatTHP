@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
         <div class="container-fluid px-4 px-lg-5">
             <!-- TITLE -->
-            <%= link_to "Kitten World", root_path, class: "navbar-brand" %>
+            <%= link_to "House Of Coin", root_path, class: "navbar-brand" %>
             <!-- BURGER button -->
             <button class="navbar-toggler" 
                     type="button" 
@@ -18,10 +18,10 @@
                 <!-- Cart button -->
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li>
-                        <a href="<%=wallets_path%>" class="btn btn-outline-dark">
+                        <%=link_to carts_path, class: "btn btn-outline-dark" do %>
                             <i class="bi-cart-fill me-1"></i>Panier
-                            <span class="badge bg-dark text-white ms-1 rounded-pill"><%=current_order.line_items.length%></span>
-                        </a>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill"><%=current_order.house_coins.length%></span>
+                        <%end%>
                     </li>
                 </ul>
                 <!-- CONNECTIONS buttons -->
@@ -29,22 +29,22 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <% unless user_signed_in? %>
                             <li class="nav-item">
-                                <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+                                <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
                             </li>
                             <li class="nav-item">
-                                <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
+                                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
                             </li>
                         <% else %>
                             <% if is_admin? %>
                                 <li class="nav-item">
-                                    <%= link_to "Dashboard", admin_kittens_path, class: "nav-link" %>
+                                    <%= link_to "Dashboard", admin_real_estates_path, class: "nav-link" %>
                                 </li>
                             <% end %>
                             <li class="nav-item">
-                                <%= link_to "Mon profil", user_path(current_user.id), class: "nav-link" %>
+                                <%= link_to "My profile", user_path(current_user.id), class: "nav-link" %>
                             </li>
                             <li class="nav-item">
-                                <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                                <%= link_to "Disconnect", destroy_user_session_path, method: :delete, class: "nav-link" %>
                             </li>
                         <% end %>
                     </ul>

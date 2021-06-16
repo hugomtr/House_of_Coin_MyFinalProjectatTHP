@@ -1,0 +1,7 @@
+<section class="container d-flex flex-column align-items-center my-5">
+    <h1>Edit real estate</h1>
+    <div class="mw-form custom-form">
+        <% @path = {data: @real_estate, url: admin_real_estate_path(@real_estate.id), method: 'put'} %>
+        <%= render :partial => "shared/real_estates_edit_form", :object => @path %>
+    </div>
+</section>

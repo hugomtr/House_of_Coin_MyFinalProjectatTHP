@@ -1,20 +1,27 @@
 <a href="<%= real_estate_path(@estate.id) %>" class="card">
-    <div class="card-image">
-        <% if @estate.image_urls %>
+    <div class="card-image text-center">
+        <% if @estate.pictures.attached? %>
+            <%= image_tag @estate.pictures[0], alt: 'picture', class: 'w-auto h-100'%>
+        <% elsif @estate.image_urls %>
             <%= image_tag @estate.image_urls, alt: 'picture', class: 'w-auto h-100'%>
         <% end %>
     </div>
     <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title text-truncate">
             <%= @estate.name %>
         </h5>
-        <p class="card-text">
+        <p class="card-text mb-0">
             <strong class="text-primary">
-                <%= @estate.price %>
+                <% if @estate.price %>
+                    <%= @estate.price / 100 %> €
+                <% else %>
+                    --
+                <% end %>
             </strong>
         </p>
         <p class="card-text">
             <%= @estate.city %>
         </p>
+        <%=button_to 'Add to cart', house_coins_path, method: :post, params: { real_estate_id: @estate.id, coin_price: @estate.coin_price, user_id: @estate.user, order_id: current_order }, class: "btn btn-primary"%>
     </div>
 </a>

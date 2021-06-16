@@ -1,2 +1,7 @@
-<h1>RealEstates#new</h1>
-<p>Find me in app/views/real_estates/new.html.erb</p>
+<section class="container d-flex flex-column align-items-center my-5">
+    <h1>New real estate</h1>
+    <div class="mw-form custom-form">
+        <% @path = {url: real_estates_path, method: 'post'} %>
+        <%= render :partial => "shared/real_estates_new_form", :object => @path %>
+    </div>
+</section>
