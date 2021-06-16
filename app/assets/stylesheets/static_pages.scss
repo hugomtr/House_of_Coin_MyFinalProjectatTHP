@@ -4,8 +4,9 @@
 
 //beginning of contact
 
-.content * {
-    margin: 0;
+.contact *
+{
+    margin: 25;
     padding: 0!important;
     box-sizing: border-box;
 }
@@ -195,6 +196,11 @@
     overflow: hidden;
 }
 
+#about .about-img img{
+    position: absolute;
+    width: 95%;
+}
+
 .fa-play{
     font-size: 100px;
     
@@ -252,7 +258,6 @@
 
 #about .about-img{
     position: relative;
-    
 }
 
 .color-3{
