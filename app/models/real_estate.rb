@@ -11,7 +11,10 @@ class RealEstate < ApplicationRecord
   validates :zipcode ,presence: true
   validates :city ,presence: true
 
-  after_create :announce_validation_confirm, :original_coin_number
+  #TODO reactivate mailers
+
+  # after_create :announce_validation_confirm, :original_coin_number
+  after_create :original_coin_number
 
   def pictures_urls
     pictures.map(&:url)

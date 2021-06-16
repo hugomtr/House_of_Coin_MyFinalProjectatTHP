@@ -9,7 +9,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :welcome_send
+  #TODO reactivate mailers
+
+  # after_create :welcome_send
 
   private
     def welcome_send
