@@ -190,7 +190,7 @@
 #about{
     padding-top: 98px;
     padding-bottom: 101px;
-    background: #fff;
+    background: #F3F3FA;
     font-family: tahoma;
     text-align: justify;
     overflow: hidden;
@@ -313,7 +313,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #fff;
+    background-color: #F3F3FA;
 }
 
 .card_team {
@@ -369,6 +369,10 @@
 
 .card_team .info .icons_team a:hover {
     color: #f0f0f0;
+}
+
+.h1_team {
+    text-align: center;
 }
 
 //end of team
