@@ -362,7 +362,7 @@
 
 //end of team
 
-//beginning of terms_and_conditions
+//beginning of terms_and_conditions/privacy_policy
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -451,13 +451,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .card .primary-heading {
-        font-size: 3.5em;
-    }
-
-    .footer-heading {
-        font-size: 1.5em;
-    }
 }
 
 @media only screen and (max-width: 626px) {
@@ -471,15 +464,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    .header-mobile {
-        display: block;
-    }
-
-    .main-header {
-        display: none;
-    }
-
     .card .primary-heading {
         font-size: 3em;
     }
@@ -518,3 +502,5 @@
         font-size: 2em;
     }
 }
+
+//end of terms_and_conditions/privacy_policy
