@@ -7,7 +7,9 @@
                 <th scope="col" class="d-flex justify-content-end">
                     <%= link_to "", 
                         new_admin_real_estate_path, 
-                        class: "btn-circle btn-primary fas fa-plus" %>
+                        class: "btn-circle btn-primary fas fa-plus",
+                        :data => { :bs_toggle => "tooltip", :bs_placement => "top" },
+                        title: "New estate" %>
                 </th>
             </tr>
         </thead>
@@ -20,12 +22,16 @@
                     <td class="d-flex justify-content-end">
                         <%= link_to "", 
                             edit_admin_real_estate_path(estate.id), 
-                            class: "btn-circle btn-primary fas fa-edit ms-1 my-1" %>
+                            class: "btn-circle btn-primary fas fa-edit ms-1 my-1",
+                            :data => { :bs_toggle => "tooltip", :bs_placement => "top" },
+                            title: "Edit estate" %>
                         <% if estate.house_coins.length == 0 %>
                             <%= link_to "", 
                                 admin_real_estate_path(estate.id), 
                                 method: :delete,
-                                class: "btn-circle btn-danger fas fa-trash-alt ms-1 my-1" %>
+                                class: "btn-circle btn-danger fas fa-trash-alt ms-1 my-1",
+                                :data => { :bs_toggle => "tooltip", :bs_placement => "top" },
+                                title: "Delete estate" %>
                         <% else %>
                             <i class="btn-circle btn-danger fas fa-trash-alt ms-1 my-1 disabled"></i>
                         <% end %>
