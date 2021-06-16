@@ -28,7 +28,7 @@ markers.forEach(function (marker) {
   let el = document.createElement('div');
   let imgel = document.createElement('img');
   el.appendChild(imgel);
-  imgel.src = "app/views/real_estates/icon.png";
+  imgel.src = "<%= asset_path 'icon.png' %>";
   el.className = 'marker';
   el.style.width = '64px';
   el.style.height = '80px';
