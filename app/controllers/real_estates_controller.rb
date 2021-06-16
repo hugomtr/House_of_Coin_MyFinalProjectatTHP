@@ -9,7 +9,8 @@ class RealEstatesController < ApplicationController
       {
         coordinates: [mark.longitude,mark.latitude],
         adress: mark.adress,
-        price: mark.price
+        price: mark.price,
+        id: mark.id,
       }
     end
   end

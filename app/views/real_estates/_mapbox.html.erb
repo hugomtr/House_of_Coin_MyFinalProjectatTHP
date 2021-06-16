@@ -33,12 +33,18 @@ markers.forEach(function (marker) {
   el.style.width = '64px';
   el.style.height = '80px';
   el.style.backgroundSize = '100%';
-
+  console.log(marker.id);
   el.addEventListener('click', function () {
-  window.alert(marker.properties.message);
   });
+
   new mapboxgl.Marker(el)
   .setLngLat(marker.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 })
+            .setHTML(
+                "<a href=/real_estates/"+ marker.id+">"+
+                  "<p> Price: " + marker.price + " $" + "</p>"+
+                "</a>"
+            ))
   .addTo(map);
 });
 </script>
