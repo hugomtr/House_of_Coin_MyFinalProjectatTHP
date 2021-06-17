@@ -28,9 +28,9 @@ markers.forEach(function (marker) {
   el.appendChild(imgel);
   imgel.src = "<%= asset_path 'icon.png' %>";
   el.className = 'marker';
-  el.style.width = '100px';
-  el.style.height = '100px';
-  el.style.marginTop = '-25px';
+  el.style.width = '24px';
+  el.style.height = '24px';
+  el.style.marginTop = '-12px';
   el.style.backgroundSize = '50%';
 
   new mapboxgl.Marker(el)
