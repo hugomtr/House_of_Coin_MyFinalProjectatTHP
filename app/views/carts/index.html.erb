@@ -4,7 +4,7 @@
   <%unique_items = []%>
 
   <%@house_coins.each do | item |%>
-    <%if !unique_items.map { | c | c.real_estate_id }.include?(item.id)%>
+    <%if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id)%>
       <%unique_items << item%>
     <%end%>
   <%end%>
