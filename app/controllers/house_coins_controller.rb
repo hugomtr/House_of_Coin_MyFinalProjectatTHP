@@ -9,7 +9,7 @@ class HouseCoinsController < ApplicationController
         else
             puts @order.errors.messages
             flash[:notice] = @order.errors.full_messages
-            redirect_to root_path
+            redirect_back(fallback_location: root_path)
         end
     end
 
