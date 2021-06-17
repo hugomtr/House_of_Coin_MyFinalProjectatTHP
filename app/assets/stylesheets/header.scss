@@ -1,0 +1,28 @@
+.header {
+    background-color: $body;
+}
+
+a.navbar-brand {
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+
+    .header-logo {
+        fill: $dark !important;
+        -webkit-transition: all 300ms ease;
+        -moz-transition: all 300ms ease;
+        -ms-transition: all 300ms ease;
+        -o-transition: all 300ms ease;
+        transition: all 300ms ease;
+    }
+    &:hover .header-logo {
+        fill: $primary !important;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $dark;
+    font-size: 16px;
+}
