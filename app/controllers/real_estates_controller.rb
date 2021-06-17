@@ -5,23 +5,24 @@ class RealEstatesController < ApplicationController
   def index
     @estates = estates_all
 
-    @markers = @estates.geocoded.map do |mark|
-      {
-        coordinates: [mark.longitude,mark.latitude],
-        adress: mark.adress,
-        price: mark.price,
-        id: mark.id,
-      }
+    @markers = @estates.geocoded.map do |mark| {
+      coordinates: [ mark.longitude, mark.latitude ],
+      adress: mark.adress,
+      price: mark.price,
+      id: mark.id,
+    }
     end
   end
 
   def show
     @estates = estates_all
     @real_estate = estate_find
-    @marker = {coordinates: [@real_estate.longitude,@real_estate.latitude],
-              adress: @real_estate.adress,          
-              price: @real_estate.price,
-              id: @real_estate.id
+    @marker = {
+      coordinates:
+        [ @real_estate.longitude, @real_estate.latitude ],
+        adress: @real_estate.adress,
+        price: @real_estate.price,
+        id: @real_estate.id
     }
   end
 
