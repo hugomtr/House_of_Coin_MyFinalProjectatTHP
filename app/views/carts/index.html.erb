@@ -1,11 +1,21 @@
 <h1>My Cart</h1>
 <div class="container">
   <ul class="list-group-flush">
-    <%@house_coins.each do | hc |%> 
+  <%unique_items = []%>
+
+  <%@house_coins.each do | item |%>
+    <%if !unique_items.map { | c | c.real_estate_id }.include?(item.id)%>
+      <%unique_items << item%>
+    <%end%>
+  <%end%>
+
+    <%unique_items.each do | hc |%> 
       <li class="list-group-item">
         <ul class="list-group my-3">
+          <li class="list-group-item"><h6>Quantity</h6></li>
+          <li class="list-group-item"><%= q = HouseCoin.where(order_id: current_order, real_estate_id: hc.real_estate_id).length %></li>
           <li class="list-group-item"><h6>Price</h6></li>
-          <li class="list-group-item"><%=hc.coin_price / 100.0%> €</li>
+          <li class="list-group-item"><%=q * hc.coin_price / 100.0%> €</li>
           <li class="list-group-item"><h6>For property</h6></li>
           <li class="list-group-item"><%=RealEstate.find(hc.real_estate_id).name%></li>
         </ul>
