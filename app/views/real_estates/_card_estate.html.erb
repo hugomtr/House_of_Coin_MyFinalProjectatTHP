@@ -1,4 +1,4 @@
-<a href="<%= real_estate_path(@estate.id) %>" class="card">
+<%= link_to real_estate_path(@estate.id), class: "card" do %>
     <div class="card-image text-center">
         <% if @estate.pictures.attached? %>
             <%= image_tag @estate.pictures[0], alt: 'picture', class: 'w-auto h-100'%>
@@ -24,4 +24,4 @@
         </p>
         <%=button_to 'Add to cart', house_coins_path, method: :post, params: { real_estate_id: @estate.id, coin_price: @estate.coin_price, user_id: @estate.user, order_id: current_order }, class: "btn btn-primary"%>
     </div>
-</a>
+<% end %>

@@ -3,7 +3,8 @@
         <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     </head>
     <body>
-        <h1>Announcement n° <%= @real_estate_id %></h1>
+        <h1>New announcement</h1>
+        <h2>Announcement n° <%= @real_estate_id %></h2>
         <% user_id = @real_estate.user_id %>
         <% real_estate_id = @real_estate.id %>
         <p>Seller :      <%= User.find(user_id).email %></p>

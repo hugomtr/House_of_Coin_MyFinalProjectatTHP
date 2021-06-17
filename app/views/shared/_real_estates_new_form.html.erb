@@ -27,10 +27,10 @@
         <%= label_tag "City" %>
         <%= text_field_tag :city, '', class: "form-control" %>
     </div>
-    <div class="form-group mt-3">
-        <%= label_tag "Geocode" %>
-        <%= text_field_tag :geocode, '', class: "form-control" %>
-    </div>
+    <!--<div class="form-group mt-3">
+        <%#= label_tag "Geocode" %>
+        <%#= text_field_tag :geocode, @path[:data].geocode, class: "form-control" %>
+    </div>-->
     <div class="form-group mt-4">
         <%= submit_tag "Save", class: "btn btn-primary me-1" %>
         <%= link_to "Dashboard", admin_real_estates_path, class: "btn btn-secondary" %>

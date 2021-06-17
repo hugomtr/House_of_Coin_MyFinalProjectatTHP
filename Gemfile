@@ -87,3 +87,5 @@ gem 'bootstrap-sass'
 
 gem 'carrierwave'
 gem "fog-aws"
+
+gem 'inline_svg'
