@@ -1,10 +1,10 @@
 .newsletter-block {
     background-color: $pink;
-    padding: 20px;
-    height: 398px;
+    flex-direction: column;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
 
     .fas {
         opacity: 0.3;
