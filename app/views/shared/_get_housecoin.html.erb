@@ -5,7 +5,7 @@
             <h4><%= @real_estate.price / 100 %>€</h4>
         </li>
         <li class="d-flex flex-column col-4 col-sm-4 col-md-5" id="button-housecoin">
-            <%=button_to 'Get a HouseCoin', house_coins_path, method: :post, class: "btn btn-primary"%>
+            <%=button_to 'Get housecoin', house_coins_path, method: :post, params: { real_estate_id: @estate.id, coin_price: @estate.coin_price, user_id: @estate.user, order_id: current_order }, class: "btn btn-primary"%>
         </li>
     </ul>
 </div>
