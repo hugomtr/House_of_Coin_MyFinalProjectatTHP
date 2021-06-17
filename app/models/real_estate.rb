@@ -38,9 +38,18 @@ class RealEstate < ApplicationRecord
   private
 
   def original_coin_number
-    house_coins_num = price_euros / 50 # We want our house_coins to cost 50 €
+    if price_euros <= 100000
+    house_coins_num = 100
+    elsif price_euros > 100000 && price_euros < 500000
+    house_coins_num = 200
+    elsif price_euros > 500000 && price_euros < 1000000
+    house_coins_num = 300
+    elsif price_euros > 1000000
+    house_coins_num = 400
+    end
     self.update(original_house_coin_number: house_coins_num)
     self.update(current_house_coin_number: house_coins_num)
+    
   end
 
   def announce_validation_confirm
