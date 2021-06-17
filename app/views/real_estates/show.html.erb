@@ -6,14 +6,14 @@
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_housecoin", :object => @button %>
             <%= @real_estate.description %>
-            <%#= render :partial => "shared/geolocalisation", :object => @geocoding %>
+            <%= render 'mapbox_show' %>
         </div>
         <div class="d-flex flex-column col-12 col-sm-6 col-md-4">
             <%= render :partial => "shared/brief_characteristics", :object => @text %>
         </div>
     </article>
     <div class="row">
-        <div class="col-12 col-sm-6 col-md-8">
+        <div class="">
             <%= render :partial => "shared/pictures_group", :object => @imgArr %>
         </div>
     <div class="row">
@@ -22,6 +22,3 @@
         </div>
     </div>
 </div>
-<%= render 'mapbox_show' %>
-<%=@marker[:coordinates]%>
-<!-- @estates.last(@estates.size * 0.5)  tableau pour cedric -->
