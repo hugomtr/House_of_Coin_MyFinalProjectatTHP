@@ -1,9 +1,12 @@
-<header class="fixed-top" >
+<header class="header fixed-top" >
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-        <div class="container-fluid px-4 px-lg-5">
-            <!-- TITLE -->
-            <%= link_to "House Of Coin", root_path, class: "navbar-brand" %>
-            <!-- BURGER button -->
+        <div class="container">
+            <!-- L O G O -->
+            <%= link_to root_path, class: "navbar-brand" do %>
+                <%= inline_svg_tag "logo.svg", class: 'header-logo' %>
+            <% end %>
+
+            <!-- B U R G E R  button -->
             <button class="navbar-toggler" 
                     type="button" 
                     data-bs-toggle="collapse" 
@@ -13,42 +16,74 @@
                     aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- BUTTONS group -->
+
+            <!-- B U T T O N S  group -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Cart button -->
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li>
-                        <%=link_to carts_path, class: "btn btn-outline-dark" do %>
+                <!-- LEFT -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item">
+                            <%= link_to "Team", team_path, class: "nav-link" %>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to "Contact us", contact_path, class: "nav-link" %>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to "About", about_path, class: "nav-link" %>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to "Terms", terms_path, class: "nav-link" %>
+                        </li>
+                        <li class="nav-item">
+                            <%= link_to "Privacy policy", privacy_policy_path, class: "nav-link" %>
+                        </li>
+                    </ul>
+                </ul>
+
+                <!-- RIGHT -->
+                <ul class="d-flex">
+                    <!-- CART -->
+                    <li class="me-2">
+                        <%= link_to carts_path, class: "btn btn-primary" do %>
                             <i class="bi-cart-fill me-1"></i>My Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill"><%=current_order.house_coins.length%></span>
-                        <%end%>
+                            <span class="badge bg-light text-primary ms-1 rounded-pill"><%=current_order.house_coins.length%></span>
+                        <% end %>
+                    </li>
+                    <!-- CONNECTION -->
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" 
+                                    type="button" 
+                                    id="dropdownMenuHeader" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">Connection</button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuHeader">
+                                <li>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                </li>
+                                <% unless user_signed_in? %>
+                                    <li>
+                                        <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+                                    </li>
+                                    <li>
+                                        <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
+                                    </li>
+                                <% else %>
+                                    <% if is_admin? %>
+                                        <li>
+                                            <%= link_to "Dashboard", admin_real_estates_path, class: "dropdown-item" %>
+                                        </li>
+                                    <% end %>
+                                    <li>
+                                        <%= link_to "My profile", user_path(current_user.id), class: "dropdown-item" %>
+                                    </li>
+                                    <li>
+                                        <%= link_to "Disconnect", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                                    </li>
+                                <% end %>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-                <!-- CONNECTIONS buttons -->
-                <form class="d-flex">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <% unless user_signed_in? %>
-                            <li class="nav-item">
-                                <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
-                            </li>
-                            <li class="nav-item">
-                                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-                            </li>
-                        <% else %>
-                            <% if is_admin? %>
-                                <li class="nav-item">
-                                    <%= link_to "Dashboard", admin_real_estates_path, class: "nav-link" %>
-                                </li>
-                            <% end %>
-                            <li class="nav-item">
-                                <%= link_to "My profile", user_path(current_user.id), class: "nav-link" %>
-                            </li>
-                            <li class="nav-item">
-                                <%= link_to "Disconnect", destroy_user_session_path, method: :delete, class: "nav-link" %>
-                            </li>
-                        <% end %>
-                    </ul>
-                </form>
             </div>
         </div>
     </nav>
