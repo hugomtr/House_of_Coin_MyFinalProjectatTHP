@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require activestorage
 //= require tooltip
+//= require flash
 
