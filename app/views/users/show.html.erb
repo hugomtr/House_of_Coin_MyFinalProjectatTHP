@@ -57,4 +57,29 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <h2>My Properties</h2>
+    <ul class="list-group">
+      <%current_user.real_estates.each_with_index do | property, i |%>
+        <li class="list-group-item">
+          <h6>Property n° <%=i%></h6>
+        </li>
+        <li class="list-group-item">
+          <%if property.pictures.present?%>
+            <li class="list-group-item">
+              <%=image_tag property.pictures, alt: property.name, style: "width: 20rem;"%>
+            </li>
+          <%else%>
+            <li class="list-group-item">
+              <%=image_tag property.image_urls, alt: property.name, style: "width: 20rem;"%>
+            </li>
+          <%end%>
+        </li>
+        <li class="list-group-item">
+          <h6>HouseCoin sales</h6>
+          <p><%=property.current_house_coin_number%> / <%=property.original_house_coin_number%></p>
+        </li>
+      <%end%>
+    </ul>
+  </div>
 </div>
