@@ -3,8 +3,8 @@
     border-color: $primary;
 
     &:hover {
-        background-color: darken($primary, 10%);
-        border-color: darken($primary, 10%);
+        background-color: $primary_hover;
+        border-color: $primary_hover;
     }
 }
 
@@ -20,7 +20,7 @@
         text-decoration: none;
     }
     &.disabled {
-        opacity: .5;
+        opacity: .125;
     }
 }
 
@@ -31,5 +31,12 @@
     &:hover {
         background-color: darken($primary, 10%);
         border-color: darken($primary, 10%);
+    }
+}
+
+.devise-link {
+    color: $primary;
+    &:hover {
+        color: $primary_hover;
     }
 }

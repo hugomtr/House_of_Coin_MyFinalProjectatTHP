@@ -8,7 +8,12 @@
     </div>
     <%= form_tag(real_estates_path, method: "get", class: "search-estate-form d-inline-flex align-items-center mt-3", multipart: true )  do %>
         <%#= select_tag "property_type", options_from_collection_for_select(@people, "id", "class") %>
-        <%= text_field_tag :location, "Search of location", class: "form-control w-auto me-2 fas fa-map-marker-alt" %>
-        <%= submit_tag "Search", class: "btn btn-primary w-auto fas fa-search" %>
+        <div class="input-group d-flex align-items-stretch me-2">
+            <i class="form-control fas fa-map-marker-alt"></i>
+            <%= text_field_tag :location, "Search of location", class: "form-control w-auto" %>
+        </div>
+        <%= submit_tag "Search", class: "btn btn-primary w-auto" do %>
+            <i class="fas fa-search"></i>
+        <%end%>
     <%end%>
 </div>

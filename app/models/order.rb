@@ -9,4 +9,9 @@ class Order < ApplicationRecord
     return total
   end
 
+  private
+  def buyer_housecoin
+    AdminMailer.buyer_housecoin(self.user_id, self.order_id).deliver_now
+  end
+  
 end

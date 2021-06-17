@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user!, :verify_identity
+
   def show
     @user = find_user
   end
@@ -14,6 +17,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def verify_identity
+    @user = find_user
+    if @user != current_user
+      flash[:notice] = "This is not your profile"
+      redirect_to root_path
+    end
+  end
 
   def find_user
     User.find(params[:id])

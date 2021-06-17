@@ -5,23 +5,24 @@ class RealEstatesController < ApplicationController
   def index
     @estates = estates_all
 
-    @markers = @estates.geocoded.map do |mark|
-      {
-        coordinates: [mark.longitude,mark.latitude],
-        adress: mark.adress,
-        price: mark.price,
-        id: mark.id,
-      }
+    @markers = @estates.geocoded.map do |mark| {
+      coordinates: [ mark.longitude, mark.latitude ],
+      adress: mark.adress,
+      price: mark.price,
+      id: mark.id,
+    }
     end
   end
 
   def show
     @estates = estates_all
     @real_estate = estate_find
-    @marker = {coordinates: [@real_estate.longitude,@real_estate.latitude],
-              adress: @real_estate.adress,          
-              price: @real_estate.price,
-              id: @real_estate.id
+    @marker = {
+      coordinates:
+        [ @real_estate.longitude, @real_estate.latitude ],
+        adress: @real_estate.adress,
+        price: @real_estate.price,
+        id: @real_estate.id
     }
   end
 
@@ -30,19 +31,12 @@ class RealEstatesController < ApplicationController
   end
 
   def create
-    @estate = RealEstate.new(
-        user: current_user,
-        name: params[:name],
-        description: params[:description],
-        price: params[:price],
-        adress: params[:adress],
-        zipcode: params[:zipcode],
-        city: params[:city],
-        geocode: params[:geocode]
-    )
+    @estate = RealEstate.new(estate_params)
+    @estate.user = current_user
 
     if @estate.save
         flash[:notice] = "Real estate created!"
+        @estate.pictures.attach(params[:pictures])
         redirect_to root_path
     else
         flash.now[:notice] = "Ouppps !"
@@ -59,6 +53,7 @@ class RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
+      @real_estate.pictures.attach(params[:pictures])
       redirect_to root_path
     else
       flash.now[:notice] = "Ouppps !"
@@ -90,6 +85,15 @@ class RealEstatesController < ApplicationController
   end
 
   def estate_params
-      params.permit(:name, :price, :description, :adress, :zipcode, :city, :geocode)
+      params.permit(
+        :name,
+        :price,
+        :description,
+        :adress,
+        :zipcode,
+        :city,
+        :geocode,
+        { pictures: [] }
+      )
   end
 end

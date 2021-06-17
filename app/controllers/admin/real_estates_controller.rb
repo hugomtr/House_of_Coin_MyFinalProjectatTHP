@@ -11,18 +11,12 @@ class Admin::RealEstatesController < ApplicationController
   def create
     @estate = RealEstate.new(estate_params)
     @estate.user = current_user
-    
-    puts "*"*40
-    #puts params[:pictures].length
-    puts params[:pictures]
 
     if @estate.save
       flash[:notice] = "Real estate created!"
       @estate.pictures.attach(params[:pictures])
       redirect_to admin_real_estates_path
     else
-      puts "*"*40
-      puts @estate.errors.messages
       flash.now[:notice] = "Ouppps !"
       render :new
     end
@@ -40,6 +34,7 @@ class Admin::RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
+      @real_estate.pictures.attach(params[:pictures])
       redirect_to admin_real_estates_path
     else
       flash.now[:notice] = "Ouppps !"
