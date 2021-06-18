@@ -1,0 +1,9 @@
+<ul class="list-group my-3">
+    <li class="list-group-item"><h6>Quantity</h6></li>
+    <li class="list-group-item"><%= q = HouseCoin.where(order_id: current_order, real_estate_id: @hc.real_estate_id).length %></li>
+    <li class="list-group-item"><h6>Price</h6></li>
+    <li class="list-group-item"><%=q * @hc.coin_price%> €</li>
+    <li class="list-group-item"><h6>For property</h6></li>
+    <li class="list-group-item"><%=RealEstate.find(@hc.real_estate_id).name%></li>
+</ul>
+<%=button_to 'Remove from cart', house_coin_path(@hc.id), method: :delete, class: "btn btn-danger"%>
