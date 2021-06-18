@@ -12,14 +12,11 @@ class ChatroomController < ApplicationController
     @message = current_user.messages.build(message_params)
     if @message.save
       puts "OK"
-      render :index
-      #redirect_back(fallback_location:root_path)
+      redirect_to real_estate_chatroom_index_path(params[:real_estate_id])
     else
       puts @message.errors.messages
       render :index
     end
-
-    #@real_estate = find_real_estate
   end
   
   private
