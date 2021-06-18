@@ -1,13 +1,14 @@
 <div class="container">
   <h1>My Cart</h1>
-  <ul class="list-group-flush">
-  <%unique_items = []%>
 
-  <%@house_coins.each do | item |%>
-    <%if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id)%>
-      <%unique_items << item%>
+  <ul class="list-group-flush">
+    <%unique_items = []%>
+
+    <%@house_coins.each do | item |%>
+      <%if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id)%>
+        <%unique_items << item%>
+      <%end%>
     <%end%>
-  <%end%>
 
     <%unique_items.each do | hc |%> 
       <%@hc = hc%>
