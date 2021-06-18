@@ -5,7 +5,7 @@ class HouseCoinsController < ApplicationController
 
         if @order.save
             session[:order_id] = @order.id
-            redirect_to root_path
+            redirect_back(fallback_location: root_path)
         else
             puts @order.errors.messages
             flash[:notice] = @order.errors.full_messages

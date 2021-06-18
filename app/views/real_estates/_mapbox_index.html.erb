@@ -1,47 +1,38 @@
-<div id="map">
-</div>
+<div id="map"></div>
 <input type="hidden" value="<%= @markers.to_json%>" id="marker">
 
-
-<style>
-#map {width:600px; height:600px}
-</style>
-
-
 <script>
+  let dataset_marker = document.getElementById("marker").value;
+  const markers = JSON.parse(dataset_marker)
+  mapboxgl.accessToken = "<%=ENV['MAPBOX_API_KEY']%>";
 
-let dataset_marker = document.getElementById("marker").value;
-const markers = JSON.parse(dataset_marker)
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [2.213749,46.227638],
+    zoom: 5
+  });
 
-mapboxgl.accessToken = "<%=ENV['MAPBOX_API_KEY']%>";
+  markers.forEach(function (marker) {
+    let el = document.createElement('div');
+    let imgel = document.createElement('img');
+    el.appendChild(imgel);
+    imgel.src = "<%= asset_path 'icon.png' %>";
+    el.className = 'marker';
+    el.style.width = '24px';
+    el.style.height = '24px';
+    el.style.marginTop = '-12px';
+    el.style.backgroundSize = '50%';
 
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11',
-center: [2.213749,46.227638],
-zoom: 5
-});
- 
-markers.forEach(function (marker) {
-  let el = document.createElement('div');
-  let imgel = document.createElement('img');
-  el.appendChild(imgel);
-  imgel.src = "<%= asset_path 'icon.png' %>";
-  el.className = 'marker';
-  el.style.width = '24px';
-  el.style.height = '24px';
-  el.style.marginTop = '-12px';
-  el.style.backgroundSize = '50%';
-
-  new mapboxgl.Marker(el)
-  .setLngLat(marker.coordinates)
-  .setPopup(new mapboxgl.Popup({ offset: 25 })
-            .setHTML(
-                "<a href=/real_estates/"+ marker.id+">"+
-                  "<p> Price: " + marker.price + " $" + "</p>"+
-                  "<p> "+ marker.coordinates + "</p>"+
-                "</a>"
-            ))
-  .addTo(map);
-});
+    new mapboxgl.Marker(el)
+      .setLngLat(marker.coordinates)
+      .setPopup(new mapboxgl.Popup({ offset: 25 })
+      .setHTML(
+        "<a href=/real_estates/"+ marker.id+">"+
+          "<p> Price: " + marker.price + " $" + "</p>"+
+          "<p> "+ marker.coordinates + "</p>"+
+        "</a>"
+      ))
+      .addTo(map);
+  });
 </script>
