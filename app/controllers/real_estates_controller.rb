@@ -1,6 +1,7 @@
 class RealEstatesController < ApplicationController
   before_action :user_signed_in?, except: [:index, :show, :new]
-  before_action :authenticate_user!, :estate_creator?, except: [:index, :show, :new, :create]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :estate_creator?, except: [:index, :show, :new, :create]
 
   def index
     @estates = estates_all
