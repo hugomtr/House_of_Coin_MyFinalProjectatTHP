@@ -1,13 +1,18 @@
 <div class="cross-selling">
     <h2 id="selling">You might be interested in</h2>
-    <ul class="row">
-        <li class="col-12 col-sm-6 col-md-4 mb-3">
-            <%# <% @estates.last(@estates.size * 0.5) %> 
-                <%# <% @estate = estate %>
-                <%# <%= render :partial => "card_estate", :object => @estate %>
-            <%# <% end %>
-            <%# @posts=@user.favorited.order('created_at DESC') %>
-            <%# default_scope { order ("created_at DESC")} %>
-        </li> 
+    <ul class="estate-list row mt-4">
+        <% @estates_latest.each do |estate| %>
+            <li class="col-12 col-sm-6 col-md-3">
+                <%= link_to real_estate_path(estate.id), 
+                            :data => { :bs_toggle => "tooltip", :bs_placement => "bottom" }, 
+                            title: estate.name do %>
+                    <div class="card-image text-center">
+                        <% if estate.pictures.attached? %>
+                            <%= image_tag estate.pictures[0], alt: 'picture', class: 'w-auto h-100' %>
+                        <% end %>
+                    </div>
+                <% end %>
+            </li>
+        <% end %>
     </ul>
 </div>
