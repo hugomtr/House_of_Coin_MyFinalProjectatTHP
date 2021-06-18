@@ -1,4 +1,5 @@
 <%#= render 'real_estates/search_estate' %>
+
 <div class="video_home"><%= video_tag "video_home.m4v", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %></div>
 
 
@@ -13,9 +14,6 @@
                         <img src="assets/coins.png" alt=""><br>
                         <h4>Investing</h4><br>
                         <p>Investing in House Of Coin means making your money grow while minimizing your risk.</p>
-                        <a href="#" class="main-button">
-                            Read More
-                        </a>
                     </div>
                 </div>
             </div>
@@ -26,9 +24,6 @@
                         <img src="assets/multiple_houses.png" alt=""><br>
                         <h4>Owner</h4><br>
                         <p>Thanks to the platform, become a multiple owner.</p><br><br>
-                        <a href="#" class="main-button">
-                            Read More
-                        </a>
                     </div>
                 </div>
             </div>
@@ -39,9 +34,6 @@
                         <img src="assets/stonks.png" alt=""><br>
                         <h4>Value</h4><br>
                         <p>Dilute your risks and benefit from interesting added value.</p><br>
-                        <a href="#" class="main-button">
-                            Read More
-                        </a>
                     </div>
                 </div>
             </div>
@@ -52,9 +44,6 @@
                         <img src="assets/team.png" alt="">
                         <h4>Our Team</h4><br>
                         <p>Benefit from projects audited by our teams.</p><br><br>
-                        <a href="#" class="main-button">
-                            Read More
-                        </a>
                     </div>
                 </div>
             </div>
@@ -63,16 +52,18 @@
 </section>
 
 <br><br><br>
-<div class="container-fluid">
+<div class="container-fluid" id="article_home">
 	<div class="row">
 		<div class="col-md-3">
 		</div>
 		<div class="col-md-3">
-			<p>
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+			<h2>The future of real estate investing is fractional</h2><br>
+            <p>The future of real estate investing is fractional
+            Tokenizing real estate has become the focus of many institutions in 2018, and is likely to continue into the future as Ethereum offers a way to add improved levels of liquidity (tokens) to a notoriously illiquid industry (real estate).
+            Fractional ownership democratizes access to real estate investment, and therefore distributes and minimizes the risks and labor involved with owning property.  And RealToken makes it even simpler!
 			</p>
 		</div>
-		<div class="col-md-3"><img class="img_article" src="https://avatars.githubusercontent.com/u/63638023?v=4" alt="alternatetext">
+		<div class="col-md-3"><img class="img_article" src=<%= asset_path '1.png' %> alt="alternatetext">
 		</div>
 		<div class="col-md-3">
 		</div>
@@ -80,11 +71,12 @@
 	<div class="row">
 		<div class="col-md-3">
 		</div>
-		<div class="col-md-3"><img class="img_article" src="https://avatars.githubusercontent.com/u/78352513?v=4" alt="alternatetext">
+		<div class="col-md-3"><img class="img_article" src=<%= asset_path '2.png' %> alt="alternatetext">
 		</div>
 		<div class="col-md-3">
-			<p>
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+			<h2>Permissionless, compliant, and first-of-its-kind</h2><br>
+            <p>TRealToken provides investors with a simple, intelligent, and user-friendly method to buy into fractional, tokenized properties, leveraging the U.S. legal system and the permissionless, unrestricted token issuance of Ethereum.
+            Investing with RealT means low maintenance property ownership, access to cash flows related to the property (e.g., rent), and frictionless ownership transactions via RealTokens.
 			</p>
 		</div>
 		<div class="col-md-3">
@@ -102,11 +94,11 @@
             </div>
             <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                 <ul>
-                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
                         <img src="assets/house_1.png" alt="">
                         <div class="text">
                             <h4>Investing</h4>
-                            <p>Find a property to invest in.</p>
+                            <p>Find a property to invest in and earn your benefits</p>
                         </div>
                     </li>
                     <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
