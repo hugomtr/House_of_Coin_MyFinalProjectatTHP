@@ -9,7 +9,7 @@
 <div class="d-flex flex-row justify-content-between">
   <div class="card col-md-9 ml-1"> 
     <%= render :partial => "messages" %>
-    <%= render 'form', message: @message %>
+    <%= render 'form', message: @message, real_estate: @real_estate %>
   </div>
   <div class="card col-md-2 mr-1">
     <div class="col-md-4"><%= render :partial => "column-navbar" %>

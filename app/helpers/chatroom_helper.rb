@@ -13,7 +13,7 @@ module ChatroomHelper
           where M.user_id in 
           (select distinct user_id 
             from house_coins H 
-            where H.real_estate_id=#{real_estate.id})
+            where H.real_estate_id = #{real_estate.id})
             order by created_at"
     records_array = ActiveRecord::Base.connection.execute(sql)
     return records_array
