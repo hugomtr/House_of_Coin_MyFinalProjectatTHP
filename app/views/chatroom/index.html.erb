@@ -4,26 +4,11 @@
   <img src="<%=asset_path 'coffee.png'%>" alt="image-cofee"></div>
 </div>
 
-
+<hr>
 
 <div class="d-flex flex-row justify-content-between">
   <div class="card col-md-9 ml-1"> 
-    <div class="d-flex flex-row p-3"> <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
-          <div class="chat ml-2 p-3">Hello and thankyou for visiting HouseCoin</div>
-    </div>   
-    <%= @messages.each do |message| %>
-      <div class="d-flex flex-row p-3"> <img src="#" width="30" height="30">
-          <div class="chat ml-2 p-3">
-            <%= User.find_by(id:message.values[1]).username%>
-            : <%= message.values[2] %>
-          </div>
-      </div>  
-    <% end %>
-
-    <div class="form-group px-3"> 
-      <textarea class="form-control" placeholder="Type your message"></textarea> 
-      <button type="button" class="btn btn-primary">submit</button>
-    </div>
+    <%= render :partial => "messages" %>
   </div>
   <div class="card col-md-2 mr-1">
     <div class="col-md-4"><%= render :partial => "column-navbar" %>
