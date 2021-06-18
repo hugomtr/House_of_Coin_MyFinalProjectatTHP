@@ -100,7 +100,7 @@ end
     end
 end
 
-1000.times do 
+200.times do 
     Message.create(user_id: User.all.sample.id,
     body:Faker::Lorem.question(word_count: 4))
 end
