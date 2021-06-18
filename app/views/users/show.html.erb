@@ -12,7 +12,7 @@
                 <li class="list-group-item">
                   <h6>House Coin n°<%=hc.id%></h6>
                   <%real = RealEstate.find_by(id: hc.real_estate_id)%>
-                  <p>Price <%=hc.coin_price / 100%> €</p>
+                  <p>Price <%=hc.coin_price%> €</p>
                 </li>
                 <%if real.pictures.present?%>
                   <li class="list-group-item">
