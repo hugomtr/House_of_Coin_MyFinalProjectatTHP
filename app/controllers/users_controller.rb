@@ -12,8 +12,14 @@ class UsersController < ApplicationController
 
   def update
     @user = find_user
-    @user.update(permited_params)
-    redirect_to user_path(@user)
+
+    if @user.update(permited_params)
+      flash[:notice] = "User profile updated!"
+      redirect_to user_path(@user)
+    else
+      flash.now[:notice] = "Ouppps !"
+      render :edit
+    end
   end
 
   private

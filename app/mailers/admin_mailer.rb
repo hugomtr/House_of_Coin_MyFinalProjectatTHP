@@ -8,11 +8,11 @@ class AdminMailer < ApplicationMailer
         end
     end
 
-    def buyer_housecoin(order.house_coins)
+    def buyer_housecoin(order)
         admin_array = User.where(is_admin: true)
         admin_array.each do |admin|
             @admin = admin
-            @house_coins = @order.house_coins
+            @house_coins = order.house_coins
             mail(to: @admin.email, subject: 'A new HouseCoin sale') 
         end
     end
