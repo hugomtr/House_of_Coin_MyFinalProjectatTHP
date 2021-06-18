@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'real_estates#index'
+  root to: 'homepage#index'
+  resources :homepage, only: [:index]
   resources :users, only: [:show, :edit, :update], :path => 'my_profile'   
   resources :real_estates do
     resources :chatroom, only: [:index, :create]
