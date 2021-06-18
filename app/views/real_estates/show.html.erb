@@ -6,18 +6,20 @@
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_housecoin", :object => @button %>
             <%= @real_estate.description %>
-            <%= render 'mapbox_show' %>
-        </div>
-        <div class="d-flex flex-column col-12 col-sm-6 col-md-4">
-            <%= render :partial => "shared/property_type", :object => @text %>
+            <!-- MAP -->
+            <div class="mt-5">
+                <%= render 'mapbox_show' %>
+            </div>
         </div>
     </article>
     <div class="row">
+        <div class="d-flex flex-column col-12 col-sm-6 col-md-4">
+            <%= render :partial => "shared/property_type", :object => @text %>
+        </div>
         <div class="">
             <%= render :partial => "shared/pictures_group", :object => @imgArr %>
         </div>
-    <div class="row">
-        <div class="">    
+        <div class="">
             <%= render :partial => "shared/newsletter" %>
         </div>
     </div>
