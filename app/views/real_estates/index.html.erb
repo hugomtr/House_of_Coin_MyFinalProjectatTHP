@@ -6,15 +6,15 @@
 <section class="container my-5">
     <h1>Search for an offer</h1>
     <p class="sub-title">Choose from the most advantageous offers</p>
-    <ul class="estate-list row align-items-stretch align-content-stretch">
+    <ul class="estate-list row align-items-stretch align-content-stretch mb-3">
         <% @estates.each do |estate| %>
-            <li class="col-12 col-sm-6 col-md-4 mb-3">
+            <li class="col-12 col-sm-6 col-md-4 mb-5">
                 <% @estate = estate %>
                 <%= render :partial => "card_estate", :object => @estate %>
             </li>
         <% end %>
     </ul>
+    <!-- MAP -->
+    <%= render 'mapbox_index' %>
 </section>
-
-<%= render 'mapbox_index' %>
 <%= render :partial => "shared/newsletter" %>
