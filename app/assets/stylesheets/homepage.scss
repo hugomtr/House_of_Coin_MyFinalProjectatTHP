@@ -1,3 +1,20 @@
+.video_home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.home_video {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    top: 0;
+    z-index: -2;
+}
+
 #four_points {
     padding: 100px 0px;
     position: relative;
