@@ -11,7 +11,7 @@ zipcode = ["17600","34725","34700","69005","19200","44510","38000","71000","5850
 city = ["Le Gua","Saint André de sangonis","fozieres","lyon","Saint Angel","le pouliguen","Grenoble","Mâcon","Rix","Périgueux"]  
 
 require 'faker'
-
+Message.destroy_all
 Charge.destroy_all
 HouseCoin.destroy_all
 Order.destroy_all
@@ -23,7 +23,8 @@ User.destroy_all
 10.times do
     user = User.new(
         email: Faker::Internet.email,
-        password: Faker::Internet.password(min_length: 8)
+        password: Faker::Internet.password(min_length: 8),
+        username: Faker::FunnyName.name
     )
 
     if user.save
@@ -97,6 +98,11 @@ end
     else
         puts charge.errors.messages
     end
+end
+
+1000.times do 
+    Message.create(user_id: User.all.sample.id,
+    body:Faker::Lorem.question(word_count: 4))
 end
 
 puts "*"*30
