@@ -33,3 +33,10 @@
         border-color: darken($primary, 10%);
     }
 }
+
+.devise-link {
+    color: $primary;
+    &:hover {
+        color: $primary_hover;
+    }
+}

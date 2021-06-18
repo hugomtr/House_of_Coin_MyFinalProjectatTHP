@@ -1,22 +1,6 @@
-<footer class="footer-basic mt-auto">
-    <div class="social">
-        <a href="https://www.instagram.com/kittensthp/">
-            <i class="icon ion-social-instagram"></i>
-        </a>
-    </div>
-    <ul class="list-inline">
-        <li class="list-inline-item">
-            <%#= link_to 'À propos', about_path %>
-        </li>
-        <li class="list-inline-item">
-            <%#= link_to 'Contact', contact_path %>
-        </li>
-        <li class="list-inline-item">
-            <%#= link_to 'Termes et conditions', terms_path %>
-        </li>
-        <li class="list-inline-item">
-            <%#= link_to 'Politique de confidentialité', privacy_policy_path %>
-        </li>
-    </ul>
-    <p class="copyright">Kittens THP © 2021</p>
+<footer class="footer mt-auto">
+    <%= link_to root_path, class: "footer-link text-center" do %>
+        <%= inline_svg_tag "logo-light.svg", class: 'footer-logo' %>
+        <h4 class="mt-2">House Of Coins</h4>
+    <% end %>
 </footer>
