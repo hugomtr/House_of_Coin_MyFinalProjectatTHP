@@ -11,6 +11,9 @@ class RealEstate < ApplicationRecord
   validates :zipcode ,presence: true
   validates :city ,presence: true
 
+  # For show the latest real estates
+  scope :lastest_estate, -> { order(created_at: :desc) }
+
   #TODO reactivate mailers
 
   # after_create :announce_validation_confirm, :original_coin_number
@@ -20,12 +23,8 @@ class RealEstate < ApplicationRecord
     pictures.map(&:url)
   end
 
-  def price_euros
-    price_euros = self.price / 100
-  end
-
   def coin_price
-    coin_value = (price_euros / self.original_house_coin_number) * 100 # The returned value must be in cents
+    coin_value = self.price / self.original_house_coin_number # The returned value must be in cents
   end
 
   geocoded_by :full_address
@@ -38,13 +37,13 @@ class RealEstate < ApplicationRecord
   private
 
   def original_coin_number
-    if price_euros <= 100000
+    if self.price <= 100000
     house_coins_num = 100
-    elsif price_euros > 100000 && price_euros < 500000
+    elsif self.price > 100000 && self.price < 500000
     house_coins_num = 200
-    elsif price_euros > 500000 && price_euros < 1000000
+    elsif self.price > 500000 && self.price < 1000000
     house_coins_num = 300
-    elsif price_euros > 1000000
+    elsif self.price > 1000000
     house_coins_num = 400
     end
     self.update(original_house_coin_number: house_coins_num)

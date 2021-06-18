@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :real_estates
   has_many :charges
   has_many :orders ,through: :charges
+  has_many :messages
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

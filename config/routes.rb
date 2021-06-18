@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'real_estates#index'
+  root to: 'homepage#index'
+  resources :homepage, only: [:index]
   resources :users, only: [:show, :edit, :update], :path => 'my_profile'   
-  resources :real_estates
+  resources :real_estates do
+    resources :chatroom, only: [:index, :create]
+  end
   resources :charges, only: [:new, :create], :path => 'checkout'
   resources :house_coins, only: [:create, :update, :destroy]
-  resources :carts, only: [:index], :path => 'my_cart'
+  resources :carts, only: [:index, :destroy], :path => 'my_cart'
 
   namespace :admin do
     resources :real_estates
