@@ -12,8 +12,10 @@
             <%= render :partial => "shared/property_type", :object => @text %>
         </div>
     </article>
-    <div class="row">
-            <%= render :partial => "shared/pictures_group", :object => @imgArr %>
-            <%= render :partial => "shared/newsletter" %>
-    </div>
 </div>
+
+<div class="container d-flex flex-column ">
+<%= render :partial => "shared/pictures_group", :object => @imgArr %>
+</div>
+<%= render :partial => "shared/newsletter" %>
+

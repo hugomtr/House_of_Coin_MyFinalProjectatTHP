@@ -1,20 +1,23 @@
 .newsletter-block {
     background-color: $pink;
-    padding: 20px;
-    height: 398px;
+    padding: 6rem 3.5rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
 
     .fas {
         opacity: 0.3;
         color: $primary;
     }
-}
-.row .square-block {
-    padding-left: 150px;
+
+    .form-group {
+        width: 250px;
+        float: left;
+    }
 }
 
-.row .form-newsletter {
-    width: 260px;
+.square-block {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15rem;
 }
