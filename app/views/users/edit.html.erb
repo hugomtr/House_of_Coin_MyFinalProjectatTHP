@@ -1,2 +1,14 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<section class="container d-flex flex-column align-items-center my-5">
+    <h1>Edit user profile</h1>
+    <div class="mw-form custom-form">
+        <%= form_tag(user_path(@user.id), method: :put, id: "user-profile-form", multipart: true )  do %>
+            <div class="form-group mt-3">
+                <%= label_tag "User name" %>
+                <%= text_field_tag :username, @user.username, class: "form-control" %>
+            </div>
+            <div class="form-group mt-4">
+                <%= submit_tag "Save", class: "btn btn-primary me-1" %>
+            </div>
+        <%end%>
+    </div>
+</section>
