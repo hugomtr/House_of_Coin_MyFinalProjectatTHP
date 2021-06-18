@@ -1,7 +1,7 @@
 <div class="container d-flex flex-column my-5">
     <h1><%= @real_estate.name %></h1>
     <article class="row">
-        <div class="col-12 col-sm-6 col-md-8">
+        <div class="d-flex flex-column col-12 col-sm-6 col-md-8">
             <%= render :partial => "shared/small_carousel", :object => @real_estate %>
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_housecoin", :object => @button %>
@@ -13,12 +13,7 @@
         </div>
     </article>
     <div class="row">
-        <div class="">
             <%= render :partial => "shared/pictures_group", :object => @imgArr %>
-        </div>
-    <div class="row">
-        <div class="">    
             <%= render :partial => "shared/newsletter" %>
-        </div>
     </div>
 </div>
