@@ -16,7 +16,7 @@ class RealEstatesController < ApplicationController
   end
 
   def show
-    @estates = estates_all
+    @estates_latest = RealEstate.lastest_estate.max(4)
     @real_estate = estate_find
     @marker = {
       coordinates:
