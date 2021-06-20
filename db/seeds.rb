@@ -101,7 +101,7 @@ end
 end
 
 200.times do 
-    Message.create(user_id: User.all.sample.id,
+    Message.create(user_id: User.all.sample.id,real_estate_id: RealEstate.all.sample.id,
     body:Faker::Lorem.question(word_count: 4))
 end
 
