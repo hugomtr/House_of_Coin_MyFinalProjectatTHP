@@ -1,3 +1,9 @@
+<% @imgArr = [
+    'https://images.pexels.com/photos/399647/pexels-photo-399647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    'https://images.pexels.com/photos/4062842/pexels-photo-4062842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    'https://images.pexels.com/photos/1404824/pexels-photo-1404824.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+] %>
+
 <div class="container d-flex flex-column my-5">
     <h1><%= @real_estate.name %></h1>
     <article class="row">
@@ -6,7 +12,7 @@
             <%@real_estate.pictures.each_with_index do |picture, i|%>
                 <%=image_tag(@real_estate.thumbnail(i))%>
             <%end%>
-            <%= render :partial => "shared/small_carousel", :object => @real_estate %>
+            <%= render :partial => "shared/small_carousel", :object => @imgArr %>
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_housecoin", :object => @button %>
             <%= @real_estate.description %>
