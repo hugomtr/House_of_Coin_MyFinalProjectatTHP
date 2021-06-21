@@ -28,7 +28,6 @@ class RealEstatesController < ApplicationController
   end
 
   def new
-    @real_estate = RealEstate.new
   end
 
   def create
@@ -37,9 +36,8 @@ class RealEstatesController < ApplicationController
 
     if @real_estate.save
         flash[:notice] = "Real estate created!"
-        redirect_to root_path
-    else
-        puts @real_estate.errors.messages
+        redirect_to real_estates_path
+    elsif @real_estate.errors
         flash.now[:notice] = @real_estate.errors.full_messages 
         render :new
     end
@@ -54,7 +52,7 @@ class RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
-      redirect_to root_path
+      redirect_to real_estates_path 
     else
       flash.now[:notice] = @real_estate.errors.full_messages 
       render :edit
