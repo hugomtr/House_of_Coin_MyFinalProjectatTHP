@@ -24,7 +24,7 @@ User.destroy_all
     user = User.new(
         email: "user#{i}@example.com",
         password: 'password',
-        username: Faker::FunnyName.name
+        username: Faker::FunnyName.name,
         is_admin?: Faker::Boolean.boolean
     )
 
