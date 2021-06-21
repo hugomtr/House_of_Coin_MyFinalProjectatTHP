@@ -1,50 +1,48 @@
-#about {
+#article {
     margin-top: 20px;
     padding: 100px 0px 0px 0px;
     position: relative;
     z-index: 9;
   }
   
-  #about .section-heading h2 {
+  #article  .section-heading h2 {
     padding-right: 120px;
   }
   
-  #about img {
+  #article  img {
     width: 100%;
     overflow: hidden;
   }
   
-  #about .left-text-content p {
+  #article  .left-text-content p {
     margin-bottom: 25px;
   }
   
-  #about .right-content {
+  #article  .right-content {
     margin-left: 30px;
   }
   
-  #about .right-content .thumb {
+  #article  .right-content .thumb {
     position: relative;
+    padding-left: 20%;
+    padding-top: 20%;
   }
+
+ 
   
-  #about .right-content .thumb a {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 70px;
-    height: 70px;
-    display: inline-block;
-    line-height: 70px;
+  
+//////////////////////////////
+
+#h1_homepage {
+    padding-top: 50px;
     text-align: center;
-    background-color: #fb5849;
-    color: #fff;
-    border-radius: 50%;
-    transform: translate(-35px, -35px);
-    transition: all .3s;
-  }
-  
-  #about .right-content .thumb a:hover {
-    opacity: .9;
-  }
+}
+
+#h2_homepage {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
 
 .video_home {
     position: relative;
@@ -64,7 +62,6 @@
     z-index: -2;
 }
 
-
 #article_home {
     background-color: #F3F3FA;
 }
@@ -79,15 +76,10 @@
     border-radius: 50%;
 }
 
-
-
-
 #four_points {
-    padding: 100px 0px;
+    padding: 10px 0px;
     position: relative;
-    z-index: auto;
 }
-
 
 .features-item {
     border-radius: 5px;
@@ -126,7 +118,10 @@
     display: inline-block;
 }
 
-
+#promotion {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
 #promotion .right-text ul {
     padding: 0;
     margin: 0;
