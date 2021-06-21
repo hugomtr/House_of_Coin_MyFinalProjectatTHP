@@ -19,6 +19,8 @@ class RealEstate < ApplicationRecord
   # after_create :announce_validation_confirm, :original_coin_number
   after_create :original_coin_number
 
+  scope :lastest_estate, -> { order(created_at: :desc) }
+
   def pictures_urls
     pictures.map(&:url)
   end
