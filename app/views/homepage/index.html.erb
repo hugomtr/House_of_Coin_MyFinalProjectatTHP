@@ -1,0 +1,155 @@
+<%#= render 'real_estates/search_estate' %>
+
+<div class="video_home"><%= video_tag "video_home.m4v", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%></div>
+
+
+
+<section class="section" id="four_points">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12"
+                data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <img src=<%= asset_path 'coins.png' %> alt="coins_jar">
+                        <h4>Investing</h4><br>
+                        <p>Investing in House Of Coins means making your money grow while minimizing your risk.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12"
+                data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <img src=<%= asset_path 'multiple_houses.png' %> alt="houses">
+                        <h4>Owner</h4><br>
+                        <p>Thanks to the platform, become a multiple owner.</p><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12"
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <img src=<%= asset_path 'stonks.png' %> alt="stonks">
+                        <h4>Value</h4><br>
+                        <p>Dilute your risks and benefit from interesting added value.</p><br>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12"
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <img src=<%= asset_path 'team.png' %> alt="people_working">
+                        <h4>Our Team</h4><br>
+                        <p>Benefit from projects audited by our teams.</p><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br><br>
+<div class="container-fluid" id="article_home">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-3">
+			<h2>The future of real estate investing is fractional</h2><br>
+            <p>The future of real estate investing is fractional
+            Tokenizing real estate has become the focus of many institutions in 2018, and is likely to continue into the future as Ethereum offers a way to add improved levels of liquidity (tokens) to a notoriously illiquid industry (real estate).
+            Fractional ownership democratizes access to real estate investment, and therefore distributes and minimizes the risks and labor involved with owning property.  And RealToken makes it even simpler!
+			</p>
+		</div>
+		<div class="col-md-3"><img class="img_article" src=<%= asset_path 'erwan_le_corre_article.png' %> alt="erwan_le_corre_profile_photo">
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div><br><br><br>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-3"><img class="img_article" src=<%= asset_path 'cedric_mesas_article.png' %> alt="cedric_mesas_profile_photo">
+		</div>
+		<div class="col-md-3">
+			<h2>Permissionless, compliant, and first-of-its-kind</h2><br>
+            <p>TRealToken provides investors with a simple, intelligent, and user-friendly method to buy into fractional, tokenized properties, leveraging the U.S. legal system and the permissionless, unrestricted token issuance of Ethereum.
+            Investing with RealT means low maintenance property ownership, access to cash flows related to the property (e.g., rent), and frictionless ownership transactions via RealTokens.
+			</p>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
+<br><br><br>
+
+<section class="section" id="promotion">
+    <div class="container">
+        <div class="row">
+            <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <img src=<%= asset_path 'building_art.png' %> alt="building">
+            </div>
+            <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
+                <ul>
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
+                        <img src=<%= asset_path 'house_1.png' %> alt="house">
+                        <div class="text">
+                            <h4>Investing</h4>
+                            <p>Find a property to invest in and earn your benefits</p>
+                        </div>
+                    </li>
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
+                        <img src=<%= asset_path 'house_2.png' %> alt="house">
+                        <div class="text">
+                            <h4>HouseCoin</h4>
+                            <p>The price displayed on HouseCoins is the price for a 'token' of the property for sale.</p>
+                        </div>
+                    </li>
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
+                        <img src=<%= asset_path 'house_3.png' %> alt="house">
+                        <div class="text">
+                            <h4>Payments</h4>
+                            <p>As soon as all HouseCoins have been sold, you receive your payments every month on a fixed date.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2 class="h2_testimonials">Testimonials</h2>
+
+<div class="testimonials">
+    <figure class="testimonials_card">
+    <img src=<%= asset_path 'jeff_bezos.png' %> alt="jeff_bezos" />
+    <figcaption>
+        <blockquote>
+        <p>I could've been richer if I had discovered House of Coins before</p>
+        </blockquote>
+        <h3>Jeff Bezos</h3>
+        <h5>Rich</h5>
+    </figcaption>
+    </figure>
+    <figure class="testimonials_card"><img src=<%= asset_path 'mark_zuckerberg.png' %> alt="mark_zuckerberg" />
+    <figcaption>
+        <blockquote>
+        <p>Is my smile convincing?</p><br><br>
+        </blockquote>
+        <h3>Mark Zuckerberg</h3>
+        <h5>Robot</h5>
+    </figcaption>
+    </figure>
+        <figure class="testimonials_card"><img src=<%= asset_path 'elon_musk_weed.png' %> alt="elon_musk_joe_rogan"/>
+    <figcaption>
+        <blockquote>
+        <p>Soon you'll buy houses on Mars thanks to House of Coins</p>
+        </blockquote>
+        <h3>Elon Musk</h3>
+        <h5>Martian</h5>
+    </figcaption>
+    </figure>
+</div>

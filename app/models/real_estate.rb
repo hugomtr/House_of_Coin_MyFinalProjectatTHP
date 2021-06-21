@@ -11,6 +11,9 @@ class RealEstate < ApplicationRecord
   validates :zipcode ,presence: true
   validates :city ,presence: true
 
+  # For show the latest real estates
+  scope :lastest_estate, -> { order(created_at: :desc) }
+
   #TODO reactivate mailers
 
   # after_create :announce_validation_confirm, :original_coin_number
