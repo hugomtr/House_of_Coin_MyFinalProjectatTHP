@@ -1,4 +1,4 @@
-<h4>Say Something!<%=current_user.username%></h4>
+<h4>Say Something <%=current_user.username%>!</h4>
 <div class="container" height="20%">
   <div class="text-center">
   <img src="<%=asset_path 'coffee.png'%>" alt="image-cofee"></div>
@@ -9,8 +9,6 @@
 <div class="d-flex flex-row justify-content-between">
   <div class="card col-md-9 ml-1"> 
     <%= render :partial => "messages" %>
-    <%= params[:real_estate_id]%>
-    <%= @investors.values%>
     <% if @investors.values.include?([current_user.id])%>
       <%= render 'form', message: @message, real_estate: @real_estate %>
     <%else %>
