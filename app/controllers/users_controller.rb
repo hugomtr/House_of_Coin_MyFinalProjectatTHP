@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def permited_params
     params.permit(:username)
-  ends
+  end
 
 end
 
