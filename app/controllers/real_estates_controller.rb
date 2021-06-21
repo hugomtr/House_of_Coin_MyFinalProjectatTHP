@@ -37,7 +37,7 @@ class RealEstatesController < ApplicationController
     if @real_estate.save
         flash[:notice] = "Real estate created!"
         redirect_to real_estates_path
-    elsif @real_estate.errors
+    else @real_estate.errors
         flash.now[:notice] = @real_estate.errors.full_messages 
         render :new
     end
