@@ -20,12 +20,12 @@
             <!-- B U T T O N S  group -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- LEFT -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <%= link_to "Team", team_path, class: "nav-link" %>
                         </li>
                         <li class="nav-item">
-                            <%= link_to "Contact us", contact_path, class: "nav-link" %>
+                            <%= link_to "Contact", contact_path, class: "nav-link" %>
                         </li>
                         <li class="nav-item">
                             <%= link_to "About", about_path, class: "nav-link" %>
@@ -37,7 +37,7 @@
                             <%= link_to "Privacy policy", privacy_policy_path, class: "nav-link" %>
                         </li>
                         <li class="nav-item">
-                            <%= link_to "Our Products", real_estates_path, class: "nav-link" %>
+                            <%= link_to "Products", real_estates_path, class: "nav-link" %>
                         </li>
                     </ul>
                 </ul>
@@ -46,12 +46,12 @@
                 <ul class="d-flex">
                     <!-- CREATE -->
                     <li class="me-2">
-                        <%= link_to "Create an offer", new_real_estate_path, class: "btn btn-outline-primary" %>
+                        <%= link_to "New offer", new_real_estate_path, class: "btn btn-outline-primary" %>
                     </li>
                     <!-- CART -->
                     <li class="me-2">
-                        <%= link_to carts_path, class: "btn btn-primary" do %>
-                            <i class="bi-cart-fill me-1"></i>My Cart
+                        <%= link_to carts_path, data: { bs_toggle: "tooltip", bs_placement: "bottom" }, title: "My Cart", class: "btn btn-primary" do %>
+                            <i class="fas fa-shopping-cart"></i>
                             <span class="badge bg-light text-primary ms-1 rounded-pill"><%=current_order.house_coins.length%></span>
                         <% end %>
                     </li>
@@ -62,7 +62,12 @@
                                     type="button" 
                                     id="dropdownMenuHeader" 
                                     data-bs-toggle="dropdown" 
-                                    aria-expanded="false">Connection</button>
+                                    bs_toggle="tooltip" 
+                                    bs_placement="bottom" 
+                                    aria-expanded="false" 
+                                    title="Connection">
+                                <i class="fas fa-user"></i>
+                            </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuHeader">
                                 <% unless user_signed_in? %>
                                     <li>
