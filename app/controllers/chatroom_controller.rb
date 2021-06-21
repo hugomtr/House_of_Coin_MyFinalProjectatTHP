@@ -9,8 +9,8 @@ class ChatroomController < ApplicationController
   end
 
   def create 
-    @message.new(real_estate_id:find_real_estate)
-    @message = current_user.messages.build(message_params)
+    @message= Message.new(real_estate_id:params[:real_estate_id])
+    @message.update(user_id:current_user.id,body:message_params[:body])
     if @message.save
       puts "OK"
       redirect_to real_estate_chatroom_index_path(params[:real_estate_id])
@@ -22,7 +22,7 @@ class ChatroomController < ApplicationController
   
   private
   def message_params
-    params.require(:message).permit(:body,:real_estate_id)
+    params.require(:message).permit(:body)
   end
 
   def find_real_estate
