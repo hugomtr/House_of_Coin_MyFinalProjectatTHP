@@ -25,6 +25,7 @@ User.destroy_all
         email: "user#{i}@example.com",
         password: 'password',
         username: Faker::FunnyName.name
+        is_admin?: Faker::Boolean.boolean
     )
 
     if user.save
