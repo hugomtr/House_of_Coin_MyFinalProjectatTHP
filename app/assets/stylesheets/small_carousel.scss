@@ -25,11 +25,9 @@
 
 .bd-placeholder-img {
     height: 20rem;
-}
-
-.carousel-caption {
-    top: 0;
-    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .carousel-inner {
