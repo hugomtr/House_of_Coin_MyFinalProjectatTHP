@@ -14,12 +14,6 @@ Rails.application.routes.draw do
     resources :real_estates
   end
 
-  resources :users do
-    user do
-      get :confirm_email
-    end
-  end
-
   # static pages
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
