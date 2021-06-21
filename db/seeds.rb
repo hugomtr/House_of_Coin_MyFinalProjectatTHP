@@ -23,7 +23,8 @@ User.destroy_all
 10.times do
     user = User.new(
         email: Faker::Internet.email,
-        password: Faker::Internet.password(min_length: 8)
+        password: Faker::Internet.password(min_length: 8),
+        is_admin?: Faker::Boolean.boolean
     )
 
     if user.save
