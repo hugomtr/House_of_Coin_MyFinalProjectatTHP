@@ -6,6 +6,7 @@ class RealEstate < ApplicationRecord
 
   belongs_to :user
   has_many :house_coins
+  has_many :real_estates
 
   validates :adress ,presence: true
   validates :zipcode ,presence: true

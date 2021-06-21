@@ -9,7 +9,8 @@ class ChatroomController < ApplicationController
   end
 
   def create 
-    @message = current_user.messages.build(message_params)
+    @message= Message.new(real_estate_id:params[:real_estate_id])
+    @message.update(user_id:current_user.id,body:message_params[:body])
     if @message.save
       puts "OK"
       redirect_to real_estate_chatroom_index_path(params[:real_estate_id])
