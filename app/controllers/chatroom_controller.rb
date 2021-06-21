@@ -9,6 +9,7 @@ class ChatroomController < ApplicationController
   end
 
   def create 
+    @message.new(real_estate_id:find_real_estate)
     @message = current_user.messages.build(message_params)
     if @message.save
       puts "OK"
@@ -21,7 +22,7 @@ class ChatroomController < ApplicationController
   
   private
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:body,:real_estate_id)
   end
 
   def find_real_estate
