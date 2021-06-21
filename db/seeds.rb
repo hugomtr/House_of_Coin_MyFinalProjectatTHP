@@ -25,6 +25,7 @@ User.destroy_all
         email: Faker::Internet.email,
         password: Faker::Internet.password(min_length: 8),
         username: Faker::FunnyName.name
+        is_admin?: Faker::Boolean.boolean
     )
 
     if user.save
