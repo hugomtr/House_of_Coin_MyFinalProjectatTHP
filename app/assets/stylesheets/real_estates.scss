@@ -65,3 +65,17 @@
     border-radius: .25rem;
     background-color: $pink;
 }
+
+.estate-full-figure {
+    max-width: 100%;
+    max-height: 407px;
+    border-radius: .3rem;
+    background-color: $dark;
+    text-align: center;
+    overflow: hidden;
+
+    .estate-full-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
