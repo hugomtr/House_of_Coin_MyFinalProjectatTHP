@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :real_estates
   end
 
+  mount ActionCable.server, at: '/cable'
+
   # static pages
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
