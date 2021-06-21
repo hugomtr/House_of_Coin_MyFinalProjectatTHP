@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'chatroom/index'
   devise_for :users
   root to: 'homepage#index'
   resources :homepage, only: [:index]
   resources :users, only: [:show, :edit, :update], :path => 'my_profile'   
   resources :real_estates do
-    resources :chatroom, only: [:index]
+    resources :chatroom, only: [:index, :create]
   end
   resources :charges, only: [:new, :create], :path => 'checkout'
   resources :house_coins, only: [:create, :update, :destroy]

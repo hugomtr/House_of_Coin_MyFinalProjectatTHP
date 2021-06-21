@@ -6,6 +6,7 @@ class RealEstate < ApplicationRecord
 
   belongs_to :user
   has_many :house_coins
+  has_many :real_estates
 
   validates :adress ,presence: true
   validates :zipcode ,presence: true
@@ -19,8 +20,10 @@ class RealEstate < ApplicationRecord
   # after_create :announce_validation_confirm, :original_coin_number
   after_create :original_coin_number
 
-  def pictures_urls
-    pictures.map(&:url)
+  scope :lastest_estate, -> { order(created_at: :desc) }
+
+  def thumbnail input
+    return self.pictures[input].variant(resize: '500x500').processed
   end
 
   def coin_price
@@ -41,9 +44,9 @@ class RealEstate < ApplicationRecord
     house_coins_num = 100
     elsif self.price > 100000 && self.price < 500000
     house_coins_num = 200
-    elsif self.price > 500000 && self.price < 1000000
+    elsif self.price >= 500000 && self.price < 1000000
     house_coins_num = 300
-    elsif self.price > 1000000
+    elsif self.price >= 1000000
     house_coins_num = 400
     end
     self.update(original_house_coin_number: house_coins_num)

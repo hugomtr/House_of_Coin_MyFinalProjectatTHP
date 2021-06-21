@@ -4,15 +4,14 @@
 
 //beginning of contact
 
-.contact *
-{
+.contact * {
     margin: 25;
-    padding: 0!important;
+    padding: 0 !important;
     box-sizing: border-box;
 }
 
 .content {
-    padding-bottom: 150px!important;
+    padding-bottom: 150px !important;
 }
 
 .contact {
@@ -23,8 +22,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: 
-    linear-gradient(
+    background: linear-gradient(
       rgba(10, 10, 10, 0.5),
       rgba(10, 10, 10, 0.5)
     ),
@@ -42,8 +40,7 @@
     font-size: 50px;
     font-weight: 500;
     color: #fff;
-    text-shadow:
-    0.03em 0 black,
+    text-shadow: 0.03em 0 black;
 }
 
 .contact .content p {
@@ -51,7 +48,7 @@
     color: #fff;
     text-shadow:
     0.05em 0 black,
-    0 0.05em black,
+    0 0.05em black;
 }
 
 .container_contact {
@@ -96,7 +93,7 @@
     0.07em 0 black,
     0 0.07em black,
     -0.07em 0 black,
-    0 -0.07em black
+    0 -0.07em black;
 }
 
 .container_contact .contactInfo .box .text h3 {
@@ -143,8 +140,7 @@
 .contactForm .inputBox input:focus ~ span,
 .contactForm .inputBox input:valid ~ span,
 .contactForm .inputBox textarea:focus ~ span,
-.contactForm .inputBox textarea:valid ~ span
-{
+.contactForm .inputBox textarea:valid ~ span {
     color: black;
     font-size: 12px;
     transform: translateY(-20px);
@@ -381,7 +377,7 @@
 .card_terms .primary-heading {
     text-align: center;
     color: black;
-    padding-top: 50px ;
+    padding-top: 50px;
     font-size: 4em;
 }
 
