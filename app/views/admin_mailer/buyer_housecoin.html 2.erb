@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>A new HouseCoin sale !</h1>
+        <h2>Announcement n° <%= @real_estate_id %></h2>
+        <% user_id = @real_estate.user_id %>
+        <% real_estate_id = @real_estate.id %>
+        <p>Buyer : <%= User.find(user_id).email %></p>
+        <% total = 0 %>
+        <% order_id = @order.house_coins %>
+        <% self.house_coins.each do | hc | %>
+            <p><%= order.price %></p>
+            <p><% total += hc.coin_price %></p>
+        <% end %>
+        <p><%= total %></p>
+        <%# <p>Number of HouseCoin sold :</p>
+        <p>HouseCoin price (per unit) :</p>
+        <p>Total price paid :</p> %>
+    </body>
+</html>
