@@ -1,20 +1,12 @@
-<div class="mt-2 mb-3 get-housecoin">
-    <div class="row">
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <li class="col-8">
-                <h6>Buy HouseCoin since :</h6>
-                <h5><%= @real_estate.coin_price %> € / housecoin</h5>
-            </li>
-            <li class="col-2">
-                <div class="button-housecoin">
-                    <%= button_to 'Get housecoin', house_coins_path, method: :post, params: { real_estate_id: @real_estate.id, coin_price: @real_estate.coin_price, user_id: @real_estate.user, order_id: current_order }, class: "btn btn-primary" %>
-                </div>
-            </li>
-            <li class="col-2">
-                <div class="button-housecoin">
-                    <%= link_to "Chatroom" ,real_estate_chatroom_index_path(params[:id]), class: "btn-primary" %>
-                </div>
-            </li>
+<ul class="get-housecoin row mb-4">
+    <li class="d-flex flex-column col-12 col-sm-8">
+        <h6>Buy HouseCoin since :</h6>
+        <h5><%= @real_estate.coin_price %> € / housecoin</h5>
+    </li>
+
+    <li class="d-flex flex-column col-12 col-sm-4">
+        <div class="button-housecoin">
+            <%= button_to 'Get housecoin', house_coins_path, method: :post, params: { real_estate_id: @real_estate.id, coin_price: @real_estate.coin_price, user_id: @real_estate.user, order_id: current_order }, class: "btn btn-primary" %>
         </div>
-    </div>
-</div>
+    </li>
+</ul>

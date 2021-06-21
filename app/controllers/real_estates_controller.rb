@@ -28,19 +28,17 @@ class RealEstatesController < ApplicationController
   end
 
   def new
-    @real_estate = RealEstate.new
   end
 
   def create
-    @estate = RealEstate.new(estate_params)
-    @estate.user = current_user
+    @real_estate = RealEstate.new(estate_params)
+    @real_estate.user = current_user
 
-    if @estate.save
+    if @real_estate.save
         flash[:notice] = "Real estate created!"
-        @estate.pictures.attach(params[:pictures])
-        redirect_to root_path
-    else
-        flash.now[:notice] = "Ouppps !"
+        redirect_to real_estates_path
+    else @real_estate.errors
+        flash.now[:notice] = @real_estate.errors.full_messages 
         render :new
     end
   end
@@ -54,10 +52,9 @@ class RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
-      @real_estate.pictures.attach(params[:pictures])
-      redirect_to root_path
+      redirect_to real_estates_path 
     else
-      flash.now[:notice] = "Ouppps !"
+      flash.now[:notice] = @real_estate.errors.full_messages 
       render :edit
     end
   end
@@ -93,8 +90,7 @@ class RealEstatesController < ApplicationController
         :adress,
         :zipcode,
         :city,
-        :geocode,
-        { pictures: [] }
+        pictures: []
       )
   end
 end

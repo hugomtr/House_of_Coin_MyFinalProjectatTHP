@@ -16,5 +16,4 @@
 //= require activestorage
 //= require tooltip
 //= require flash
-
-
+//= require small_carousel

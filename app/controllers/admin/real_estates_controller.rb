@@ -9,12 +9,12 @@ class Admin::RealEstatesController < ApplicationController
   end
 
   def create
-    @estate = RealEstate.new(estate_params)
-    @estate.user = current_user
+    @real_estate = RealEstate.new(estate_params)
+    @real_estate.user = current_user
 
-    if @estate.save
+    if @real_estate.save
       flash[:notice] = "Real estate created!"
-      @estate.pictures.attach(params[:pictures])
+      @real_estate.pictures.attach(params[:pictures])
       redirect_to admin_real_estates_path
     else
       flash.now[:notice] = "Ouppps !"
@@ -66,8 +66,7 @@ class Admin::RealEstatesController < ApplicationController
         :adress,
         :zipcode,
         :city,
-        :geocode,
-        { pictures: [] }
+        pictures: []
       )
   end
 end
