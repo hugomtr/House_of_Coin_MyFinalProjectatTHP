@@ -5,15 +5,17 @@
 }
 
 .home_video {
-    width: 50vw;
-    height: 50vh;
+    width: 60%;
+    height: 60%;
     position: relative;
     display: flex;
     justify-content: center;
     object-fit: cover;
     top: 0;
+    left: 0;
     z-index: -2;
 }
+
 
 #article_home {
     background-color: #F3F3FA;
