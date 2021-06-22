@@ -1,63 +1,36 @@
-<section id="about">
- 		
+<section class="static-page-container container my-5">
 	<div class="container">
 		<div class="row">
-		<div class="col-md-5">
-			<div class="about-img">
-            <img class="shape" src=<%= asset_path 'building.png' %>  alt="building">
+			<div class="col-12 col-sm-12 col-md-6">
+				<div class="me-4">
+					<img src="<%= asset_path 'building.png' %>" class="w-100" alt="building">
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6">
+				<h1 class="color-3">About</h1>
+				<p class="p-first text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet nesciunt sint, esse iure eius voluptatibus perspiciatis sequi fuga magni perferendis beatae ratione, nam culpa veritatis dolore sunt ut minus qui Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ea delectus doloremque adipisci autem deleniti non nostrum, suscipit soluta perferendis.</p>
+				<p class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores pariatur animi sunt, assumenda dicta distinctio nostrum nisi, ullam dignissimos dolor!</p>
+				<h3 class="color-3 social-link-text">
+					<%= link_to "Contact us", contact_path, class: "btn btn-primary" %>
+				</h3>
+				<ul class="mt-5 d-flex align-items-center">
+					<li class="me-2">
+						<%= link_to root_path, class: "btn-circle" do %>
+							<i class="fab fa-instagram"></i>
+						<% end %>
+					</li>
+					<li class="me-2">
+						<%= link_to root_path, class: "btn-circle" do %>
+							<i class="fab fa-youtube"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= link_to root_path, class: "btn-circle" do %>
+							<i class="fab fa-linkedin-in"></i>
+						<% end %>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<br>
-		<div class="col-md-6 about-right">
-			
-			<h2 class="color-3"><b>About</b>
-			</h2>
-			
-			<p class="p-first text-black">
-				We founded our company two years ago with the goal of revolutionizing the real estate market.
-			</p>
-			<p class="text-black">
-				Indeed, we have noticed the difficulties that people can encounter when buying and renting real estate. This is due to the administrative difficulties but also the price of entry of the real estate.
-			</p>
-			<p class="text-black">
-				Thanks to our solution you can say goodbye to the paperwork and invest without minimum amount. Our team of specialists is here to help you and guide you in your questions about your investments.
-			</p>
-			<p class="text-black">
-				House of Coins
-			</p>
-			<p class="text-black">
-				The best you can get!
-			</p>
-			<h3 class="color-3 social-link-text">
-				<button class="btn_about">Contact us</button>
-			</h3>
-			
-			<ul class="about-link">
-				
-				<li><a href=""><i class="fab fa-instagram"></i></a></li>
-				
-				
-				<li><a href=""><i class="fab fa-youtube"></i></a></li>
-				
-				
-				<li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-				
-		 
-			</ul>
-		 
-			
-		</div>
-	 
-		</div>
-
 	</div>
 </section>
-
-
-
-
-
-
-
-The Best you can get! 
-
