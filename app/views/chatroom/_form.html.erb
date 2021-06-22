@@ -1,13 +1,10 @@
 <div class="form-group px-3"> 
-  <%= form_for :message  do |form| %>
-   
-
-    <div class="field">
-      <%= form.label :body %>
-      <%= form.text_field :body %>
+  <%= form_for( :message, remote: true)  do |form| %>
+     <div class="field" >
+      <%= form.text_field :body,id:"form_message" %>
     </div>
 
-    <div class="actions">
+    <div class="actions" >
       <%= form.submit %>
     </div>
   <% end %>

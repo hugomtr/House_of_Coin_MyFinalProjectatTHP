@@ -1,12 +1,7 @@
-<div class="d-flex flex-row p-3"> <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
-      <div class="chat ml-2 p-3">Hello and thankyou for visiting HouseCoin</div>
-</div>   
-<%= @messages.each do |message| %>
+<% @messages.each do |message| %>
   <div class="d-flex flex-row p-3"> <img src="#" width="30" height="30">
-      <div class="chat ml-2 p-3">
         <%= User.find_by(id:message.values[1]).username%>
         : <%= message.values[2] %>
-      </div>
   </div>  
 <% end %>
 

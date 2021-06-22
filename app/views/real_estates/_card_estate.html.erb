@@ -22,6 +22,13 @@
         <p class="card-text">
             <%= @estate.city %>
         </p>
-        <%=button_to 'Add to cart', house_coins_path, method: :post, params: { real_estate_id: @estate.id, coin_price: @estate.coin_price, user_id: @estate.user, order_id: current_order }, class: "btn btn-primary"%>
+
+        <%# "Add to cart" Button %>
+        <%= button_to 'Add to cart', 
+                      house_coins_path, 
+                      method: :post, 
+                      params: { real_estate_id: @estate.id, coin_price: @estate.coin_price, user_id: @estate.user, order_id: current_order }, 
+                      class: "btn btn-primary", 
+                      remote: true %>
     </div>
 <% end %>

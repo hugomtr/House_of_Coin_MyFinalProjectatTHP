@@ -1,0 +1,6 @@
+element = document.getElementById("message-container")
+element.insertAdjacentHTML("beforeEnd","<%= j render 'new_message', message: @message %>");
+formMessage = document.querySelector("#form_message");
+formMessage.value="";
+element.scrollTop = element.scrollHeight;
+<!-- setTimeout("location.reload(true);", 0);-->

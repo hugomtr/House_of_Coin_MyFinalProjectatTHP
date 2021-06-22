@@ -35,11 +35,11 @@ class RealEstatesController < ApplicationController
     @real_estate.user = current_user
 
     if @real_estate.save
-        flash[:notice] = "Real estate created!"
-        redirect_to real_estates_path
-    else @real_estate.errors
-        flash.now[:notice] = @real_estate.errors.full_messages 
-        render :new
+      flash[:notice] = "Offer created"
+      render :js => "window.location = '#{real_estates_path}'"
+    else 
+      flash[:error] = @real_estate.errors.full_messages 
+      render :js => "window.location = '#{new_real_estate_path}'"
     end
   end
 
@@ -52,10 +52,11 @@ class RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
-      redirect_to real_estates_path 
+      render :js => "window.location = '#{real_estates_path}'"
     else
-      flash.now[:notice] = @real_estate.errors.full_messages 
+      flash[:notice] = @real_estate.errors.full_messages 
       render :edit
+      render :js => "window.location = '#{edit_real_estate_path(@real_estate.id)}'"
     end
   end
 

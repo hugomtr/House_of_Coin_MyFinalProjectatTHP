@@ -1,99 +1,43 @@
-.video_home {
+#article {
+    margin-top: 20px;
+    padding: 100px 0px 0px 0px;
     position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.home_video {
-    width: 50vw;
-    height: 50vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    object-fit: cover;
-    top: 0;
-    z-index: -2;
-}
-
-#article_home {
-    background-color: #F3F3FA;
-}
-
-.img_article {
-    border-radius: 50%;
-}
-
-#four_points {
-    padding: 100px 0px;
-    position: relative;
-    z-index: auto;
-}
-
-
-.features-item {
-    border-radius: 5px;
-    padding: 60px 30px;
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-.features-item h2 {
     z-index: 9;
-    position: absolute;
-    top: 15px;
-    left: 45px;
-    font-size: 100px;
-    font-weight: 600;
-    color: #fdefe9;
-}
-
-.features-item img {
-    z-index: 10;
-    position: relative;
-    max-width: 100%;
-    margin-bottom: 40px;
-}
-
-
-.features-item h4 {
-    margin-top: 0px;
-    font-size: 22px;
-    color: #1e1e1e;
+  }
+  
+  #article  .section-heading h2 {
+    padding-right: 120px;
+  }
+  
+  #article  img {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #article  .left-text-content p {
     margin-bottom: 25px;
+  }
+  
+  #article  .right-content {
+    margin-left: 30px;
+  }
+  
+  #article  .right-content .thumb {
+    position: relative;
+    padding-left: 20%;
+    padding-top: 20%;
+  }
+
+#h1_homepage {
+  text-align: center;
 }
 
-.features-item .main-button {
-    margin-top: 35px;
-    display: inline-block;
+#h2_homepage {
+  text-align: center;
 }
 
 
-#promotion .right-text ul {
-    padding: 0;
-    margin: 0;
-}
-
-#promotion .right-text ul li {
-    display: inline-block;
-    margin-bottom: 60px;
-}
-
-#promotion .right-text ul li:last-child {
-    margin-bottom: 0px;
-}
-
-#promotion .right-text img {
-    display: inline-block;
-    float: left;
-    margin-right: 30px;
-}
-
-#promotion .right-text h4 {
-    font-size: 22px;
-    color: #1e1e1e;
-    margin-bottom: 15px;
-    margin-top: 3px;
-}
+//begin of testimonials
 
 .testimonials {
     display: flex;
@@ -173,3 +117,5 @@
   .h2_testimonials {
       text-align: center;
   }
+
+  //end of testimonials

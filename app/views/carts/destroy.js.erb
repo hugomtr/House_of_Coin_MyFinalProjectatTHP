@@ -1,0 +1,11 @@
+deleteElt = document.querySelector("#modal-content");
+deleteElt.parentNode.removeChild(deleteElt);
+
+badgeElt = document.querySelector("#cart-badge");
+badgeElt.textContent = "0";
+
+totalElt = document.querySelector("#cart-total");
+totalElt.textContent = "0 €";
+
+btnsElt = document.querySelector("#cart-btns");
+btnsElt.parentNode.removeChild(btnsElt);
