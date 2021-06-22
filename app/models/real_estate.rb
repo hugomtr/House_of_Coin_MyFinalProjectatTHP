@@ -8,9 +8,13 @@ class RealEstate < ApplicationRecord
   has_many :house_coins
   has_many :real_estates
 
+  validates :name, presence: true
+  validates :price, presence: true
   validates :adress ,presence: true
   validates :zipcode ,presence: true
   validates :city ,presence: true
+
+  # validate :attachment_presence
 
   # For show the latest real estates
   scope :lastest_estate, -> { order(created_at: :desc) }
@@ -18,6 +22,8 @@ class RealEstate < ApplicationRecord
   #TODO reactivate mailers
 
   # after_create :announce_validation_confirm, :original_coin_number
+  # after_validation :ad_validation
+
   after_create :original_coin_number
 
   scope :lastest_estate, -> { order(created_at: :desc) }
@@ -57,5 +63,13 @@ class RealEstate < ApplicationRecord
   def announce_validation_confirm
     AdminMailer.announce_validation(self).deliver_now
   end
+
+  # def attachment_presence
+  #   if self.pictures.present?
+  #     return true
+  #   else
+  #     errors[:pictures] << "Your offer must have pictures."
+  #   end
+  # end
 
 end
