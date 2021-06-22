@@ -3,7 +3,7 @@ class HouseCoin < ApplicationRecord
   belongs_to :real_estate
   belongs_to :user
   
-  before_create :sufficent_house_coin_num?
+  before_create :sufficient_house_coin_num?
 
   private
 
