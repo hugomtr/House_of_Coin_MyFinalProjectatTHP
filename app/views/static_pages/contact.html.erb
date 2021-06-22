@@ -1,12 +1,14 @@
-<section class="contact">
-    <div class="content">
-        <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Unde error blanditiis architecto temporibus soluta? Dolorum reprehenderit 
-        architecto illum, magnam aspernatur numquam, totam cumque fuga eveniet 
-        aut autem excepturi, esse mollitia.</p>
-    </div>
-    <div class="container_contact">
+<% 
+    @dataImage = {
+        url: "modern_house.jpg",
+        title: "Contact Us",
+        text: "We will get back to you asap!"
+    }
+%>
+<%= render :partial => "shared/full_image", :object => @dataImage %>
+
+<section class="container my-5">
+    <div class="mw-form custom-form">
         <div class="contactInfo">
             <div class="box">
                 <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
