@@ -5,7 +5,13 @@ class HouseCoinsController < ApplicationController
 
         if @order.save
             session[:order_id] = @order.id
-            redirect_back(fallback_location: root_path)
+
+            respond_to do | format |
+                format.html {
+                    redirect_back(fallback_location: root_path)
+                }
+                format.js{}
+            end
         else
             puts @order.errors.messages
             flash[:notice] = @order.errors.full_messages
