@@ -1,3 +1,49 @@
+#article {
+    margin-top: 20px;
+    padding: 100px 0px 0px 0px;
+    position: relative;
+    z-index: 9;
+  }
+  
+  #article  .section-heading h2 {
+    padding-right: 120px;
+  }
+  
+  #article  img {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #article  .left-text-content p {
+    margin-bottom: 25px;
+  }
+  
+  #article  .right-content {
+    margin-left: 30px;
+  }
+  
+  #article  .right-content .thumb {
+    position: relative;
+    padding-left: 20%;
+    padding-top: 20%;
+  }
+
+ 
+  
+  
+//////////////////////////////
+
+#h1_homepage {
+    padding-top: 50px;
+    text-align: center;
+}
+
+#h2_homepage {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
 .video_home {
     position: relative;
     display: flex;
@@ -5,13 +51,14 @@
 }
 
 .home_video {
-    width: 50vw;
-    height: 50vh;
+    width: 60%;
+    height: 60%;
     position: relative;
     display: flex;
     justify-content: center;
     object-fit: cover;
     top: 0;
+    left: 0;
     z-index: -2;
 }
 
@@ -19,16 +66,20 @@
     background-color: #F3F3FA;
 }
 
+
 .img_article {
     border-radius: 50%;
 }
 
-#four_points {
-    padding: 100px 0px;
-    position: relative;
-    z-index: auto;
+.img_article_1 {
+    margin-left: 40%;
+    border-radius: 50%;
 }
 
+#four_points {
+    padding: 10px 0px;
+    position: relative;
+}
 
 .features-item {
     border-radius: 5px;
@@ -67,7 +118,10 @@
     display: inline-block;
 }
 
-
+#promotion {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
 #promotion .right-text ul {
     padding: 0;
     margin: 0;

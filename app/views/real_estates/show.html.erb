@@ -1,8 +1,20 @@
+<%# <% @imgArr = @real_estate.pictures %>
+
 <div class="container d-flex flex-column my-5">
-    <h1><%= @real_estate.name %></h1>
-    <article class="row">
+    <h1>
+        <%= @real_estate.name %>
+    </h1>
+    <article class="row mt-5">
         <div class="d-flex flex-column col-12 col-sm-6 col-md-8">
-            <%= render :partial => "shared/small_carousel", :object => @real_estate %>
+            <!--This is a test for multiple images upload-->
+
+            <% if @real_estate.pictures.attached? %>
+                <%= render :partial => "shared/small_carousel", :object => @real_estate %>
+            <% elsif @real_estate.image_urls %>
+                <figure class="estate-full-figure">
+                    <%= image_tag @real_estate.image_urls, alt: 'picture', class: 'estate-full-image'%>
+                </figure>
+            <% end %>
             <%= render :partial => "shared/picto_presentation" %>
             <%= render :partial => "shared/get_housecoin", :object => @button %>
             <%= @real_estate.description %>
@@ -19,4 +31,3 @@
 
 <%= render :partial => "shared/pictures_group", :object => @estates_latest %>
 <%= render :partial => "shared/newsletter" %>
-

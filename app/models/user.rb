@@ -11,7 +11,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #TODO reactivate mailers
-
   # after_create :welcome_send
 
   private

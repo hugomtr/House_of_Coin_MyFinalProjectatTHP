@@ -12,8 +12,8 @@ class ChatroomController < ApplicationController
     @message= Message.new(real_estate_id:params[:real_estate_id])
     @message.update(user_id:current_user.id,body:message_params[:body])
     if @message.save
-      puts "OK"
-      redirect_to real_estate_chatroom_index_path(params[:real_estate_id])
+      ActionCable.server.broadcast "livediscussion_channel",
+                                    foo: @message.body
     else
       puts @message.errors.messages
       render :index
