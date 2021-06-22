@@ -52,7 +52,7 @@
                     <li class="me-2">
                         <%= link_to carts_path, data: { bs_toggle: "modal", bs_placement: "bottom", bs_target: "#cartModal" }, title: "My Cart", remote: true, class: "btn btn-primary" do %>
                             <i class="fas fa-shopping-cart"></i>
-                            <span class="badge bg-light text-primary ms-1 rounded-pill"><%=current_order.house_coins.length%></span>
+                            <span class="badge bg-light text-primary ms-1 rounded-pill" id="cart-badge"><%=current_order.house_coins.length%></span>
                         <% end %>
                     </li>
                     <!-- CONNECTION -->

@@ -3,7 +3,7 @@
     <div class="alert-flash <% if flash[:notice].present? %>alert-notice<% elsif flash[:error].present? %>alert-error<% end %>" 
          role="alert">
         <div class="container d-flex justify-content-center">
-            <div class="mw-form text-center">
+            <div id="alert-content" class="mw-form text-center">
                 <% if flash[:notice].present? %>
                     <%= flash[:notice] %>
                 <% elsif flash[:error].present? %>

@@ -6,34 +6,40 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <%# Modal content %>
                 <div id="modal-content">
-                    <%# Modal content %>
                     <ul class="list-group-flush">
                         <%unique_items = []%>
 
                         <%current_order.house_coins.each do | item |%>
-                            <%if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id)%>
-                                <%unique_items << item%>
-                            <%end%>
-                        <%end%>
+                            <% if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id) %>
+                                <% unique_items << item %>
+                            <% end %>
+                        <% end %>
 
-                        <%unique_items.each do | hc |%> 
+                        <% unique_items.each do | hc | %> 
                             <%@hc = hc%>
                             <li class="list-group-item">
                                 <%=render 'carts/product', object: @hc%>
                             </li>
-                        <%end%>
-                        <li class="list-group-item"><h5>Total</h5></li>
-                        <li class="list-group-item"><%=current_order.order_total%> €</li>
+                        <% end %>
                     </ul>
-                    <%unless current_order.house_coins.length == 0%>
-                        <div class="buttons d-flex">
-                            <%=link_to 'Checkout', new_charge_path, class: "btn btn-success mr-3"%>
-                            <%=button_to 'Clear cart', cart_path(current_order), method: :delete, class: "btn btn-danger"%>
-                        </div>
-                    <%end%>
-                    <%# Modal content end %>
                 </div>
+                <%# Modal content : end %>
+
+                <ul class="list-group-flush">
+                    <li class="list-group-item">
+                        <h5>Total</h5>
+                    </li>
+                    <li class="list-group-item" id="cart-total"><%=current_order.order_total%> €</li>
+                </ul>
+
+                <% unless current_order.house_coins.length == 0 %>
+                    <div class="buttons d-flex" id="cart-btns">
+                        <%= link_to 'Checkout', new_charge_path, class: "btn btn-success mr-3" %>
+                        <%= button_to 'Clear cart', cart_path(current_order), method: :delete, class: "btn btn-danger", remote: true %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
