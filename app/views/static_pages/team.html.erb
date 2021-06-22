@@ -1,105 +1,75 @@
-
-
-<h1 class="h1_team">Our Team</h1>
-<section class="section_team">
-    <div class="card_team">
-        <div class="bg-image">
-            <img src=<%= asset_path 'big_building.jpeg' %> alt="building">
-        </div>
-        <div class="pic">
-            <img src=<%= asset_path 'erwan_le_corre.jpg' %> alt="profil_picture_erwan_le_corre">
-        </div>
-        <div class="info">
-            <h3>Erwan Le Corre</h3>
-            <span><i class="fas fa-code"></i> Love beer</span>
-            <p>Always keep your hovercraft full of eels</p>
-            <div class="icons_team">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://github.com/Septentrion50" class="fab fa-github"></a>
+<section class="static-page-container container my-5">
+    <h1>Our Team</h1>
+    <ul class="estate-list row align-items-stretch align-content-stretch my-3">
+        <li class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card">
+                <div class="card-image d-flex justify-content-center align-items-center bg-white">
+                    <img src=<%= asset_path 'erwan_le_corre.jpg' %> alt="Erwan Le Corre" class="avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">Erwan Le Corre</h5>
+                    <p class="card-text mb-0">Always keep your hovercraft full of eels</p>
+                    <%= link_to "https://github.com/Septentrion50", class: "btn-circle mt-3" do %>
+                        <i class="fab fa-github"></i>
+                    <% end %>
+                </div>
             </div>
-        </div>
-    </div>
-
-     <div class="card_team">
-        <div class="bg-image">
-            <img src=<%= asset_path 'big_building.jpeg' %> alt="building">
-        </div>
-        <div class="pic">
-            <img src=<%= asset_path 'cedric_mesas.jpg' %> alt="profil_picture_cedric_mesas">
-        </div>
-        <div class="info">
-            <h3>Crédric Mesas</h3>
-            <span><i class="fas fa-code"></i> Love front</span>
-            <p>I like fish, chips and dips</p>
-            <div class="icons_team">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://github.com/cedricmesas" class="fab fa-github"></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card">
+                <div class="card-image d-flex justify-content-center align-items-center bg-white">
+                    <img src=<%= asset_path 'cedric_mesas.jpg' %> alt="Cédric Mesas" class="avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">Cédric Mesas</h5>
+                    <p class="card-text mb-0">I like fish, chips and dips</p>
+                    <%= link_to "https://github.com/cedricmesas", class: "btn-circle mt-3" do %>
+                        <i class="fab fa-github"></i>
+                    <% end %>
+                </div>
             </div>
-        </div>
-    </div>
-
-   <div class="card_team">
-        <div class="bg-image">
-            <img src=<%= asset_path 'big_building.jpeg' %> alt="building">
-        </div>
-        <div class="pic">
-            <img src=<%= asset_path 'phb.png' %> alt="profil_picture_pierre-henry_bord">
-        </div>
-        <div class="info">
-            <h3>Pierre-Henry Bord</h3>
-            <span><i class="fas fa-code"></i> Love JS</span>
-            <p>Experiment</p>
-            <div class="icons_team">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://github.com/phbord" class="fab fa-github"></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card">
+                <div class="card-image d-flex justify-content-center align-items-center bg-white">
+                    <img src=<%= asset_path 'phb.png' %> alt="Pierre-Henri Bord" class="avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">Pierre-Henri Bord</h5>
+                    <p class="card-text mb-0">Experiment</p>
+                    <%= link_to "https://github.com/phbord", class: "btn-circle mt-3" do %>
+                        <i class="fab fa-github"></i>
+                    <% end %>
+                </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="card_team">
-        <div class="bg-image">
-            <img src=<%= asset_path 'big_building.jpeg' %> alt="building">
-        </div>
-        <div class="pic">
-            <img src=<%= asset_path 'gg.jpeg' %> alt="profil_picture_hugo_le_maitre">
-        </div>
-        <div class="info">
-            <h3>Hugo Le Maitre</h3>
-            <span><i class="fas fa-code"></i> Love math</span>
-            <p>Empty</p>
-            <div class="icons_team">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://github.com/hugomtr" class="fab fa-github"></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card">
+                <div class="card-image d-flex justify-content-center align-items-center bg-white">
+                    <img src=<%= asset_path 'big_building.jpeg' %> alt="Hugo Le Maitre" class="avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">Hugo Le Maitre</h5>
+                    <p class="card-text mb-0">Love math</p>
+                    <%= link_to "https://github.com/hugomtr", class: "btn-circle mt-3" do %>
+                        <i class="fab fa-github"></i>
+                    <% end %>
+                </div>
             </div>
-        </div>
-    </div>
-
-     <div class="card_team">
-        <div class="bg-image">
-            <img src=<%= asset_path 'big_building.jpeg' %> alt="building">
-        </div>
-        <div class="pic">
-            <img src=<%= asset_path 'sebastien_simon.jpg' %> alt="profil_picture_sebastien_simon">
-        </div>
-        <div class="info">
-            <h3>Sébastien Simon</h3>
-            <span><i class="fas fa-code"></i> Love when it's working</span>
-            <p>Putting that aside</p>
-            <div class="icons_team">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="https://github.com/Noheat9" class="fab fa-github"></a>
+        </li>
+        <li class="col-12 col-sm-6 col-md-4 mb-5">
+            <div class="card">
+                <div class="card-image d-flex justify-content-center align-items-center bg-white">
+                    <img src=<%= asset_path 'sebastien_simon.jpg' %> alt="Sébastien Simon" class="avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate">Sébastien Simon</h5>
+                    <p class="card-text mb-0">Putting that aside</p>
+                    <%= link_to "https://github.com/Noheat9", class: "btn-circle mt-3" do %>
+                        <i class="fab fa-github"></i>
+                    <% end %>
+                </div>
             </div>
-        </div>
-    </div>
+        </li>
+    </ul>
 </section>

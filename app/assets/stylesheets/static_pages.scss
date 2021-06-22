@@ -1,6 +1,29 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.static-page-container {
+    .btn-circle {
+        border: 1px solid $primary;
+
+        &:hover {
+            border-color: $primary_hover;
+            text-decoration: none;
+
+            .fab {
+                color: $primary_hover;
+            }
+        }
+        &.disabled {
+            opacity: .125;
+        }
+        .fab {
+            color: $primary;
+        }
+    }
+    .avatar {
+        width: 8rem;
+        height: 8rem;
+        border: 1px solid $primary;
+        border-radius: 50%;
+    }
+}
 
 //beginning of contact
 
@@ -28,7 +51,6 @@
     ),
     url("modern_house.jpg");
     background-size: cover;
-    
 }
 
 .contact .content {
@@ -276,7 +298,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #F3F3FA;
 }
 
 .card_team {

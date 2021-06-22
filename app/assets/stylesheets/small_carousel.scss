@@ -14,11 +14,18 @@
     margin: 0 550px; 
 }
 
-.bd-placeholder-img {
+.bd-placeholder-img,.full-image {
     height: 20rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.full-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $light;
 }
 
 .carousel-inner {
