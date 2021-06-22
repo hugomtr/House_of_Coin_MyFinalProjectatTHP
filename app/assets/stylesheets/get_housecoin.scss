@@ -1,13 +1,14 @@
 .get-housecoin {
     border-radius: .3rem;
     background-color: $pink;
-    padding: 20px;
+    padding: 25px;
     display: flex;
-    justify-content: right;
-    align-items: right;
+    flex-direction: row;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.row .li .button-housecoin {
-    padding-left: 800px;
+.button-housecoin {
     display: flex;
+    margin-top: 10px;
 }
