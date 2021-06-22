@@ -28,11 +28,6 @@
     padding-top: 20%;
   }
 
- 
-  
-  
-//////////////////////////////
-
 #h1_homepage {
   text-align: center;
 }
@@ -41,70 +36,6 @@
   text-align: center;
 }
 
-.features-item {
-  border-radius: 5px;
-  padding: 60px 30px;
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-.features-item h2 {
-  z-index: 9;
-  position: absolute;
-  top: 15px;
-  left: 45px;
-  font-size: 100px;
-  font-weight: 600;
-  color: #fdefe9;
-}
-
-.features-item img {
-  z-index: 10;
-  position: relative;
-  max-width: 100%;
-  margin-bottom: 40px;
-}
-
-
-.features-item h4 {
-  margin-top: 0px;
-  font-size: 22px;
-  color: #1e1e1e;
-  margin-bottom: 25px;
-}
-
-.features-item .main-button {
-  margin-top: 35px;
-  display: inline-block;
-}
-
-
-#promotion .right-text ul {
-  padding: 0;
-  margin: 0;
-}
-
-#promotion .right-text ul li {
-  display: inline-block;
-  margin-bottom: 60px;
-}
-
-#promotion .right-text ul li:last-child {
-  margin-bottom: 0px;
-}
-
-#promotion .right-text img {
-  display: inline-block;
-  float: left;
-  margin-right: 30px;
-}
-
-#promotion .right-text h4 {
-  font-size: 22px;
-  color: #1e1e1e;
-  margin-bottom: 15px;
-  margin-top: 3px;
-}
 
 //begin of testimonials
 
