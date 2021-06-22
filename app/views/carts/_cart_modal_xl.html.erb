@@ -8,20 +8,7 @@
             <div class="modal-body">
                 <%# MODAL CONTENT %>
                 <div id="modal-content">
-                    <ul class="">
-                        <%unique_items = []%>
-                        <%current_order.house_coins.each do | item |%>
-                            <% if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id) %>
-                                <% unique_items << item %>
-                            <% end %>
-                        <% end %>
-                        <% unique_items.each do | hc | %> 
-                            <%@hc = hc%>
-                            <li class="">
-                                <%=render 'carts/product', object: @hc%>
-                            </li>
-                        <% end %>
-                    </ul>
+                    <%= render 'carts/product_list' %>
                 </div>
 
                 <%# TOTAL %>
@@ -29,7 +16,9 @@
                     <tbody>
                         <tr>
                             <th scope="col" width="120">Total</th>
-                            <td id="cart-total"><%= current_order.order_total %> €</td>
+                            <td id="cart-total">
+                                <%= current_order.order_total %> €
+                            </td>
                         </tr>
                     </tbody>
                 </table>

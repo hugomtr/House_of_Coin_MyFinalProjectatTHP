@@ -1,9 +1,11 @@
-//document.querySelector("#alert-content").textContent = "<%= @flash %>";
-let deleteElt = document.querySelector("#modal-content");
+deleteElt = document.querySelector("#modal-content");
 deleteElt.parentNode.removeChild(deleteElt);
-let badgeElt = document.querySelector("#cart-badge");
+
+badgeElt = document.querySelector("#cart-badge");
 badgeElt.textContent = "0";
-let totalElt = document.querySelector("#cart-total");
+
+totalElt = document.querySelector("#cart-total");
 totalElt.textContent = "0 €";
-let btnsElt = document.querySelector("#cart-btns");
+
+btnsElt = document.querySelector("#cart-btns");
 btnsElt.parentNode.removeChild(btnsElt);
