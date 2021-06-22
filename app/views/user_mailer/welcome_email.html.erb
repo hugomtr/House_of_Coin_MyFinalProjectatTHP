@@ -2,12 +2,53 @@
 <html>
     <head>
         <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+
+    <style type="text/css">
+
+body .email-cont {
+    font-family: $font-default;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+
+.email-cont {
+    background-color: $pink;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: .25rem;
+    justify-content: center
+}
+
+.email-cont .email-title {
+    font-family: $font-title;
+    color: #141B2D;
+}
+
+.email-cont .team-signature {
+    color: #1C3988;
+}
+
+p {
+    font-size: 16px;
+}
+    </style>
     </head>
     <body>
-        <h1>Welcome <%= @user.username %>!</h1>
-        <p>You are registered on House of Coin using the following e-mail: <%= @user.email %>.</p>
-        <p>To access your customer area, log in via: <%= @url %>.</p>
-        <p>See you soon on House of Coin website!</p>
-        <p>The House of Coin team.</p>
+
+        <div class="email-cont container-fluid">
+            <div class="col-12 col-sm-4">
+                <%= inline_svg_tag "logo.svg", class: 'email-logo' %>
+                <h3 class="email-title">Welcome <strong><%= @user.username %></strong>!</h3>
+                <p>You are registered on House of Coin using the following e-mail: <strong><%= @user.email %></strong>.</p>
+                <p>To access your customer area, log in via: <strong><%= @url %>.</strong></p>
+                <p>See you soon on House of Coin website!</p>
+                <p class="team-signature">The House of Coin team.</p>
+                <p><small>Copyright © 2021 House of Coin.</small></p>
+            </div>
+        </div>
+
     </body>
 </html>
