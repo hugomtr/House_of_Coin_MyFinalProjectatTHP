@@ -1,6 +1,11 @@
 <%#= render 'real_estates/search_estate' %>
+<section class="container my-5">
+    <% @image_data = {url: 'img_home.png', pos_x: 'right', pos_y: '50%'} %>
+    <%= render :partial => "real_estates/search_estate", :object => @image_data %>
+    <%= video_tag "video_home.m4v", autoplay: :autoplay, loop: :loop, muted: :muted, class: "w-100 mt-5"%>
+</section>
 
-<div class="video_home"><%= video_tag "video_home.m4v", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%></div>
+
 
 <h2 id="h1_homepage">This is why you should choose House of Coins</h2>
 
