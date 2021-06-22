@@ -1,7 +1,7 @@
 function toggleAlert() {
     setTimeout(() => {
         _removeAlert(document.querySelector('.alert-flash'));
-    }, 5000);
+    }, 3000);
 }
 
 function _removeAlert(elt) {
