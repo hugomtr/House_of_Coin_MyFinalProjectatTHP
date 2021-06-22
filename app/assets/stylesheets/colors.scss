@@ -1,4 +1,5 @@
 $body: #fff;
+$white: #fff;
 $light: #fff;
 $dark: #141B2D;
 $primary: #1C3988;/* color #3 */
@@ -8,4 +9,7 @@ $error: #FF0059;
 
 .text-primary {
     color: $primary !important;
+}
+.bg-white {
+    background-color: $white !important;
 }
