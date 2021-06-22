@@ -22,6 +22,8 @@ class RealEstate < ApplicationRecord
   #TODO reactivate mailers
 
   # after_create :announce_validation_confirm, :original_coin_number
+  # after_validation :ad_validation
+
   after_create :original_coin_number
 
   scope :lastest_estate, -> { order(created_at: :desc) }
