@@ -4,21 +4,10 @@
         <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     </head>
     <body>
-        <h1>Hi <%= @user.username %>,</h1>
-        <p>
-        Thanks for registering! To confirm your registration click the URL below.
-        </p>
-        <p>
-        <%= confirm_email_user_url(@user.confirm_token) %>
-        </p>
-        <p>Thanks. 
-        </p>
-        <p>The HouseCoin teams. 
-        </p>
+        <h1>Hello <%= @user.username %>,</h1>
+        <p>Thanks for registering! To confirm your registration click the URL below.</p>
+        <p><%= confirm_email_user_url(@user.confirm_token) %></p>
+        <p>Thanks.</p>
+        <p>The House of Coin team.</p>
     </body>
 </html>
-
-
-
-
-
