@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :charges
   has_many :orders ,through: :charges
   has_many :messages
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   #TODO reactivate mailers

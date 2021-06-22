@@ -23,7 +23,7 @@ class RealEstate < ApplicationRecord
   scope :lastest_estate, -> { order(created_at: :desc) }
 
   def thumbnail input
-    return self.pictures[input].variant(resize: '300x300').processed
+    return self.pictures[input].variant(resize: '500x500').processed
   end
 
   def coin_price
@@ -44,7 +44,7 @@ class RealEstate < ApplicationRecord
     house_coins_num = 100
     elsif self.price > 100000 && self.price < 500000
     house_coins_num = 200
-    elsif self.price > 500000 && self.price < 1000000
+    elsif self.price >= 500000 && self.price < 1000000
     house_coins_num = 300
     elsif self.price >= 1000000
     house_coins_num = 400
