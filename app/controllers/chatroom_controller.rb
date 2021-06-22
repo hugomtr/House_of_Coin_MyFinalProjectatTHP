@@ -11,15 +11,16 @@ class ChatroomController < ApplicationController
   def create 
     @message= Message.new(real_estate_id:params[:real_estate_id])
     @message.update(user_id:current_user.id,body:message_params[:body])
-    if @message.save
-      ActionCable.server.broadcast "livediscussion_channel",
-                                    foo: @message.body
-    else
+    respond_to do |format|
+      format.html {redirect_to real_estate_chatroom_index_path(params[:real_estate_id])}
+      format.js {}
+    end
+    if !@message.save
       puts @message.errors.messages
       render :index
     end
   end
-  
+
   private
   def message_params
     params.require(:message).permit(:body)
