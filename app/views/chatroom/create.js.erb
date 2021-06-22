@@ -1,1 +1,3 @@
-document.getElementById("message-container").insertAdjacentHTML("beforeEnd","<%= j render 'new_message', message: @message %>");
+element = document.getElementById("message-container")
+element.insertAdjacentHTML("beforeEnd","<%= j render 'new_message', message: @message %>");
+element.scrollTop = element.scrollHeight;

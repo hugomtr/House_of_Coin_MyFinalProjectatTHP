@@ -1,33 +1,39 @@
-<h4>Say Something <%=current_user.username%>!</h4>
-<div class="container" height="20%">
+<% if @investors.values.include?([current_user.id])%>
+  <h4>Say Something <%=current_user.username%>!</h4>
+<% end %>
+<div class="container" height="15%">
   <div class="text-center">
-  <img src="<%=asset_path 'coffee.png'%>" alt="image-cofee"></div>
+  <img src="<%=asset_path 'coffee.png'%>" alt="image-cofee" width="20%"></div>
 </div>
 
 <hr>
 
 <div class="d-flex flex-row justify-content-between">
-  <div class="card col-md-9 ml-1">
+  <div class="card col-md-9 ml-1" style="overflow:scroll;height:400px;" id="discussion">
 
-      <div class="d-flex flex-row p-3"> <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
-            <div class="chat ml-2 p-3">Hello and thankyou for visiting HouseCoin</div>
-      </div> 
+    <div class="d-flex flex-row p-3"> <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="25" height="25">
+          <div class="chat ml-2 p-3">Hello and thankyou for visiting HouseCoin</div>
+    </div> 
 
-      <div id="message-container">
-        <%= render :partial => "messages" %>
-      </div> 
+    <div id="message-container">
+      <%= render :partial => "messages" %>
+    </div> 
 
-      <% if @investors.values.include?([current_user.id])%>
-        <%= render 'form', message: @message, real_estate: @real_estate%>
-      <%else %>
-        <p>No permission to write in this channel</p>
-      <% end %>
+    <% if @investors.values.include?([current_user.id])%>
+      <%= render 'form', message: @message, real_estate: @real_estate%>
+    <%else %>
+      <p>No permission to write in this channel</p>
+    <% end %>
 
   </div>
-
+  
   <div class="card col-md-2 mr-1">
     <div class="col-md-4"><%= render :partial => "column-navbar" %>
   </div>
 
 </div>
-
+<script>
+  let element = document.getElementById("discussion");
+  console.log(element);
+  element.scrollTop = element.scrollHeight;
+</script>
