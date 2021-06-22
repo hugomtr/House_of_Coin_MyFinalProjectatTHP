@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#gem pour la carte
+# gem for the map 
 gem 'geocoder'
 
 # Use ActiveStorage variant
