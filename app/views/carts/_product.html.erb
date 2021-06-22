@@ -10,13 +10,13 @@
         <tr>
             <th scope="col">Price</th>
             <td>
-                <%=q * @hc.coin_price%> €
+                <%= q * @hc.coin_price %> €
             </td>
         </tr>
         <tr>
             <th scope="col">For property</th>
             <td>
-                <%=RealEstate.find(@hc.real_estate_id).name%>
+                <%= RealEstate.find(@hc.real_estate_id).name %>
             </td>
         </tr>
     </tbody>
@@ -27,10 +27,12 @@
     <%= button_to 'Remove one', 
                   house_coin_path(@hc.id), 
                   method: :delete, 
-                  class: "btn btn-outline-danger btn-sm mr-2" %>
+                  class: "btn btn-outline-danger btn-sm mr-2",
+                  remote: true %>
     <%= button_to 'Add one more', 
                   house_coins_path, 
                   method: :post, 
                   params: { real_estate_id: @hc.real_estate_id, coin_price: @hc.coin_price, user_id: @hc.user_id, order_id: current_order }, 
-                  class: "btn btn-outline-primary btn-sm" %>
+                  class: "btn btn-outline-primary btn-sm",
+                  remote: true %>
 </div>

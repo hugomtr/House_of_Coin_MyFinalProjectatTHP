@@ -1,0 +1,15 @@
+<ul>
+    <%unique_items = []%>
+    <%current_order.house_coins.each do | item |%>
+        <% if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id) %>
+            <% unique_items << item %>
+        <% end %>
+    <% end %>
+    <% unique_items.each do | hc | %> 
+        <%@hc = hc%>
+        <li>
+            <%# PRODUCT %>
+            <%= render 'carts/product', object: @hc %>
+        </li>
+    <% end %>
+</ul>
