@@ -276,7 +276,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #F3F3FA;
 }
 
 .card_team {
@@ -353,15 +352,6 @@
 ::-webkit-scrollbar-thumb {
     background: #F3F3FA;
 }
-
-
-.title-mobile {
-    font-size: 18px;
-    color: black;
-    cursor: pointer;
-    padding-top: 30px;
-}
-
 
 .card_terms {
     margin-top: 100px;

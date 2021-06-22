@@ -34,120 +34,79 @@
 //////////////////////////////
 
 #h1_homepage {
-    padding-top: 50px;
-    text-align: center;
+  text-align: center;
 }
 
 #h2_homepage {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-}
-
-.video_home {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.home_video {
-    width: 60%;
-    height: 60%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    z-index: -2;
-}
-
-#article_home {
-    background-color: #F3F3FA;
-}
-
-
-.img_article {
-    border-radius: 50%;
-}
-
-.img_article_1 {
-    margin-left: 40%;
-    border-radius: 50%;
-}
-
-#four_points {
-    padding: 10px 0px;
-    position: relative;
+  text-align: center;
 }
 
 .features-item {
-    border-radius: 5px;
-    padding: 60px 30px;
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 60px 30px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
 .features-item h2 {
-    z-index: 9;
-    position: absolute;
-    top: 15px;
-    left: 45px;
-    font-size: 100px;
-    font-weight: 600;
-    color: #fdefe9;
+  z-index: 9;
+  position: absolute;
+  top: 15px;
+  left: 45px;
+  font-size: 100px;
+  font-weight: 600;
+  color: #fdefe9;
 }
 
 .features-item img {
-    z-index: 10;
-    position: relative;
-    max-width: 100%;
-    margin-bottom: 40px;
+  z-index: 10;
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 40px;
 }
 
 
 .features-item h4 {
-    margin-top: 0px;
-    font-size: 22px;
-    color: #1e1e1e;
-    margin-bottom: 25px;
+  margin-top: 0px;
+  font-size: 22px;
+  color: #1e1e1e;
+  margin-bottom: 25px;
 }
 
 .features-item .main-button {
-    margin-top: 35px;
-    display: inline-block;
+  margin-top: 35px;
+  display: inline-block;
 }
 
-#promotion {
-    padding-bottom: 50px;
-    padding-top: 50px;
-}
+
 #promotion .right-text ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #promotion .right-text ul li {
-    display: inline-block;
-    margin-bottom: 60px;
+  display: inline-block;
+  margin-bottom: 60px;
 }
 
 #promotion .right-text ul li:last-child {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #promotion .right-text img {
-    display: inline-block;
-    float: left;
-    margin-right: 30px;
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
 }
 
 #promotion .right-text h4 {
-    font-size: 22px;
-    color: #1e1e1e;
-    margin-bottom: 15px;
-    margin-top: 3px;
+  font-size: 22px;
+  color: #1e1e1e;
+  margin-bottom: 15px;
+  margin-top: 3px;
 }
+
+//begin of testimonials
 
 .testimonials {
     display: flex;
@@ -227,3 +186,5 @@
   .h2_testimonials {
       text-align: center;
   }
+
+  //end of testimonials
