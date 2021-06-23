@@ -90,4 +90,4 @@ gem "fog-aws"
 
 gem 'inline_svg'
 
-gem 'ruby-gmail', '~> 0.3.1'
+gem 'google-api-client'
