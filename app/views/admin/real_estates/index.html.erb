@@ -19,6 +19,10 @@
                     <td>
                         <%= estate.name %>
                     </td>
+                    <td>
+                        <% @real_estate = estate %>
+                        <%= render 'checkbox_validation', object: @real_estate %>
+                    </td>
                     <td class="d-flex justify-content-end">
                         <%= link_to "", 
                             edit_admin_real_estate_path(estate.id), 

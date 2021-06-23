@@ -9,6 +9,7 @@ class CartsController < ApplicationController
         @order.house_coins.each do | hc |
             hc.destroy
         end
+
         respond_to do |format|
             format.html do 
                 flash[:notice] = @flash
