@@ -1,4 +1,5 @@
 body {
+    overflow-x: hidden;
     background-color: $body;
     color: $dark;
     font-family: $font-default;
@@ -7,7 +8,7 @@ h1,h2,h3,h4,h5,h6 {
     font-family: $font-title;
 }
 h1 {
-    font-size: 51.88px;
+    font-size: 3.243rem;
 }
 ul,ol,li {
     margin: 0;
@@ -24,7 +25,7 @@ table {
 }
 
 .sub-title {
-    font-size: 21.25px;
+    font-size: 1.328rem;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
