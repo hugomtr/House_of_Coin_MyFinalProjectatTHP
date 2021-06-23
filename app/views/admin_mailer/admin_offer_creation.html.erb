@@ -1,16 +1,9 @@
-<html>
-    <head>
-        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    </head>
-    <body>
-        <h1>New offer</h1>
-        <h2>Offer n° <%= @real_estate.id %></h2>
-        <% user_id = @real_estate.user_id %>
-        <p>Seller :      <%= User.find(user_id).email %></p>
-        <p>Price :       <%= @real_estate.price %> €</p>
-        <p>Address :     <%= @real_estate.adress %></p>
-        <p>Zipcode :     <%= @real_estate.zipcode %></p>
-        <p>City :        <%= @real_estate.city %></p>
-        <p>Description : <%= @real_estate.description %></p>
-    </body>
-</html>
+<h1>New offer</h1>
+<h2>Offer n° <%= @real_estate.id %></h2>
+<% user_id = @real_estate.user_id %>
+<p>Seller :      <%= User.find(user_id).email %></p>
+<p>Price :       <%= @real_estate.price %> €</p>
+<p>Address :     <%= @real_estate.adress %></p>
+<p>Zipcode :     <%= @real_estate.zipcode %></p>
+<p>City :        <%= @real_estate.city %></p>
+<p>Description : <%= @real_estate.description %></p>
