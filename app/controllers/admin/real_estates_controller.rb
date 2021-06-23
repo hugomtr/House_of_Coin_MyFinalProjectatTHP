@@ -35,8 +35,15 @@ class Admin::RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
-      @real_estate.pictures.attach(params[:pictures])
-      redirect_to admin_real_estates_path
+      if @real_estate.validated?
+        UserMailer.offer_validation(@real_estate.user_id).deliver_now
+      end
+      respond_to do | format |
+        format.html {
+          redirect_to admin_real_estates_path
+        }
+        format.js {}
+      end
     else
       flash.now[:notice] = "Ouppps !"
       render :edit
