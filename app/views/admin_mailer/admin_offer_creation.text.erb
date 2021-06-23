@@ -5,18 +5,8 @@ Offer n° <%= @real_estate.id %>
     <% user_id = @real_estate.user_id %>
     <% real_estate_id = @real_estate.id %>
     Seller :      <%= User.find(user_id).email %>
-    Price :       <%= real_estate_price = @real_estate.price %>
-    Adress :      <%= real_estate_adress = @real_estate.adress %>
-    Zipcode :     <%= real_estate_zipcode = @real_estate.zipcode %>
-    City :        <%= real_estate_city = @real_estate.city %>
-    Description : <%= real_estate_description = @real_estate.description %>
-
-
-</p>
-        <p>Price :       <%= @real_estate.price %> €</p>
-        <p>Address :     <%= @real_estate.adress %></p>
-        <p>Zipcode :     <%= @real_estate.zipcode %></p>
-        <p>City :        <%= @real_estate.city %></p>
-        <p>Description : <%= @real_estate.description %></p>
-    </body>
-</html>
+    Price :       <%= @real_estate.price %> €
+    Address :     <%= @real_estate.adress %>
+    Zipcode :     <%= @real_estate.zipcode %>
+    City :        <%= @real_estate.city %>
+    Description : <%= @real_estate.description %>
