@@ -77,7 +77,7 @@
                                         <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
                                     </li>
                                 <% else %>
-                                    <% if is_admin? %>
+                                    <% if current_user.is_admin? %>
                                         <li>
                                             <%= link_to "Dashboard", admin_real_estates_path, class: "dropdown-item" %>
                                         </li>
@@ -97,4 +97,7 @@
         </div>
     </nav>
 </header>
-<%=render 'carts/cart_modal_xl'%>
+
+<div id="cart-modal">
+    <%= render 'carts/cart_modal_xl' %>
+</div>

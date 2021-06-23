@@ -1,5 +1,6 @@
 class Admin::RealEstatesController < ApplicationController
-  before_action :is_admin?, :user_signed_in?
+  before_action :user_signed_in? 
+  before_action :is_admin?
 
   def index
     @estates = estates_all
@@ -66,7 +67,15 @@ class Admin::RealEstatesController < ApplicationController
         :adress,
         :zipcode,
         :city,
+        :validated?,
         pictures: []
       )
   end
+
+  def is_admin?
+    return true if current_user.is_admin?
+
+    redirect_to root_path
+  end
+
 end
