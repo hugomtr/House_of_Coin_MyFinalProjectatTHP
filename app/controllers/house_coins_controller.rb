@@ -3,9 +3,24 @@ class HouseCoinsController < ApplicationController
         @order = current_order
         @house_coin = @order.house_coins.new(order_params)
 
+        # @order.save
+        # session[:order_id] = @order.id
+        # respond_to do |format|
+        #     format.html {
+        #         redirect_back(fallback_location: root_path)
+        #     }
+        #     format.js {}
+        # end
+
         if @order.save
             session[:order_id] = @order.id
-            redirect_back(fallback_location: root_path)
+
+            respond_to do |format|
+                format.html {
+                    redirect_back(fallback_location: root_path)
+                }
+                format.js {}
+            end
         else
             puts @order.errors.messages
             flash[:notice] = @order.errors.full_messages
@@ -26,7 +41,14 @@ class HouseCoinsController < ApplicationController
         @house_coin.destroy
         @house_coins = @order.house_coins
 
-        redirect_back(fallback_location: root_path)
+        respond_to do |format|
+            format.html do 
+                redirect_back(fallback_location: root_path)
+            end
+
+            format.js do
+            end
+        end
     end
 
     private

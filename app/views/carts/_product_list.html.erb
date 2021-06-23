@@ -1,0 +1,36 @@
+<%# PRODUCT LIST %>
+<ul>
+    <%unique_items = []%>
+    <%current_order.house_coins.each do | item |%>
+        <% if !unique_items.map{ | c | c.real_estate_id }.include?(item.real_estate_id) %>
+            <% unique_items << item %>
+        <% end %>
+    <% end %>
+    <% unique_items.each do | hc | %> 
+        <%@hc = hc%>
+        <li>
+            <%# PRODUCT %>
+            <%= render 'carts/product', object: @hc %>
+        </li>
+    <% end %>
+</ul>
+
+<%# TOTAL %>
+<table class="table table-light mt-5">
+    <tbody>
+        <tr>
+            <th scope="col" width="120">Total</th>
+            <td id="cart-total">
+                <%= current_order.order_total %> €
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<%# BUTTONS group %>
+<% unless current_order.house_coins.length == 0 %>
+    <div class="d-flex mt-3" id="cart-btns">
+        <%= link_to 'Checkout', new_charge_path, class: "btn btn-primary mr-2" %>
+        <%= button_to 'Clear cart', cart_path(current_order), method: :delete, class: "btn btn-danger", remote: true %>
+    </div>
+<% end %>

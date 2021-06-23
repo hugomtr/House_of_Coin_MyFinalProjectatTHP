@@ -1,0 +1,6 @@
+deleteElt = document.querySelector("#modal-content");
+deleteElt.innerHTML = ""
+
+badgeElt = document.querySelector("#cart-badge");
+badgeElt.textContent = "0";
+modalElt.insertAdjacentHTML("beforeend", "<%= j render 'carts/product_list' %>");

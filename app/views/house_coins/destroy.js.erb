@@ -1,0 +1,8 @@
+badgeElt = document.querySelector('#cart-badge');
+badgeVal = parseInt(badgeElt.textContent);
+badgeElt.textContent = badgeVal - 1;
+
+modalElt = document.querySelector('#modal-content');
+modalElt.innerHTML = "";
+modalElt.insertAdjacentHTML("beforeend", "<%= j render 'carts/product_list' %>");
+

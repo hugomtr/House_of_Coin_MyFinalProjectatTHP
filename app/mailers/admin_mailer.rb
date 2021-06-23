@@ -1,4 +1,5 @@
 class AdminMailer < ApplicationMailer
+    
     def announce_validation(real_estate)
         admin_array = User.where(is_admin?: true)
         admin_array.each do |admin|
