@@ -48,6 +48,8 @@
     </div>
 </div>
 
+<%= render :partial => 'shared/pictures_group'%>
+
 <section class="section mb-5" id="article">
     <div class="container">
         <div class="row">
@@ -135,7 +137,7 @@
         <img src=<%= asset_path 'mark_zuckerberg.png' %> alt="mark_zuckerberg">
         <figcaption>
             <blockquote>
-                <p>Is my smile convincing?</p>
+                <p>Is my smile convincing?</p><br><br> <!-- Needed to align quotes blocks -->
             </blockquote>
             <h3>Mark Zuckerberg</h3>
             <h5>Robot</h5>
