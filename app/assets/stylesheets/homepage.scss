@@ -1,8 +1,9 @@
 #article {
-    padding: 100px 0px 0px 0px;
+    padding: 100px 0px 100px 0px;
     position: relative;
     z-index: 9;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
+    background-color: #F3F3FA;
   }
   
   #article  .section-heading h2 {
@@ -28,14 +29,17 @@
     padding-top: 20%;
   }
 
-#h1_homepage {
-  text-align: center;
-  margin-bottom: 80px;
+
+
+.container {
+  .h2 {
+    text-align: left;
+    margin-bottom: 50px;
+  }
 }
 
-#h2_homepage {
-  text-align: center;
-  margin-bottom: 80px;
+.features-item {
+  margin-top: 50px;
 }
 
 #promotion {
@@ -44,14 +48,18 @@
 
 //begin of testimonials
 
+.h2home {
+    text-align: center;
+}
+
 .testimonials {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
 .testimonials_card {
-    font-family: 'Lato', Arial, sans-serif;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -118,11 +126,6 @@
   .testimonials_card h5 {
     font-weight: 400;
     margin: 0;
-  }
-
-  .h2_testimonials {
-      text-align: center;
-      margin-bottom: 50px;
   }
 
   //end of testimonials
