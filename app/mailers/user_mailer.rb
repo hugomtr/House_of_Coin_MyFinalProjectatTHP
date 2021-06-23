@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-    default from: 'ced@yopmail.com'
+    default from: 'houseofcoins2021@gmail.com'
 
     def welcome_email(user)
         @user = user 
@@ -12,8 +12,8 @@ class UserMailer < ApplicationMailer
         mail(to: "#{user.name} <#{user.email}>", subject: 'Registration Confirmation')
     end
 
-    def ad_validation(user)
+    def offer_validation(user)
         @user = user
-        mail(to: @user.email, subject: 'Validation of your ad')
+        mail(to: @user.email, subject: 'Validation of your offer')
     end
 end
