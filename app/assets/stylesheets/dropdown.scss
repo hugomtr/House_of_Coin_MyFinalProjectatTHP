@@ -1,7 +1,7 @@
 .dropdown-item {
     &,&:focus,&:hover {
         color: $dark;
-        font-size: 16px;
+        font-size: 1rem;
     }
     &:focus,&:hover {
         background-color: $pink;
