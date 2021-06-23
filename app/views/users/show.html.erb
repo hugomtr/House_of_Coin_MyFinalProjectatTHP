@@ -83,3 +83,121 @@
     </ul>
   </div>
 </div>
+
+<div class="container">
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        My infos
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <div class="card my-5">
+        <div class="card-body">
+          <div class="card-text">
+            <p>Username: <%=current_user.username%></p>   
+            <p>Email: <%=current_user.email%></p>   
+            <div class="buttons d-flex">
+              <%=link_to 'Modify infos', edit_user_path(current_user.id), class: "btn btn-warning mr-2"%>
+              <%=link_to 'Modify registration', edit_user_registration_path(current_user.id), class: "btn btn-danger"%>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#flush-collapseTwo" 
+              aria-expanded="false" 
+              aria-controls="flush-collapseTwo">
+        My orders
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+      <ul class="list-group">
+        <%current_user.charges.each_with_index do | charge, i |%>
+          <h5 class="mt-3">Order n°<%=i + 1%></h5>
+          <li class="list-group-item">
+            <%Order.find_by(id: charge.order_id).house_coins.each do | hc |%>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h6>House Coin n°<%=hc.id%></h6>
+                  <%real = RealEstate.find_by(id: hc.real_estate_id)%>
+                  <p>Price <%=hc.coin_price%> €</p>
+                </li>
+                <%if real.pictures.present?%>
+                  <li class="list-group-item">
+                    <%#image_tag real.pictures, alt: real.name, style: "width: 20rem;"%>
+                  </li>
+                <%else%>
+                  <li class="list-group-item">
+                    <%=image_tag real.image_urls, alt: real.name, style: "width: 20rem;"%>
+                  </li>
+                <%end%>
+                <li class="list-group-item">
+                  <h6>Name</h6>
+                  <p><%=real.name%></p>
+                </li>
+                <li class="list-group-item">
+                  <h6>Address</h6>
+                  <p><%=real.adress%></p>
+                </li>
+                <li class="list-group-item">
+                  <h6>Zip code</h6>
+                  <p><%=real.zipcode%></p>
+                </li>
+              </ul>
+            <%end%>
+          </li>
+        <%end%>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#flush-collapseThree" 
+              aria-expanded="false" 
+              aria-controls="flush-collapseThree">
+        My Properties
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <ul class="list-group">
+          <%current_user.real_estates.each_with_index do | property, i |%>
+          <li class="list-group-item">
+            <h6>Property n° <%=i%></h6>
+          </li>
+          <li class="list-group-item">
+            <%if property.pictures.present?%>
+              <li class="list-group-item">
+                <%#image_tag property.pictures, alt: property.name, style: "width: 20rem;"%>
+              </li>
+            <%else%>
+              <li class="list-group-item">
+                <%=image_tag property.image_urls, alt: property.name, style: "width: 20rem;"%>
+              </li>
+            <%end%>
+          </li>
+          <li class="list-group-item">
+            <h6>HouseCoin left</h6>
+            <p><%=property.current_house_coin_number%> / <%=property.original_house_coin_number%></p>
+          </li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
