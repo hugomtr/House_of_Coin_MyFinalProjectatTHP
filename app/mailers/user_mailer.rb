@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
     default from: 'houseofcoins2021@gmail.com'
+    layout 'mailer'
 
     def welcome_email(user)
         @user = user 
@@ -13,7 +14,7 @@ class UserMailer < ApplicationMailer
     end
 
     def offer_validation(user)
-        @user = user
+        @user = User.find(user) 
         mail(to: @user.email, subject: 'Validation of your offer')
     end
 end
