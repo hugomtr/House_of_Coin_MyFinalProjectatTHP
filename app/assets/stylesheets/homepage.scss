@@ -1,8 +1,8 @@
 #article {
-    margin-top: 20px;
     padding: 100px 0px 0px 0px;
     position: relative;
     z-index: 9;
+    margin-bottom: 120px;
   }
   
   #article  .section-heading h2 {
@@ -30,18 +30,24 @@
 
 #h1_homepage {
   text-align: center;
+  margin-bottom: 80px;
 }
 
 #h2_homepage {
   text-align: center;
+  margin-bottom: 80px;
 }
 
+#promotion {
+  margin-bottom: 120px;
+}
 
 //begin of testimonials
 
 .testimonials {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .testimonials_card {
@@ -116,6 +122,7 @@
 
   .h2_testimonials {
       text-align: center;
+      margin-bottom: 50px;
   }
 
   //end of testimonials
