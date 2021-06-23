@@ -1,18 +1,20 @@
 <ul class="newsletter-block mt-auto">
-    <li class="col-12 col-sm-12 col-md-6 square-block">
-        <%= inline_svg_tag "plane_newsletter.svg", class: 'picto_newsletter' %>
-    </li>
-    <li class="col-12 col-sm-12 col-md-6">
-        <div class="d-flex flex-column">
-            <h3 class="title-news mb-2"><strong>Subscribe to newsletter</strong></h3>
-            <p class="text-news">Get the latest advices and interesting offers and real estate</p>
-            <div class="mw-form">
-                <div class="d-flex form-group mt-3">
-                <%= text_field_tag :subscribe, '', class: "form-control me-2" %>
-                <%= submit_tag "Subscribe", class: "btn btn-outline-primary" %>
+    <div class="container d-flex">
+        <li class="col-12 col-sm-12 col-md-4">
+            <%= inline_svg_tag "plane_newsletter.svg", class: 'picto_newsletter' %>
+        </li>
+        <li class="col-12 col-sm-12 col-md-8">
+            <div class="d-flex flex-column">
+                <h3 class="title-news mb-2"><strong>Subscribe to newsletter</strong></h3>
+                <p class="text-news">Get the latest advices and interesting offers and real estate</p>
+                <div class="mw-form">
+                    <div class="d-flex form-group mt-3">
+                    <%= text_field_tag :subscribe, '', class: "form-control me-2" %>
+                    <%= submit_tag "Subscribe", class: "btn btn-outline-primary" %>
+                    </div>
                 </div>
             </div>
-        </div>
-    </li>
+        </li>
+    </div>
 </ul>
 

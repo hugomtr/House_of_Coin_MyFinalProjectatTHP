@@ -1,7 +1,8 @@
+<%=label_tag 'validate', 'Validated', class: "form-check-label mr-2"%>
 <%= check_box_tag "Validated", 1, @real_estate.validated?, data: { 
                                                             remote: true, 
                                                             url: admin_real_estate_path(@real_estate.id), 
                                                             id: @real_estate.id,
                                                             params: { id: @real_estate.id, validated?: @real_estate.validated? }.to_param, 
                                                             method: "put" 
-                                                        }, class: 'real_estate-cb' %>
+                                                        }, class: 'real_estate-cb', id: 'validate' %>
