@@ -64,6 +64,10 @@ class RealEstate < ApplicationRecord
     AdminMailer.announce_validation(self).deliver_now
   end
 
+  def offer_validation
+    UserMailer.offer_validation(self.user_id).deliver_later
+  end
+
   # def attachment_presence
   #   if self.pictures.present?
   #     return true
