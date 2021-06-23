@@ -21,7 +21,7 @@ class RealEstate < ApplicationRecord
 
   #TODO reactivate mailers
   after_update :offer_validation
-  after_create :admin_offer_creation, :original_coin_number
+  after_create :admin_offer_creation_mail, :original_coin_number
 
   scope :lastest_estate, -> { order(created_at: :desc) }
 
@@ -57,8 +57,8 @@ class RealEstate < ApplicationRecord
     
   end
 
-  def announce_validation_confirm
-    AdminMailer.announce_validation(self).deliver_now
+  def admin_offer_creation_mail
+    AdminMailer.admin_offer_creation(self).deliver_now
   end
 
   def offer_validation
