@@ -15,7 +15,7 @@ Rails.application.initialize!
 # }
 
 # SMTP settings for gmail
-config.action_mailer.smtp_settings = {
+ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :user_name            => ENV[GMAIL_USERNAME],
