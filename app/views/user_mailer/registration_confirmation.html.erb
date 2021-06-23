@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    </head>
-    <body>
-        <div class="email-cont container-fluid">
-            <div class="col-12 col-sm-4">
-                <h3 class="email-title">Hello <%= @user.username %>,</h3>
-                <p>Thanks for registering! To confirm your registration click the URL below.</p>
-                <p><%= confirm_email_user_url(@user.confirm_token) %></p>
-                <p>Thanks.</p>
-                <p class="team-signature">The House of Coin team.</p>
-                <p><small>Copyright © 2021 House of Coin.</small></p>
-            </div>
-        </div>
-    </body>
-</html>
+<div class="email-cont container-fluid">
+    <div class="col-12 col-sm-4">
+        <h3 class="email-title">Hello <%= @user.username %>,</h3>
+        <p>Thanks for registering! To confirm your registration click the URL below.</p>
+        <p><%= confirm_email_user_url(@user.confirm_token) %></p>
+        <p>Thanks.</p>
+        <p class="team-signature">The House of Coin team.</p>
+        <p><small>Copyright © 2021 House of Coin.</small></p>
+    </div>
+</div>
