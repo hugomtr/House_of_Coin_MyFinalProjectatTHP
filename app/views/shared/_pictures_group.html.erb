@@ -9,6 +9,8 @@
                     <div class="card-image text-center">
                         <% if estate.pictures.attached? %>
                             <%= image_tag estate.pictures[0], alt: 'picture', class: 'w-auto h-100' %>
+                        <% else %>
+                            <%= image_tag estate.image_urls, alt: 'picture', class: 'w-auto h-100' %>
                         <% end %>
                     </div>
                 <% end %>
