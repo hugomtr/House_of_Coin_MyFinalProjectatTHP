@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
     end
 
     def offer_validation(user)
-        @user = user
+        @user = User.find(user) 
         mail(to: @user.email, subject: 'Validation of your offer')
     end
 end
