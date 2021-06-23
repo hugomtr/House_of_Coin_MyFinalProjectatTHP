@@ -10,11 +10,17 @@ class UserMailer < ApplicationMailer
     
     def registration_confirmation(user)
         @user = user
-        mail(to: "#{user.name} <#{user.email}>", subject: 'Registration Confirmation')
+        mail(to: @user.email, subject: 'Registration Confirmation')
     end
 
     def offer_validation(user)
         @user = User.find(user) 
         mail(to: @user.email, subject: 'Validation of your offer')
+    end
+
+    def buyer_charge_confirmation(user, order)
+        @user  = User.find(user)
+        @order = Order.find(order)
+        mail(to: @user.email, subject: 'Confirmation of your order')
     end
 end
