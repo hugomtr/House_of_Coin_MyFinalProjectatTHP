@@ -89,5 +89,3 @@ gem 'carrierwave'
 gem "fog-aws"
 
 gem 'inline_svg'
-
-gem 'google-api-client'
