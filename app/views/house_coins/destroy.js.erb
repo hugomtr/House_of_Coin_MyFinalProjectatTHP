@@ -6,6 +6,3 @@ modalElt = document.querySelector('#modal-content');
 modalElt.innerHTML = "";
 modalElt.insertAdjacentHTML("beforeend", "<%= j render 'carts/product_list' %>");
 
-totalElt = document.querySelector('#cart-total');
-totalVal = parseInt(totalElt.textContent) - parseInt(<%= @house_coin.coin_price %>);
-totalElt.textContent = totalVal + ' €';
