@@ -1,11 +1,6 @@
 deleteElt = document.querySelector("#modal-content");
-deleteElt.parentNode.removeChild(deleteElt);
+deleteElt.innerHTML = ""
 
 badgeElt = document.querySelector("#cart-badge");
 badgeElt.textContent = "0";
-
-totalElt = document.querySelector("#cart-total");
-totalElt.textContent = "0 €";
-
-btnsElt = document.querySelector("#cart-btns");
-btnsElt.parentNode.removeChild(btnsElt);
+modalElt.insertAdjacentHTML("beforeend", "<%= j render 'carts/product_list' %>");
