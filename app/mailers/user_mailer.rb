@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
     default from: 'houseofcoins2021@gmail.com'
+    layout 'mailer'
 
     def welcome_email(user)
         @user = user 

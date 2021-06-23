@@ -35,7 +35,9 @@ class Admin::RealEstatesController < ApplicationController
 
     if @real_estate.update(estate_params)
       flash[:notice] = "Real estate updated!"
-      @real_estate.pictures.attach(params[:pictures])
+      if @real_estate.validated? == true
+        UserMailer.offer_validation(@real_estate.user_id).deliver_now
+      end
       redirect_to admin_real_estates_path
     else
       flash.now[:notice] = "Ouppps !"
