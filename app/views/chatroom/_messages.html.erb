@@ -1,7 +1,7 @@
 <% @messages.each do |message| %>
-  <div class="d-flex flex-row p-3"> <img src="#" width="30" height="30">
-        <%= User.find_by(id:message.values[1]).username%>
-        : <%= message.values[2] %>
-  </div>  
+  <div class="d-flex flex-row p-3">
+    <img src="#" width="30" height="30">
+    <%= User.find_by(id:message.values[1]).username%>: <%= message.values[2] %>
+  </div>
 <% end %>
 
