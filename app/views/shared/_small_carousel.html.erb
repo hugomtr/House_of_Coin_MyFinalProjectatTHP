@@ -16,11 +16,11 @@
             <div class="carousel-item<% if index == 0 %> active<% end %>">
                 <!-- Picture -->
                 <div class="card-image text-center">
-                <% if @real_estate.pictures.attached? %>
-                    <%= image_tag @real_estate.thumbnail(index), alt: 'picture', class: 'w-auto h-100'%>
-                <% elsif @real_estate.image_urls %>
-                    <%= image_tag @real_estate.image_urls, alt: 'picture', class: 'w-auto h-100'%>
-                <% end %>
+                    <% if @real_estate.pictures.attached? %>
+                        <%= image_tag @real_estate.thumbnail(index), alt: 'picture', class: 'carousel-img'%>
+                    <% elsif @real_estate.image_urls %>
+                        <%= image_tag @real_estate.image_urls, alt: 'picture', class: 'carousel-img'%>
+                    <% end %>
                 </div>
             </div>
         <% end %>
