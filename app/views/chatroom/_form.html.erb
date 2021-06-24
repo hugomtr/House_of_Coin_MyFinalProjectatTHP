@@ -2,22 +2,24 @@
 #form_message{
 background: 
     linear-gradient(
-      rgba(10, 10, 10, 0.6),
-      rgba(10, 10, 10, 0.6)
+      rgba(10, 10, 10, 0.8),
+      rgba(10, 10, 10, 0.8)
     );
-    border-radius:10px;
+    border-radius:2px;
     color:white !important; 
+    border:2px;
+    border-color:white;
 }
 
 </style>
-<div class="form-group px-3" > 
+<div class="form-group px-3 mt-3" > 
   <%= form_for( :message, remote: true)  do |form| %>
      <div class="field" >
       <%= form.text_field :body,id:"form_message" %>
     </div>
 
-    <div class="actions" >
-      <%= form.submit %>
+    <div class="form-group mt-4" >
+        <%= form.submit "Save", class: "btn btn-primary me-1" %>
     </div>
   <% end %>
 </div>
