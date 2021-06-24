@@ -11,12 +11,11 @@
         <% @estates.each do |estate| %>
             <div class="row">
                 <div class="col-12 col-sm-9 px-2">
-                    <%= estate.name %>
+                <%=link_to estate.name, real_estate_path(estate.id) %>
                 </div>
                 <div class="col-12 col-sm-3 px-2 d-flex justify-content-end">
                     <% @real_estate = estate %>
 
-                    <%= render 'checkbox_validation', object: @real_estate %>
                     <%= link_to "", 
                                 edit_admin_real_estate_path(estate.id), 
                                 class: "btn-circle btn-primary fas fa-edit ms-2 my-1",

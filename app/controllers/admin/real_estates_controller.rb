@@ -68,6 +68,7 @@ class Admin::RealEstatesController < ApplicationController
 
   def estate_params
       params.permit(
+        :id,
         :name,
         :price,
         :description,
