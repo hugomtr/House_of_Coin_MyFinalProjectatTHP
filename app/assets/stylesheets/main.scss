@@ -2,7 +2,12 @@ body {
     background-color: $body;
     color: $dark;
     font-family: $font-default;
+
+    @media screen and (max-width: 767px) {
+        font-size: 1rem;
+    }
 }
+
 h1,h2,h3,h4,h5,h6 {
     font-family: $font-title;
 }
@@ -30,5 +35,3 @@ table {
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: $pink;
 }
-
-
