@@ -18,7 +18,7 @@
     <% if @investors.values.include?([current_user.id])%>
       <%= render 'form', message: @message, real_estate: @real_estate%>
     <%else %>
-      <p>No permission to write in this channel</p>
+      <p>You need to buy HouseCoins to discuss with your co-owners.</p>
     <% end %>
   </div>
   <div class="card col-2.5 mr-1">

@@ -1,3 +1,5 @@
+
+
 <section class="container my-5">
     <% @image_data = {url: 'img_home.png', pos_x: 'right', pos_y: '50%'} %>
     <%= render :partial => "real_estates/search_estate", :object => @image_data %>
@@ -6,14 +8,14 @@
 
 <div class="container my-5">
     <div class="container text-center">
-    <h2>This is why you should choose House of Coins</h2>
+    <h2>Why choose House Of Coins?</h2>
         <div class="row justify-content-center text-center">
             <div class="col-lg-3 col-md-5 col-sm-12 col-xs-12">
                 <div class="features-item">
                     <div class="features-icon">
                         <img src=<%= asset_path 'coins.png' %> alt="coins_jar">
                         <h4 class="mt-3">Investing</h4>
-                        <p>Investing in House Of Coins means making your money grow while minimizing your risk.</p>
+                        <p>Investing in House Of Coins means making your money grow while minimizing your risks.</p>
                     </div>
                 </div>
             </div>
@@ -31,7 +33,7 @@
                     <div class="features-icon">
                         <img src=<%= asset_path 'stonks.png' %> alt="stonks">
                         <h4 class="mt-3">Value</h4>
-                        <p>Dilute your risks and benefit from interesting added value.</p>
+                        <p>Benefits from an interesting added value.</p>
                     </div>
                 </div>
             </div>
@@ -40,7 +42,7 @@
                     <div class="features-icon">
                         <img src=<%= asset_path 'team.png' %> alt="people_working">
                         <h4 class="mt-3">Our Team</h4>
-                        <p>Benefit from projects audited by our teams.</p>
+                        <p>Benefits from a project audited by our teams.</p>
                     </div>
                 </div>
             </div>
@@ -48,7 +50,7 @@
     </div>
 </div>
 
-<%= render :partial => 'shared/pictures_group'%>
+<%= render :partial => 'shared/pictures_group' %>
 
 <section class="section mb-5" id="article">
     <div class="container">
@@ -56,11 +58,10 @@
             <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="left-text-content">
                     <div class="section-heading">
-                        <h6>House of Coins</h6>
                         <h2>The future of real estate investing is tokenization</h2>
                     </div>
-                    <p>Tokenization refers to the registration of an asset and its rights on a token in order to allow its management and exchange in a peer-to-peer manner on a blockchain, in an instantaneous and secure manner. A new era is opening up for real estate assets: their digitalization.
-                    This digitized asset, the "token", has several advantages.
+                    <p>Tokenization refers to the registration of an asset and its rights on a token in order to allow its management and exchange in a peer-to-peer manner on a blockchain, in an instantaneous and secure manner.</p>
+                    <p><strong>A new era is opening up for real estate assets: their digitalization.</strong></p>
                     <div class="row">
                         <div class="col-4">
                             <img src=<%= asset_path 'house_interior.png' %> alt="house_interior">
@@ -88,10 +89,10 @@
 <section class="section mb-5" id="promotion">
     <div class="container">
         <div class="row">
-        <h2 class="text-center mb-5" >Benefits of using House of Coins</h2>
+        <h2 class="text-center mb-5">Benefits of using House of Coins</h2>
             <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
                 data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                <img src=<%= asset_path 'building_art.png' %> alt="building">
+                <img src=<%= asset_path '2.png' %> alt="building">
             </div>
             <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                 <ul>
@@ -122,7 +123,9 @@
     </div>
 </section>
 
-<div class="testimonials mb-5">
+<div class="container">
+<h2 class="mb-5 text-center">Testimonials</h2>
+<div class="testimonials">
     <figure class="testimonials_card">
         <img src=<%= asset_path 'jeff_bezos.png' %> alt="jeff_bezos" />
         <figcaption>
@@ -153,6 +156,6 @@
         </figcaption>
     </figure>
 </div>
-
+</div>
 
 <%= render :partial => "shared/newsletter" %>

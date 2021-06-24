@@ -14,7 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
+//= require browser
 //= require tooltip
 //= require flash
 //= require small_carousel
-//= require carts
+//= require direct_uploads
