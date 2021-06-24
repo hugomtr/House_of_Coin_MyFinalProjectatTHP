@@ -1,11 +1,21 @@
-<% if @investors.values.include?([current_user.id])%>
-  <h3 class="text-center">Chat House of Coins<%=current_user.username%>!</h3>
-<% end %>
-<div class="container" height="15%" >
-  <div class="text-center mt-5">
-  <img src="<%=asset_path 'chat.png'%>" alt="image-cofee" width="20%"></div>
-</div>
-<hr>
+<style>
+#discussion{
+  border-radius:5px;
+  background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0.5)
+    );
+  color:white !important;
+  font-size:20px;
+  overflow-x: hidden; 
+  overflow-y: hidden; 
+  height:800px;
+}
+#container-discussion {
+  background:url("<%=asset_path 'amsterdam.jpg'%>");
+  background-size:cover;
+}
 
 <div class="d-flex flex-row justify-content-between" id="hyt">
   <div class="card col-md-9 ml-1" style="overflow:scroll;height:800px;" id="discussion">
@@ -26,10 +36,11 @@
     <div class="col-md-4">
       <%= render :partial => "column-navbar" %>
     </div>
-  </div>
+  </div>  
 </div>
 
 <script>
   let element = document.getElementById("discussion");
   element.scrollTop = element.scrollHeight;
 </script>
+
