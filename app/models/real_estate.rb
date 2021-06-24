@@ -30,7 +30,7 @@ class RealEstate < ApplicationRecord
   end
 
   def coin_price
-    coin_value = self.price.to_f / self.original_house_coin_number # The returned value must be in cents
+    coin_value = ((self.price.to_f / self.original_house_coin_number)*100)/100 # The returned value must be in cents
   end
 
   geocoded_by :full_address
@@ -44,13 +44,13 @@ class RealEstate < ApplicationRecord
 
   def original_coin_number
     if self.price <= 100000
-    house_coins_num = 100
+    house_coins_num = 10
     elsif self.price > 100000 && self.price < 500000
-    house_coins_num = 200
+    house_coins_num = 20
     elsif self.price >= 500000 && self.price < 1000000
-    house_coins_num = 300
+    house_coins_num = 30
     elsif self.price >= 1000000
-    house_coins_num = 400
+    house_coins_num = 40
     end
     self.update(original_house_coin_number: house_coins_num)
     self.update(current_house_coin_number: house_coins_num)

@@ -11,7 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #TODO reactivate mailers
-  after_create :welcome_send
+  #after_create :welcome_send
 
   validates :email, format: {
     with: /\A([\w-]+)@([\w\d-]+)\.(\w+)\z/,
