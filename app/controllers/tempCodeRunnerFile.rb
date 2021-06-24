@@ -1,25 +1,42 @@
-class UsersController < ApplicationController
-  def show
-    @user = User.friendly.find(params[:id])
-  end
+class ChargesController < ApplicationController
 
-  def edit
-    @user = find_user
-  end
+    before_action :authenticate_user!
 
-  def update
-    @user = find_user
-    @user.update(permited_params)
-    redirect_to user_path(@user)
-  end
+    def new
+        @stripe_amount = (current_order.order_total * 100).to_i
+    end
+    
+    def create
+        # Before the rescue, at the beginning of the method
+        @stripe_amount = ((current_order.order_total * 100).to_i
+        
+        begin  
+            customer = Stripe::Customer.create({
+            email: params[:stripeEmail],
+            source: params[:stripeToken],
+        })  
 
-  private
+        charge = Stripe::Charge.create({
+            customer: customer.id,
+            amount: @stripe_amount,
+            description: "Achat d'un produit",
+            currency: 'eur',
+        })
 
-  def find_user
-    User.find(params[:id])
-  end
+        rescue Stripe::CardError => e
+            flash[:error] = e.message
+            redirect_to new_charge_path
+        end
 
-  def permited_params
-    params.permit(:username)
-  end
+        update_products(current_order)
+        Charge.create(
+            stripe_id: customer,
+            user_id: current_user.id,
+            order_id: current_order.id
+        )
+
+        session[:order_id] = nil 
+        flash[:notice] = "Payment registered !"
+        redirect_to root_path
+    end
 end

@@ -11,7 +11,7 @@ class Order < ApplicationRecord
 
   private
   def buyer_housecoin
-    AdminMailer.buyer_housecoin(self.user_id, self.order_id).deliver_now
+    #AdminMailer.buyer_housecoin(self.user_id, self.order_id).deliver_now
   end
   
 end
