@@ -131,7 +131,9 @@
               <p><%=property.current_house_coin_number%> / <%=property.original_house_coin_number%></p>
             </li>
             <li class="list-group-item">
-              <%= link_to 'Modify your offer', edit_real_estate_path(property.id), class: "btn btn-warning"%>
+              <%if !property.validated?%>
+                <%= link_to 'Modify your offer', edit_real_estate_path(property.id), class: "btn btn-warning"%>
+              <%end%>
             </li>
             <%end%>
           </ul>
