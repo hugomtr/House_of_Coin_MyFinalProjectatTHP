@@ -30,7 +30,7 @@ class RealEstate < ApplicationRecord
   end
 
   def coin_price
-    coin_value = self.price / self.original_house_coin_number # The returned value must be in cents
+    coin_value = self.price.to_f / self.original_house_coin_number # The returned value must be in cents
   end
 
   geocoded_by :full_address
@@ -54,7 +54,6 @@ class RealEstate < ApplicationRecord
     end
     self.update(original_house_coin_number: house_coins_num)
     self.update(current_house_coin_number: house_coins_num)
-    
   end
 
   def admin_offer_creation_mail
