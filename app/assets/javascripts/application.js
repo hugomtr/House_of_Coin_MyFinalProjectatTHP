@@ -18,3 +18,4 @@
 //= require tooltip
 //= require flash
 //= require small_carousel
+//= require direct_uploads
