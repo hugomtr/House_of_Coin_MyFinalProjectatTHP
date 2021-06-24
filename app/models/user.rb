@@ -13,6 +13,11 @@ class User < ApplicationRecord
   #TODO reactivate mailers
   #after_create :welcome_send
 
+  validates :email, format: {
+    with: /\A([\w-]+)@([\w\d-]+)\.(\w+)\z/,
+    message: 'not valid'
+  }
+
   private
     def welcome_send
       UserMailer.welcome_email(self).deliver_now
