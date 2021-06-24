@@ -14,6 +14,9 @@
                 <%=link_to estate.name, real_estate_path(estate.id) %>
                 </div>
                 <div class="col-12 col-sm-3 px-2 d-flex justify-content-end">
+                    <% if estate.validated? %>
+                        <i class="primary fas fa-check ms-1 my-1"></i>
+                    <% end %>
                     <% @real_estate = estate %>
 
                     <%= link_to "", 
