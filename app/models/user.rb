@@ -15,7 +15,7 @@ class User < ApplicationRecord
   #after_create :welcome_send
 
   validates :email, format: {
-    with: /\A([\w-]+)@([\w\d-]+)\.(\w+)\z/,
+    with: /\A([\w-]+)@([\w-]+)\.(\w+)\z/,
     message: 'not valid'
   }
 
