@@ -13,5 +13,14 @@
                 <%= link_to 'Modify your offer', edit_real_estate_path(@real_estate.id), class: "btn btn-warning"%>
             <%end%>
         </div>
+        <div class="button-housecoin">
+            <% if current_user.is_admin? && !@real_estate.validated?%>
+                <%= button_to 'Validate offer', 
+                    admin_real_estate_path(@real_estate.id), 
+                    method: :put, 
+                    params: { validated?: true }, 
+                    class: "btn btn-primary" %>
+            <%end%>
+        </div>
     </li>
 </ul>
