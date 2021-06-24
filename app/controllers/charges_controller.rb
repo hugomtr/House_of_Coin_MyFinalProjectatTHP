@@ -10,7 +10,8 @@ class ChargesController < ApplicationController
     def create
         # Before the rescue, at the beginning of the method
         @stripe_amount = (current_order.order_total * 100)
-        
+        update_products(current_order)
+
         begin  
             customer = Stripe::Customer.create({
             email: params[:stripeEmail],
