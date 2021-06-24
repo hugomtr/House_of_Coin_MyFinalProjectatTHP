@@ -6,7 +6,7 @@ class Order < ApplicationRecord
     self.house_coins.each do | hc |
       total += hc.coin_price
     end
-    return total
+    return total.to_i + 1
   end
 
   private

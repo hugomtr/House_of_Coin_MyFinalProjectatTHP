@@ -3,12 +3,12 @@ class ChargesController < ApplicationController
     before_action :authenticate_user!
 
     def new
-        @stripe_amount = (current_order.order_total * 100).to_i + 1
+        @stripe_amount = (current_order.order_total * 100)
     end
     
     def create
         # Before the rescue, at the beginning of the method
-        @stripe_amount = (current_order.order_total * 100).to_i+1
+        @stripe_amount = (current_order.order_total * 100)
         
         begin  
             customer = Stripe::Customer.create({
