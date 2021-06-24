@@ -1,5 +1,10 @@
 <section class="container my-5">
-    <% @image_data = {url: 'img_home.png', pos_x: 'right', pos_y: '50%'} %>
+    <% @image_data = {
+        url: 'img_home.png', 
+        pos_x: 'right', 
+        pos_y: '50%',
+        path: contact_path,
+        link: 'Contact us'} %>
     <%= render :partial => "search_estate", :object => @image_data %>
 </section>
 
@@ -13,7 +18,7 @@
                     <% @estate = estate %>
                     <%= render :partial => "card_estate", :object => @estate %>
                 </li>
-            <%end%>    
+            <%end%>
         <% end %>
     </ul>
     <!-- MAP -->
