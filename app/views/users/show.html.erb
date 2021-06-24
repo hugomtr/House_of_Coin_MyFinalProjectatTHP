@@ -95,12 +95,15 @@
           <ul class="list-group">
             <%current_user.real_estates.each_with_index do | property, i |%>
             <li class="list-group-item">
-              <h6>Property n° <%=i%></h6>
+              <h6>Offer n° <%=i + 1%></h6>
+            </li>
+            <li class="list-group-item">
+              <h6><%=property.name%><h6>
             </li>
             <li class="list-group-item">
               <%if property.pictures.present?%>
                 <li class="list-group-item">
-                  <%#image_tag property.pictures, alt: property.name, style: "width: 20rem;"%>
+                  <%=image_tag property.pictures[0], alt: property.name, style: "width: 20rem;"%>
                 </li>
               <%else%>
                 <li class="list-group-item">
@@ -109,8 +112,11 @@
               <%end%>
             </li>
             <li class="list-group-item">
-              <h6>HouseCoin left</h6>
+              <h6>HouseCoins left</h6>
               <p><%=property.current_house_coin_number%> / <%=property.original_house_coin_number%></p>
+            </li>
+            <li class="list-group-item">
+              <%= link_to 'Modify your offer', edit_real_estate_path(property.id), class: "btn btn-warning"%>
             </li>
             <%end%>
           </ul>
