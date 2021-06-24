@@ -1,0 +1,23 @@
+.accordion-flush {
+    .accordion-item {
+        border: 1px solid rgba(0,0,0,.125);
+
+        &:first-child {
+            border-top: 1px solid rgba(0,0,0,.125);
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+        &:last-child {
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            border-bottom-left-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: $pink;
+            color: $primary;
+        }
+        .list-group-item {
+            border: 0;
+        }
+    }
+}

@@ -3,6 +3,9 @@
     <div class="mw-form custom-form">
         <%= form_tag(user_path(@user.id), method: :put, id: "user-profile-form", multipart: true )  do %>
             <div class="form-group mt-3">
+                <%= file_field_tag :avatar, class: "form-control" %>
+            </div>
+            <div class="form-group mt-3">
                 <%= label_tag "User name" %>
                 <%= text_field_tag :username, @user.username, class: "form-control" %>
             </div>
