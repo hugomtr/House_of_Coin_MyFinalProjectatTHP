@@ -18,3 +18,4 @@
 //= require flash
 //= require small_carousel
 //= require carts
+//= require direct_uploads
