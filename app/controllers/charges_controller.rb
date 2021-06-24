@@ -28,7 +28,6 @@ class ChargesController < ApplicationController
             redirect_to new_charge_path
         end
 
-        update_products(current_order)
         Charge.create(
             stripe_id: customer,
             user_id: current_user.id,
