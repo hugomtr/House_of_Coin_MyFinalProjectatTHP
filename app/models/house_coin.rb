@@ -9,7 +9,7 @@ class HouseCoin < ApplicationRecord
   def sufficient_house_coin_num?
     num = HouseCoin.where(real_estate_id:self.real_estate_id).length
     errors.add(:id) unless 
-      num < self.real_estate.original_house_coin_number
+      num < self.real_estate.current_house_coin_number
   end
 
 end
