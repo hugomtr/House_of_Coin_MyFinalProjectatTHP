@@ -3,13 +3,11 @@ class HouseCoin < ApplicationRecord
   belongs_to :real_estate
   belongs_to :user
   
-  before_create :sufficient_house_coin_num?
-
-  private
+  validate :sufficient_house_coin_num?
 
   def sufficient_house_coin_num?
     num = RealEstate.find(self.real_estate_id)
-    if num.current_house_coin_number <= 0
+    if num.house_coin_number >= 
       return false
     end
   end
