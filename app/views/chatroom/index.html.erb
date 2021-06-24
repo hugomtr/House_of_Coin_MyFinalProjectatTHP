@@ -1,32 +1,44 @@
-<% if @investors.values.include?([current_user.id])%>
-  <h3 class="text-center">Chat House of Coins<%=current_user.username%>!</h3>
-<% end %>
-<div class="container" height="15%" >
-  <div class="text-center mt-5">
-  <img src="<%=asset_path 'chat.png'%>" alt="image-cofee" width="20%"></div>
-</div>
-<hr>
+<style>
+#discussion{
+  border-radius:5px;
+  background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0.5)
+    );
+  color:white !important;
+  font-size:20px;
+  overflow-x: hidden; 
+  overflow-y: hidden; 
+  height:800px;
+}
+#container-discussion {
+  background:url("<%=asset_path 'amsterdam.jpg'%>");
+  background-size:cover;
+}
 
-<div class="d-flex flex-row justify-content-between">
-  <div class="card col-md-9 ml-1" style="overflow:scroll;height:800px;" id="discussion">
-    <div class="d-flex flex-row p-3">
-      <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="25" height="25">
-      <div class="chat ml-2 p-3">Hello and thank you for visiting House of Coins</div>
+</style>
+<div id="container-discussion">
+  <% if @investors.values.include?([current_user.id])%>
+    <h3 class="text-center">Chat House of Coins <%=current_user.username%>!</h3>
+  <% end %>
+
+  <div class="d-flex justify-content-center p-2">
+    <div class="card col-md-10" id="discussion">
+      <div class="d-flex flex-row p-3">
+        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="25" height="25">
+        <div class="chat ml-2 p-3">Hello and thank you for visiting House of Coins</div>
+      </div>
+      <div id="message-container">
+        <%= render :partial => "messages" %>
+      </div>
+      <% if @investors.values.include?([current_user.id])%>
+        <%= render 'form', message: @message, real_estate: @real_estate%>
+      <%else %>
+        <p>You need to buy HouseCoins to discuss with your co-owners.</p>
+      <% end %>
     </div>
-    <div id="message-container">
-      <%= render :partial => "messages" %>
-    </div>
-    <% if @investors.values.include?([current_user.id])%>
-      <%= render 'form', message: @message, real_estate: @real_estate%>
-    <%else %>
-      <p>You need to buy HouseCoins to discuss with your co-owners.</p>
-    <% end %>
-  </div>
-  <div class="card col-2.5 mr-1">
-    <div class="col-md-4">
-      <%= render :partial => "column-navbar" %>
-    </div>
-  </div>
+  </div>  
 </div>
 
 <script>

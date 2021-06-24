@@ -1,4 +1,16 @@
-<div class="form-group px-3"> 
+<style>
+#form_message{
+background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.6),
+      rgba(10, 10, 10, 0.6)
+    );
+    border-radius:10px;
+    color:white !important; 
+}
+
+</style>
+<div class="form-group px-3" > 
   <%= form_for( :message, remote: true)  do |form| %>
      <div class="field" >
       <%= form.text_field :body,id:"form_message" %>
