@@ -17,9 +17,11 @@
       <!-- BODY -->
       <div id="flush-collapseOne" class="accordion-collapse collapse pb-3 show" aria-labelledby="profile-accordion-item-1" data-bs-parent="#profile-accordion">
         <div class="accordion-body mt-3">
-          <%if @user.avatar.attached? %>
-            <%= image_tag @user.avatar, alt: 'avatar', class: 'img-avatar float-end ms-3 mb-3' %>
-          <% end %>
+          <% @avatar_data = { class: 'img-avatar float-end ms-3 mb-3' } %>
+          <%= render :partial => "shared/avatar", :object => @avatar_data %>
+          <%#if @user.avatar.attached? %>
+            <%#= image_tag @user.avatar, alt: 'avatar', class: 'img-avatar float-end ms-3 mb-3' %>
+          <%# end %>
           <p>Username: <%= current_user.username %></p>
           <p>Email: <%= current_user.email %></p>
           <div class="buttons d-flex mt-4">
