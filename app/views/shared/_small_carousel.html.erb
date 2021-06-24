@@ -15,18 +15,30 @@
         <% @real_estate.pictures.each.with_index do |img, index| %>
             <div class="carousel-item<% if index == 0 %> active<% end %>">
                 <!-- Picture -->
-                <div class="bd-placeholder-img" style="background-image: url('<%= polymorphic_url(@real_estate.thumbnail(index)) %>');"></div>
+                <div class="card-image text-center">
+                <% if @real_estate.pictures.attached? %>
+                    <%= image_tag @real_estate.thumbnail(index), alt: 'picture', class: 'w-auto h-100'%>
+                <% elsif @real_estate.image_urls %>
+                    <%= image_tag @real_estate.image_urls, alt: 'picture', class: 'w-auto h-100'%>
+                <% end %>
+                </div>
             </div>
         <% end %>
     </div>
 
     <!-- PREV AND NEXT BUTTONS -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#small-carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <button class="carousel-control-prev" 
+            type="button" 
+            data-bs-target="#small-carousel" 
+            data-bs-slide="prev">
+        <%= inline_svg_tag "chevron-left.svg", class: "chevron-carousel" %>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#small-carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <button class="carousel-control-next" 
+            type="button" 
+            data-bs-target="#small-carousel" 
+            data-bs-slide="next">
+        <%= inline_svg_tag "chevron-right.svg", class: "chevron-carousel" %>
         <span class="visually-hidden">Next</span>
     </button>
 </div>

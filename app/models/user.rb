@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_one_attached :avatar
 
   has_many :house_coins
   has_many :real_estates
@@ -14,7 +15,7 @@ class User < ApplicationRecord
   #after_create :welcome_send
 
   validates :email, format: {
-    with: /\A([\w-]+)@([\w\d-]+)\.(\w+)\z/,
+    with: /\A([\w-]+)@([\w-]+)\.(\w+)\z/,
     message: 'not valid'
   }
 

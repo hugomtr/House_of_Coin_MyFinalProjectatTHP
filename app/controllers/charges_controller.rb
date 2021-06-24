@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 
     before_action :authenticate_user!
+    before_action :is_available_to_buy?
 
     def new
         @stripe_amount = (current_order.order_total * 100)
@@ -9,7 +10,8 @@ class ChargesController < ApplicationController
     def create
         # Before the rescue, at the beginning of the method
         @stripe_amount = (current_order.order_total * 100)
-        
+        update_products(current_order)
+
         begin  
             customer = Stripe::Customer.create({
             email: params[:stripeEmail],
@@ -28,7 +30,6 @@ class ChargesController < ApplicationController
             redirect_to new_charge_path
         end
 
-        update_products(current_order)
         Charge.create(
             stripe_id: customer,
             user_id: current_user.id,

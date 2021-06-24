@@ -1,12 +1,26 @@
 <ul class="get-housecoin row mb-4">
     <li class="d-flex flex-column col-12 col-sm-8">
         <h6>Buy HouseCoin since :</h6>
-        <h5><%= @real_estate.coin_price %> € / housecoin</h5>
+        <h5><%= @real_estate.coin_price.to_i %> € / housecoin</h5>
     </li>
 
     <li class="d-flex flex-column col-12 col-sm-4">
         <div class="button-housecoin">
             <%=button_to 'Get housecoin', house_coins_path, method: :post, params: { real_estate_id: @real_estate.id, coin_price: @real_estate.coin_price, user_id: @real_estate.user, order_id: current_order }, class: "btn btn-primary"%>
+        </div>
+        <div class="button-housecoin">
+            <% if current_user == @real_estate.user && !@real_estate.validated?%>
+                <%= link_to 'Modify your offer', edit_real_estate_path(@real_estate.id), class: "btn btn-warning"%>
+            <%end%>
+        </div>
+        <div class="button-housecoin">
+            <% if current_user.is_admin? && !@real_estate.validated?%>
+                <%= button_to 'Validate offer', 
+                    admin_real_estate_path(@real_estate.id), 
+                    method: :put, 
+                    params: { validated?: true }, 
+                    class: "btn btn-primary" %>
+            <%end%>
         </div>
     </li>
 </ul>

@@ -3,4 +3,5 @@ class ApplicationController < ActionController::Base
     include HouseCoinsHelper
     include ChargesHelper
     include ChatroomHelper
+    include RealEstatesHelper
 end

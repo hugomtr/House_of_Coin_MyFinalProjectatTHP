@@ -2,18 +2,10 @@
      style="background-image: url('<%= asset_path @image_data[:url] %>'); 
             background-position-x: <%= @image_data[:pos_x] %>; 
             background-position-y: <%= @image_data[:pos_y] %>">
+    <!-- CONTENT -->
     <div class="estate-search-w">
-        <h1>Modern living for everyone</h1>
-        <p class="sub-title">We provide a complete service for the sale, purchase or rental of real estate. We have been operating in Madrid and Barcelona more than 15 years.</p>
+        <h1>House of Coins</h1>
+        <p class="sub-title">We provide a complete service for the sale, purchase or rental of real estate. We have been operating in France for over two years.</p>
+        <%=link_to @image_data[:link], @image_data[:path], class: "btn btn-outline-primary w-auto"%>
     </div>
-    <%= form_tag(real_estates_path, method: "get", class: "search-estate-form d-inline-flex align-items-center mt-3", multipart: true )  do %>
-        <%#= select_tag "property_type", options_from_collection_for_select(@people, "id", "class") %>
-        <div class="input-group d-flex align-items-stretch me-2">
-            <i class="form-control fas fa-map-marker-alt"></i>
-            <%= text_field_tag :location, "Search of location", class: "form-control w-auto" %>
-        </div>
-        <%= submit_tag "Search", class: "btn btn-primary w-auto" do %>
-            <i class="fas fa-search"></i>
-        <%end%>
-    <%end%>
 </div>

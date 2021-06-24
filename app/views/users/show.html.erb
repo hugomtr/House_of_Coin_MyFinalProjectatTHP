@@ -1,29 +1,39 @@
 <div class="container my-5" style="height: 100%;">
-  <div class="accordion accordion-flush">
-    <div class="accordion-item">
+  <ul class="accordion accordion-flush" id="profile-accordion">
+
+    <!-- ITEM 01 -->
+    <li class="accordion-item" id="profile-accordion-item-1">
+      <!-- HEADER -->
       <h1 class="accordion-header">
-        <button class="accordion-button collapsed" 
+        <button class="accordion-button" 
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#flush-collapseOne" 
-                aria-expanded="false" 
+                aria-expanded="true" 
                 aria-controls="flush-collapseOne">
           My infos
         </button>
       </h1>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">
-          <p>Username: <%=current_user.username%></p>   
-          <p>Email: <%=current_user.email%></p>   
-          <div class="buttons d-flex">
-            <%=link_to 'Modify infos', edit_user_path(current_user.id), class: "btn btn-warning mr-2"%>
-            <%=link_to 'Modify registration', edit_user_registration_path(current_user.id), class: "btn btn-danger"%>
+      <!-- BODY -->
+      <div id="flush-collapseOne" class="accordion-collapse collapse pb-3 show" aria-labelledby="profile-accordion-item-1" data-bs-parent="#profile-accordion">
+        <div class="accordion-body mt-3">
+          <%if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, alt: 'avatar', class: 'img-avatar float-end ms-3 mb-3' %>
+          <% end %>
+          <p>Username: <%= current_user.username %></p>
+          <p>Email: <%= current_user.email %></p>
+          <div class="buttons d-flex mt-4">
+            <%= link_to 'Modify infos', edit_user_path(current_user.id), class: "btn btn-primary mr-2" %>
+            <%= link_to 'Modify registration', edit_user_registration_path(current_user.id), class: "btn btn-outline-primary" %>
           </div>
         </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
+    </li>
+
+    <!-- ITEM 02 -->
+    <li class="accordion-item" id="profile-accordion-item-2">
+      <!-- HEADER -->
+      <h1 class="accordion-header">
         <button class="accordion-button collapsed" 
                 type="button" 
                 data-bs-toggle="collapse" 
@@ -32,20 +42,21 @@
                 aria-controls="flush-collapseTwo">
           My HouseCoins
         </button>
-      </h2>
+      </h1>
+      <!-- BODY -->
       <div id="flush-collapseTwo" 
-            class="accordion-collapse collapse" 
-            aria-labelledby="flush-headingTwo" 
-            data-bs-parent="#accordionFlushExample">
+            class="accordion-collapse collapse pb-3" 
+            aria-labelledby="profile-accordion-item-2" 
+            data-bs-parent="#profile-accordion">
         <div class="accordion-body">
           <%current_user.charges.each_with_index do | charge, i |%>
-            <h5 class="mt-3">Order n°<%=i + 1%></h5>
-            <li class="list-group-item">
-              <%Order.find_by(id: charge.order_id).house_coins.each do | hc |%>
+            <h4 class="mt-3">Order n°<%= i + 1 %></h4>
+            <div class="list-group-item">
+              <% Order.find_by(id: charge.order_id).house_coins.each do | hc | %>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
-                    <h6>House Coin n°<%=hc.id%></h6>
-                    <%real = RealEstate.find_by(id: hc.real_estate_id)%>
+                    <h5>House Coin n°<%=hc.id%></h5>
+                    <% real = RealEstate.find_by(id: hc.real_estate_id) %>
                     <p>Price <%=hc.coin_price%> €</p>
                   </li>
                   <%if real.pictures.present?%>
@@ -58,26 +69,29 @@
                     </li>
                   <%end%>
                   <li class="list-group-item">
-                    <h6>Name</h6>
+                    <h5>Name</h5>
                     <p><%=real.name%></p>
                   </li>
                   <li class="list-group-item">
-                    <h6>Address</h6>
+                    <h5>Address</h5>
                     <p><%=real.adress%></p>
                   </li>
                   <li class="list-group-item">
-                    <h6>Zip code</h6>
+                    <h5>Zip code</h5>
                     <p><%=real.zipcode%></p>
                   </li>
                 </ul>
               <%end%>
-            </li>
+            </div>
           <%end%>
         </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
+    </li>
+
+    <!-- ITEM 03 -->
+    <li class="accordion-item" id="profile-accordion-item-3">
+      <!-- HEADER -->
+      <h1 class="accordion-header">
         <button class="accordion-button collapsed" 
                 type="button" 
                 data-bs-toggle="collapse" 
@@ -86,35 +100,46 @@
                 aria-controls="flush-collapseThree">
           My Offers
         </button>
-      </h2>
+      </h1>
+      <!-- BODY -->
       <div id="flush-collapseThree" 
-            class="accordion-collapse collapse" 
-            aria-labelledby="flush-headingThree" 
-            data-bs-parent="#accordionFlushExample">
+            class="accordion-collapse collapse pb-3" 
+            aria-labelledby="profile-accordion-item-3" 
+            data-bs-parent="#profile-accordion">
         <div class="accordion-body">
           <ul class="list-group">
             <%current_user.real_estates.each_with_index do | property, i |%>
             <li class="list-group-item">
-              <h6>Property n° <%=i%></h6>
+              <h5>Offer n° <%=i + 1%></h5>
+            </li>
+            <li class="list-group-item">
+              <h6><%=property.name%><h6>
             </li>
             <li class="list-group-item">
               <%if property.pictures.present?%>
                 <li class="list-group-item">
-                  <%#image_tag property.pictures, alt: property.name, style: "width: 20rem;"%>
+                  <%=image_tag property.pictures[0], alt: property.name, style: "width: 20rem;"%>
                 </li>
               <%else%>
                 <li class="list-group-item">
-                  <%=image_tag property.image_urls, alt: property.name, style: "width: 20rem;"%>
+                  <%= image_tag property.image_urls, alt: property.name, style: "width: 20rem;" %>
                 </li>
               <%end%>
             </li>
             <li class="list-group-item">
-              <h6>HouseCoin left</h6>
+              <h5>HouseCoins left</h5>
               <p><%=property.current_house_coin_number%> / <%=property.original_house_coin_number%></p>
+            </li>
+            <li class="list-group-item">
+              <%if !property.validated?%>
+                <%= link_to 'Modify your offer', edit_real_estate_path(property.id), class: "btn btn-warning"%>
+              <%end%>
             </li>
             <%end%>
           </ul>
         </div>
       </div>
-    </div>
+    </li>
+
+  </ul>
 </div>
