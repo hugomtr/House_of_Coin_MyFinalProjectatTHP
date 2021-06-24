@@ -17,4 +17,13 @@ module ChargesHelper
             hc.update(user: current_user)
         end
     end
+    
+    def is_available_to_buy?
+        houses=current_order.house_coins.map{|u| u.real_estate}
+        houses.each do |house| 
+            if house.current_house_coin_number + houses.count(house) > house.original_house_coin_number
+                return false
+            end
+        end
+    end
 end

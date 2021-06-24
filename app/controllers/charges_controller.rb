@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 
     before_action :authenticate_user!
+    before_action :is_available_to_buy?
 
     def new
         @stripe_amount = (current_order.order_total * 100)
