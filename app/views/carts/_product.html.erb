@@ -10,7 +10,7 @@
         <tr>
             <th scope="col">Price</th>
             <td>
-                <%= ((q * @hc.coin_price)*100)/100 %> €
+                <%= (q * @hc.coin_price).to_i %> €
             </td>
         </tr>
         <tr>
