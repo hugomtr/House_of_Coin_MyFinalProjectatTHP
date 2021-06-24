@@ -73,20 +73,6 @@ end
     end
 end
 
-30.times do
-    coin = HouseCoin.new(
-        order: Order.all.sample,
-        real_estate_id: RealEstate.all.sample.id,
-        coin_price: Faker::Number.number(digits: 4),
-        user_id: User.all.sample.id
-    )
-    if coin.save
-        puts "coin OK"
-    else
-        puts "coin"
-        puts coin.errors.messages
-    end
-end
 
 30.times do
     charge = Charge.new(
