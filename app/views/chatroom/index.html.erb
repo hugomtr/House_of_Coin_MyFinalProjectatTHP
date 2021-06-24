@@ -1,6 +1,6 @@
 <style>
 #discussion{
-  border-radius:5px;
+  border-radius:10px;
   background: 
     linear-gradient(
       rgba(10, 10, 10, 0.5),
@@ -9,21 +9,25 @@
   color:white !important;
   font-size:20px;
   overflow-x: hidden; 
-  overflow-y: hidden; 
-  height:800px;
+  overflow-y: scroll; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  height:84vh;
 }
+
+#discussion::-webkit-scrollbar {
+    display: none;
+}
+
 #container-discussion {
   background:url("<%=asset_path 'amsterdam.jpg'%>");
   background-size:cover;
 }
-
 </style>
-<div id="container-discussion">
-  <% if @investors.values.include?([current_user.id])%>
-    <h3 class="text-center">Chat House of Coins <%=current_user.username%>!</h3>
-  <% end %>
 
-  <div class="d-flex justify-content-center p-2">
+<div id="container-discussion">
+
+  <div class="d-flex justify-content-center p-5">
     <div class="card col-md-10" id="discussion">
       <div class="d-flex flex-row p-3">
         <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="25" height="25">
