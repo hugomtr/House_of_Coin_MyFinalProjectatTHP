@@ -1,7 +1,8 @@
 <div class="cross-selling">
     <h2 id="selling">You might be interested in</h2>
     <ul class="estate-list row mt-4">
-        <% @estates_latest.each do |estate| %>
+        <% valid = @estates_latest.keep_if{ |e| e.validated?} %>
+        <% valid.each do |estate| %>
             <li class="col-12 col-sm-6 col-md-3">
                 <%= link_to real_estate_path(estate.id), 
                             :data => { :bs_toggle => "tooltip", :bs_placement => "bottom" }, 
