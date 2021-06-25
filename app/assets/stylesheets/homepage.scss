@@ -56,27 +56,27 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    min-width: 250px;
-    max-width: 310px;
-    width: 100%;
+    //width: 33.33%;
+    //max-width: 310px;
+    //width: 100%;
     background-color: #000000;
     color: #ffffff;
     text-align: center;
     font-size: 1rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   }
-  
+
   .testimonials_card * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  
+
   .testimonials_card img {
     max-width: 100%;
     vertical-align: top;
     opacity: 0.7;
   }
-  
+
   .testimonials_card figcaption {
     position: absolute;
     top: 0;
@@ -85,7 +85,7 @@
     right: 0;
     padding: 80px 10% 15%;
   }
-  
+
   .testimonials_card figcaption:before {
     content: "\201C";
     position: absolute;
@@ -97,7 +97,7 @@
     top: 0px;
     left: 50%;
   }
-  
+
   .testimonials_card blockquote {
     padding: 0;
     margin: 0;
@@ -105,7 +105,7 @@
     font-size: 1.2rem;
     font-family: $font-default;
   }
-  
+
   .testimonials_card h3 {
     text-transform: uppercase;
     font-size: 1.250rem;
