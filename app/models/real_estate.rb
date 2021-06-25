@@ -64,12 +64,4 @@ class RealEstate < ApplicationRecord
     UserMailer.offer_validation(self.user_id).deliver_now
   end
 
-  # def attachment_presence
-  #   if self.pictures.present?
-  #     return true
-  #   else
-  #     errors[:pictures] << "Your offer must have pictures."
-  #   end
-  # end
-
 end

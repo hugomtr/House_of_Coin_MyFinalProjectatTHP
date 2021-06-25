@@ -2,14 +2,6 @@ class HouseCoinsController < ApplicationController
     def create
         @order = current_order
         @house_coin = @order.house_coins.new(order_params)
-        # @order.save
-        # session[:order_id] = @order.id
-        # respond_to do |format|
-        #     format.html {
-        #         redirect_back(fallback_location: root_path)
-        #     }
-        #     format.js {}
-        # end
 
         if @order.save
             session[:order_id] = @order.id

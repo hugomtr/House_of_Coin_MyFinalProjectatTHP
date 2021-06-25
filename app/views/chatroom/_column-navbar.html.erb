@@ -1,7 +1,7 @@
-
 <ul class="nav navbar-dark flex-column">
   <li class="nav-item">
-    <a class="nav-link active" href="/real_estates">Return to our Products</a>
+  <% @id %>
+  <%= link_to "Real Estate", real_estate_path(@id), class: "btn btn-primary" %>
   </li>
 </ul>
 
