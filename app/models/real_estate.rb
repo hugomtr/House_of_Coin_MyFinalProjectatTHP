@@ -14,15 +14,9 @@ class RealEstate < ApplicationRecord
   validates :zipcode ,presence: true
   validates :city ,presence: true
 
-  # validate :attachment_presence
-
-  scope :lastest_estate, -> { order(created_at: :desc) }
-
   #TODO reactivate mailers
   after_update :offer_validation
   after_create :admin_offer_creation_mail, :original_coin_number
-
-  scope :lastest_estate, -> { order(created_at: :desc) }
 
   def thumbnail input
     return self.pictures[input].variant(resize: '500x500').processed
@@ -38,7 +32,7 @@ class RealEstate < ApplicationRecord
   def full_address
     "#{adress} ,#{zipcode}, #{city}"
   end
-  
+
   private
 
   def original_coin_number
