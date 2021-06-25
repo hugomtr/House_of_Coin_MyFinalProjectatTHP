@@ -16,11 +16,10 @@ class RealEstate < ApplicationRecord
 
   # validate :attachment_presence
 
-  # For show the latest real estates
   scope :lastest_estate, -> { order(created_at: :desc) }
 
   #TODO reactivate mailers
-  # after_update :offer_validation
+  after_update :offer_validation
   after_create :admin_offer_creation_mail, :original_coin_number
 
   scope :lastest_estate, -> { order(created_at: :desc) }
@@ -63,5 +62,4 @@ class RealEstate < ApplicationRecord
   def offer_validation
     UserMailer.offer_validation(self.user_id).deliver_now
   end
-
 end

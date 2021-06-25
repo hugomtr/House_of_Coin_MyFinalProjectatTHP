@@ -49,6 +49,7 @@
     display: flex;
     margin-top: 50px;
     margin-bottom: 50px;
+    margin-left: 2px;
     justify-content: space-between;
 }
 
@@ -106,9 +107,8 @@
     font-family: $font-default;
   }
   
-  .testimonials_card h3 {
+  .testimonials_card h4 {
     text-transform: uppercase;
-    font-size: 1.250rem;
     font-weight: 400;
     line-height: 24px;
     margin: 3px 0;

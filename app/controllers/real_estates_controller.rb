@@ -78,7 +78,7 @@ class RealEstatesController < ApplicationController
   end
 
   def estate_validated?
-    unless estate_find.validated?
+    unless estate_find.validated? || current_user.id == estate_find.user_id
       redirect_to root_path
     end
   end

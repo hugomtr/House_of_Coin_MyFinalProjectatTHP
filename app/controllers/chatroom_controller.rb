@@ -29,5 +29,4 @@ class ChatroomController < ApplicationController
   def find_real_estate
     return RealEstate.find(params[:real_estate_id])
   end
-  
 end
