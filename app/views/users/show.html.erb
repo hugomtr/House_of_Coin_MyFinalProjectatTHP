@@ -78,12 +78,12 @@
               <h5>Offer n° <%=i + 1%></h5>
             </li>
             <li class="list-group-item">
-              <h6><%=property.name%><h6>
+              <h6><%= property.name %><h6>
             </li>
             <li class="list-group-item">
               <%if property.pictures.present?%>
                 <li class="list-group-item">
-                  <%=image_tag property.pictures[0], alt: property.name, style: "width: 20rem;"%>
+                  <%=image_tag property.pictures[0], alt: property.name, style: "width: 20rem;" %>
                 </li>
               <%else%>
                 <li class="list-group-item">
@@ -93,11 +93,11 @@
             </li>
             <li class="list-group-item">
               <h5>HouseCoins left</h5>
-              <p><%=property.current_house_coin_number%> / <%=property.original_house_coin_number%></p>
+              <p><%= property.current_house_coin_number %> / <%= property.original_house_coin_number %></p>
             </li>
             <li class="list-group-item">
-              <%if !property.validated?%>
-                <%= link_to 'Modify your offer', edit_real_estate_path(property.id), class: "btn btn-warning"%>
+              <% if !property.validated? %>
+                <%= link_to 'Modify your offer', edit_real_estate_path(property.id), class: "btn btn-warning" %>
               <%end%>
             </li>
             <%end%>

@@ -44,6 +44,5 @@ class UsersController < ApplicationController
   def permited_params
     params.permit(:username)
   end
-
 end
 

@@ -1,49 +1,39 @@
-//first_block_choose_house_of_coins
-
 .features-item {
   margin-top: 50px;
 }
-
-//second_block_future_of_real_estate
 
 #article {
     padding: 100px 0px 100px 0px;
     position: relative;
     background-color: #F3F3FA;
-  }
+}
   
-  #article  .section-heading h2 {
+#article .section-heading h2 {
     padding-right: 120px;
-  }
+}
   
-  #article  img {
+#article img {
     width: 100%;
     overflow: hidden;
-  }
+}
   
-  #article  .left-text-content p {
+#article .left-text-content p {
     margin-bottom: 25px;
-  }
-  
-  #article  .right-content {
+}
+
+#article .right-content {
     margin-left: 30px;
-  }
-  
-  #article  .right-content .thumb {
+}
+
+#article .right-content .thumb {
     position: relative;
     padding-left: 20%;
     padding-top: 20%;
-  }
-
-//third_block_benefits
-
-#promotion {
-  margin-bottom: 120px;
 }
 
-
-//fourth_block_testimonials
-
+#promotion {
+    margin-bottom: 120px;
+}
 
 .testimonials {
     display: flex;
@@ -64,29 +54,29 @@
     text-align: center;
     font-size: 1rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  }
-
-  .testimonials_card * {
+}
+  
+.testimonials_card * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }
+}
 
-  .testimonials_card img {
+.testimonials_card img {
     max-width: 100%;
     vertical-align: top;
     opacity: 0.7;
-  }
+}
 
-  .testimonials_card figcaption {
+.testimonials_card figcaption {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 80px 10% 15%;
-  }
+}
 
-  .testimonials_card figcaption:before {
+.testimonials_card figcaption:before {
     content: "\201C";
     position: absolute;
     font-size: 10.625rem;
@@ -96,27 +86,26 @@
     transform: translateX(-50%);
     top: 0px;
     left: 50%;
-  }
-
-  .testimonials_card blockquote {
+}
+  
+.testimonials_card blockquote {
     padding: 0;
     margin: 0;
     font-style: italic;
     font-size: 1.2rem;
     font-family: $font-default;
-  }
+}
 
-  .testimonials_card h3 {
+.testimonials_card h3 {
     text-transform: uppercase;
-    font-size: 1.250rem;
     font-weight: 400;
     line-height: 24px;
     margin: 3px 0;
     font-family: $font-title;
-  }
+}
   
-  .testimonials_card h5 {
+.testimonials_card h5 {
     font-weight: 400;
     margin: 0;
     font-family: $font-title;
-  }
+}
