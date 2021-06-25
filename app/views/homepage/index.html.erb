@@ -91,30 +91,30 @@
 
 <section class="section mb-5" id="promotion">
     <div class="container">
-        <div class="row">
         <h2 class="text-center mb-5">Benefits of using House of Coins</h2>
-            <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+        <div class="row">
+            <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big mb-5"
                 data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                 <img src=<%= asset_path 'house_in_the_north.png' %> alt="house_in_the_north">
             </div>
             <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                 <ul>
-                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s" class="mb-3">
-                        <img src=<%= asset_path 'icon_house_1.png' %> alt="icon_house">
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s" class="mb-5">
+                        <img src=<%= asset_path 'icon_house_1.png' %> alt="icon_house" class="float-start me-3 mb-4">
                         <div class="text">
                             <h4 class="mt-3">Investing</h4>
                             <p>Find a property to invest in and earn your benefits.</p>
                         </div>
                     </li>
-                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s" class="mb-3">
-                        <img src=<%= asset_path 'icon_house_2.png' %> alt="icon_house">
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s" class="mb-5">
+                        <img src=<%= asset_path 'icon_house_2.png' %> alt="icon_house" class="float-start me-3 mb-4">
                         <div class="text">
                             <h4 class="mt-3">HouseCoin</h4>
                             <p>The price displayed on HouseCoins is the price for a 'token' of the property for sale.</p>
                         </div>
                     </li>
-                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s" class="mb-3">
-                        <img src=<%= asset_path 'icon_house_3.png' %> alt="icon_house">
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s" class="mb-5">
+                        <img src=<%= asset_path 'icon_house_3.png' %> alt="icon_house" class="float-start me-3 mb-4">
                         <div class="text">
                             <h4 class="mt-3">Payments</h4>
                             <p>As soon as all HouseCoins have been sold, you receive your payments every month on a fixed date.</p>
@@ -127,38 +127,39 @@
 </section>
 
 <div class="container">
-<h2 class="mb-5 text-center">Testimonials</h2>
-<div class="testimonials">
-    <figure class="testimonials_card">
-        <img src=<%= asset_path 'jeff_bezos.png' %> alt="jeff_bezos" />
-        <figcaption>
-            <blockquote>
-            <p>I could've been richer if I had discovered House of Coins before</p>
-            </blockquote>
-            <h3>Jeff Bezos</h3>
-            <h5>Rich</h5>
-        </figcaption>
-    </figure>
-    <figure class="testimonials_card">
-        <img src=<%= asset_path 'mark_zuckerberg.png' %> alt="mark_zuckerberg">
-        <figcaption>
-            <blockquote>
-                <p>Is my smile convincing?</p><br><br> <!-- Needed to align quotes blocks -->
-            </blockquote>
-            <h3>Mark Zuckerberg</h3>
-            <h5>Robot</h5>
-        </figcaption>
-    </figure>
-        <figure class="testimonials_card"><img src=<%= asset_path 'elon_musk_weed.png' %> alt="elon_musk_joe_rogan"/>
+    <h2 class="mb-5 text-center">Testimonials</h2>
+    <div class="testimonials row">
+        <figure class="testimonials_card col-12 col-sm-12 col-md-6 col-lg-4 mb-0 px-0">
+            <img src=<%= asset_path 'jeff_bezos.png' %> alt="jeff_bezos" class="w-100">
+            <figcaption>
+                <blockquote>
+                <p>I could've been richer if I had discovered House of Coins before</p>
+                </blockquote>
+                <h3>Jeff Bezos</h3>
+                <h5>Rich</h5>
+            </figcaption>
+        </figure>
+        <figure class="testimonials_card col-12 col-sm-12 col-md-6 col-lg-4 mb-0 px-0">
+            <img src=<%= asset_path 'mark_zuckerberg.png' %> alt="mark_zuckerberg" class="w-100">
+            <figcaption>
+                <blockquote>
+                    <p>Is my smile convincing?</p><br><br> <!-- Needed to align quotes blocks -->
+                </blockquote>
+                <h3>Mark Zuckerberg</h3>
+                <h5>Robot</h5>
+            </figcaption>
+        </figure>
+        <figure class="testimonials_card col-12 col-sm-12 col-md-6 col-lg-4 mb-0 px-0">
+            <img src=<%= asset_path 'elon_musk_weed.png' %> alt="elon_musk_joe_rogan" class="w-100">
             <figcaption>
                 <blockquote>
                 <p>Soon you'll buy houses on Mars thanks to House of Coins</p>
             </blockquote>
             <h3>Elon Musk</h3>
             <h5>Martian</h5>
-        </figcaption>
-    </figure>
-</div>
+            </figcaption>
+        </figure>
+    </div>
 </div>
 
 <%= render :partial => "shared/newsletter" %>

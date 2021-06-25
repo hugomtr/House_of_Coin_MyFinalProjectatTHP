@@ -11,5 +11,4 @@ class HouseCoin < ApplicationRecord
     errors.add(:id) unless 
       num < self.real_estate.current_house_coin_number
   end
-
 end
