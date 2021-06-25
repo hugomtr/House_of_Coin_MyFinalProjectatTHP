@@ -44,7 +44,6 @@ images = [
 ]
 
 (0..1).each do |i|
-    # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
@@ -63,7 +62,6 @@ images = [
     end
 end
 (2..6).each do |i|
-    # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
@@ -83,7 +81,6 @@ end
 end
 
 (7..8).each do |i|
-    # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
