@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'subscribers/index'
   devise_for :users
   root to: 'homepage#index'
   resources :homepage, only: [:index]
