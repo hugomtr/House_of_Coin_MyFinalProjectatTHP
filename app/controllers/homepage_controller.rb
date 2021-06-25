@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
   def index
-    @estates_latest = RealEstate.lastest_estate.max(4)
+    @estates_latest = RealEstate.latest_validated.max(4)
   end
 end
