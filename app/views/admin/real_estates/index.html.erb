@@ -11,7 +11,7 @@
         <% @estates.each do |estate| %>
             <div class="row">
                 <div class="col-12 col-sm-9 px-2">
-                    <%= link_to estate.name, real_estate_path(estate.id), class: "text-primary" %>
+                    <%= link_to estate.name, admin_real_estate_path(estate.id), class: "text-primary" %>
                 </div>
                 <div class="col-12 col-sm-3 px-2 d-flex justify-content-end">
                     <% if estate.validated? %>

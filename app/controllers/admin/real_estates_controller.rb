@@ -24,6 +24,7 @@ class Admin::RealEstatesController < ApplicationController
   end
 
   def show
+    @real_estate = estate_find
   end
 
   def edit

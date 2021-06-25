@@ -11,3 +11,15 @@ label,input[type="text"],input[type="number"],input[type="email"],textarea {
     border-radius: .25rem;
     background-color: $pink;
 }
+
+#form_message{
+    background: 
+        linear-gradient(
+        rgba(10, 10, 10, 0.8),
+        rgba(10, 10, 10, 0.8)
+        );
+    border-radius:2px;
+    color:white !important; 
+    border:2px;
+    border-color:white;
+}
