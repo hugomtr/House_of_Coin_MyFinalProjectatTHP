@@ -1,11 +1,15 @@
 <div class="estate-search" 
-     style="background-image: url('<%= asset_path @image_data[:url] %>'); 
+            style="background-image: url('<%= asset_path @image_data[:url] %>'); 
             background-position-x: <%= @image_data[:pos_x] %>; 
             background-position-y: <%= @image_data[:pos_y] %>">
     <!-- CONTENT -->
     <div class="estate-search-w">
         <h1>House of Coins</h1>
-        <p class="sub-title">We provide a complete service for the sale, purchase or rental of real estate using tokenization. We have been operating in France for over two years.</p>
+        <p class="sub-title">We provide a complete service for the sale, 
+        purchase or rental of real estate using tokenization. 
+        With this process you have the ability to invest a little amount of money and Expand your portofolio in a very fast safe and easy way.
+        Our Team offers you advice and support for your next trades. 
+        </p>
         <%=link_to @image_data[:link], @image_data[:path], class: "btn btn-outline-primary w-auto"%>
     </div>
 </div>
