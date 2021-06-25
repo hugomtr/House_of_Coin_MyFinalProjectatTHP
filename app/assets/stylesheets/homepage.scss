@@ -1,8 +1,14 @@
+//first_block_choose_house_of_coins
+
+.features-item {
+  margin-top: 50px;
+}
+
+//second_block_future_of_real_estate
+
 #article {
     padding: 100px 0px 100px 0px;
     position: relative;
-    z-index: 9;
-    margin-bottom: 60px;
     background-color: #F3F3FA;
   }
   
@@ -29,16 +35,14 @@
     padding-top: 20%;
   }
 
-.features-item {
-  margin-top: 50px;
-}
+//third_block_benefits
 
 #promotion {
   margin-bottom: 120px;
 }
 
 
-//begin of testimonials
+//fourth_block_testimonials
 
 
 .testimonials {
@@ -116,5 +120,3 @@
     margin: 0;
     font-family: $font-title;
   }
-
-  //end of testimonials
