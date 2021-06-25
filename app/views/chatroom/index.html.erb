@@ -1,10 +1,13 @@
 <div id="container-discussion">
-
   <div class="d-flex justify-content-center p-5">
     <div class="card col-md-10" id="discussion">
-      <div class="d-flex flex-row p-3">
-        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="25" height="25">
-        <div class="chat ml-2 p-3">Hello and thank you for visiting House of Coins</div>
+      <div class="d-flex justify-content-between py-3">
+        <div class="d-flex align-items-start me-3">
+          <img class="me-2" src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="32" height="32">
+          <div class="chat ml-2">Hello and thank you for visiting House of Coins</div>
+        </div>
+        <% @id = @real_estate.id %>
+        <%= render :partial => "column-navbar", :object => @id %>
       </div>
       <div id="message-container">
         <%= render :partial => "messages" %>
