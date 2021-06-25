@@ -78,7 +78,7 @@
               <h5>Offer n° <%=i + 1%></h5>
             </li>
             <li class="list-group-item">
-              <h6><%=property.name%><h6>
+              <h6><%= link_to property.name, real_estate_path(property.id)%><h6>
             </li>
             <li class="list-group-item">
               <%if property.pictures.present?%>
