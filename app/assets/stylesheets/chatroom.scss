@@ -22,4 +22,15 @@
 #container-discussion {
   background:url(amsterdam.jpg);
   background-size:cover;
+
+  .img-avatar {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid $primary;
+    border-radius: 50%;
+  }
+
+  .default-avatar {
+    fill: $primary;
+  }
 }

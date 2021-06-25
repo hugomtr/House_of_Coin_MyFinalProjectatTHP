@@ -1,4 +1,4 @@
-<% if @user.avatar.attached? %>
+<% if @avatar_data[:user].avatar.attached? %>
     <%= image_tag @user.avatar, 
                     alt: 'avatar', 
                     class: @avatar_data[:class] %>
