@@ -1,3 +1,6 @@
+<% if cookies[:saved_subscriber] %>
+    Thanks for signing up!
+<% else %>
 <ul class="newsletter-block mt-auto">
     <div class="container d-flex">
         <li class="col-12 col-sm-12 col-md-4">
@@ -9,12 +12,15 @@
                 <p class="text-news">Get the latest advices and interesting offers and real estate</p>
                 <div class="mw-form">
                     <div class="d-flex form-group mt-3">
-                    <%= text_field_tag :subscribe, '', class: "form-control me-2" %>
-                    <%= submit_tag "Subscribe", class: "btn btn-outline-primary" %>
+                    <%= form_for (Subscriber.new) do |f| %>
+                        <%= f.text_field :email, placeholder: "Enter your email", class: "form-control me-2" %>
+                        <%= submit_tag "Subscribe", class: "btn btn-outline-primary" %>
+                    <% end %>
                     </div>
                 </div>
             </div>
         </li>
     </div>
 </ul>
+<% end %>
 
