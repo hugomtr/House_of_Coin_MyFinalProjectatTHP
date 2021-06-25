@@ -43,7 +43,7 @@ images = [
     "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
 ]
 
-(0..8).each do |i|
+(0..1).each do |i|
     # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
@@ -53,7 +53,46 @@ images = [
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.number(digits: 6)
+        price: Faker::Number.between(from: 50000, to: 150000)
+    )
+
+    if real.save
+        puts "real OK"
+    else
+        puts real.errors.messages
+    end
+end
+(2..6).each do |i|
+    # Geocode not added for now, maybe possible to replace by latitude/longitude
+    real = RealEstate.new(
+        name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
+        description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
+        user: User.all.sample,
+        adress: adress[i],
+        zipcode: zipcode[i],
+        city: city[i],
+        image_urls: images.sample,
+        price: Faker::Number.between(from: 100000, to: 500000)
+    )
+
+    if real.save
+        puts "real OK"
+    else
+        puts real.errors.messages
+    end
+end
+
+(7..8).each do |i|
+    # Geocode not added for now, maybe possible to replace by latitude/longitude
+    real = RealEstate.new(
+        name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
+        description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
+        user: User.all.sample,
+        adress: adress[i],
+        zipcode: zipcode[i],
+        city: city[i],
+        image_urls: images.sample,
+        price: Faker::Number.between(from: 500000, to: 1500000)
     )
 
     if real.save
