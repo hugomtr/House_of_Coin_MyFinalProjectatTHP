@@ -8,10 +8,16 @@
                 <h3 class="title-news mb-2"><strong>Subscribe to newsletter</strong></h3>
                 <p class="text-news">Get the latest advices and interesting offers and real estate</p>
                 <div class="mw-form">
-                    <div class="d-flex form-group mt-3">
-                    <%= text_field_tag :subscribe, '', class: "form-control me-2" %>
-                    <%= submit_tag "Subscribe", class: "btn btn-outline-primary" %>
-                    </div>
+                    <% if cookies[:saved_subscriber] %>
+                        <p>Thanks for signing up!</p>
+                    <% else %>
+                        <%= form_for (Subscriber.new) do |f| %>
+                        <div class="d-flex form-group mt-3">
+                            <%= f.text_field :email, placeholder: "Enter your email", class: "form-control me-2" %>
+                            <%= submit_tag "Subscribe", class: "btn btn-outline-primary" %>
+                        </div>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
         </li>

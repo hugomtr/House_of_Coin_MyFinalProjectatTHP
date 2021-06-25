@@ -44,7 +44,6 @@ images = [
 ]
 
 (0..1).each do |i|
-    # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
@@ -53,7 +52,8 @@ images = [
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.between(from: 50000, to: 150000)
+        price: Faker::Number.between(from: 50000, to: 150000),
+        validated?: true
     )
 
     if real.save
@@ -63,7 +63,6 @@ images = [
     end
 end
 (2..6).each do |i|
-    # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
@@ -72,7 +71,8 @@ end
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.between(from: 100000, to: 500000)
+        price: Faker::Number.between(from: 100000, to: 500000),
+        validated?: true
     )
 
     if real.save
@@ -83,7 +83,6 @@ end
 end
 
 (7..8).each do |i|
-    # Geocode not added for now, maybe possible to replace by latitude/longitude
     real = RealEstate.new(
         name: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
         description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: true),
@@ -92,7 +91,8 @@ end
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.between(from: 500000, to: 1500000)
+        price: Faker::Number.between(from: 500000, to: 1500000),
+        validated?: true
     )
 
     if real.save

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'subscribers/index'
   devise_for :users
   root to: 'homepage#index'
   resources :homepage, only: [:index]
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :real_estates
   end
+
+  resources :subscribers, only: [:create]
 
   # static pages
   match '/about',   to: 'static_pages#about',   via: 'get'
