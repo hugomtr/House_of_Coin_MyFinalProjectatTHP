@@ -2,6 +2,7 @@ class RealEstatesController < ApplicationController
   before_action :user_signed_in?, except: [:index, :show, :new]
   before_action :authenticate_user!, except: [:show, :index]
   before_action :estate_creator?, except: [:index, :show, :new, :create]
+  before_action :estate_validated?, only: [:show]
 
   def index
     @estates = estates_all
@@ -74,6 +75,12 @@ class RealEstatesController < ApplicationController
 
   def estate_find
     RealEstate.friendly.find(params[:id])
+  end
+
+  def estate_validated?
+    unless estate_find.validated?
+      redirect_to root_path
+    end
   end
 
   def estate_creator?
