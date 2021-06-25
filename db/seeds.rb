@@ -52,7 +52,8 @@ images = [
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.between(from: 50000, to: 150000)
+        price: Faker::Number.between(from: 50000, to: 150000),
+        validated?: true
     )
 
     if real.save
@@ -70,7 +71,8 @@ end
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.between(from: 100000, to: 500000)
+        price: Faker::Number.between(from: 100000, to: 500000),
+        validated?: true
     )
 
     if real.save
@@ -89,7 +91,8 @@ end
         zipcode: zipcode[i],
         city: city[i],
         image_urls: images.sample,
-        price: Faker::Number.between(from: 500000, to: 1500000)
+        price: Faker::Number.between(from: 500000, to: 1500000),
+        validated?: true
     )
 
     if real.save
