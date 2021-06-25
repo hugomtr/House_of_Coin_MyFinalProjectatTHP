@@ -68,7 +68,7 @@ Rails.application.configure do
 
   # Action mailer
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "https://lets-buy-with-crypto-dev.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "https://lets-buy-with-crypto.herokuapp.com" }
 
 
   # SMTP settings for gmail
