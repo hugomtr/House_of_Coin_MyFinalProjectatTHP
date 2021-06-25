@@ -5,4 +5,8 @@ module RealEstatesHelper
     end
     return true
   end
+
+  def latest_validated
+    RealEstate.where(validated?: true)
+  end
 end

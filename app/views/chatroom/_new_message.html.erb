@@ -1,5 +1,4 @@
 <div class="d-flex flex-row p-3">
-      <% @avatar_data = { class: 'img-avatar float-end ms-3 mb-3' } %>
-      <%= render :partial => "shared/avatar", :object => @avatar_data %>
+      <%=image_tag 'head.png', style: "width: 32px; height: 32px;"%>
       <%= current_user.username%>: <%= message.body %>
 </div>
