@@ -29,8 +29,8 @@
       .setPopup(new mapboxgl.Popup({ offset: 25 })
       .setHTML(
         "<a href=/real_estates/"+ marker.id+">"+
-          "<p> Price: " + marker.price + " $" + "</p>"+
-          "<p> "+ marker.coordinates + "</p>"+
+          "<p> Price: " + marker.price + " €" + "</p>"+
+          //"<p> "+ marker.city + "</p>"+
         "</a>"
       ))
       .addTo(map);

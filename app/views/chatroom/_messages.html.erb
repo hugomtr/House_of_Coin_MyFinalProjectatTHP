@@ -1,8 +1,6 @@
 <% @messages.each do |message| %>
   <div class="d-flex py-2">
-    <% @user = User.find_by(id:message.values[1]) %>
-    <% @avatar_data = { class: 'img-avatar float-end me-2', user: @user } %>
-    <%= render :partial => "shared/avatar", :object => @avatar_data %>
+    <%= image_tag 'head.png', style: "width: 32px; height: 32px;"%>
     <%= User.find_by(id:message.values[1]).username%>: <%= message.values[2] %>
   </div>
 <% end %>
