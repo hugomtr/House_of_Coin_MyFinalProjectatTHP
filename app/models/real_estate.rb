@@ -19,7 +19,7 @@ class RealEstate < ApplicationRecord
   scope :lastest_estate, -> { order(created_at: :desc) }
 
   #TODO reactivate mailers
-  # after_update :offer_validation
+  after_update :offer_validation
   after_create :admin_offer_creation_mail, :original_coin_number
 
   scope :lastest_estate, -> { order(created_at: :desc) }
