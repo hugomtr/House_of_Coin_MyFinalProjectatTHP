@@ -1,7 +1,24 @@
-// Place all the styles related to the chatroom controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 #discussion{
-  background-color:blue;
-  border-radius:5px;
+  border-radius:10px;
+  background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0.5)
+    );
+  color:white !important;
+  font-size:20px;
+  overflow-x: hidden; 
+  overflow-y: scroll; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  height:84vh;
+}
+
+#discussion::-webkit-scrollbar {
+    display: none;
+}
+
+#container-discussion {
+  background:url(amsterdam.jpg);
+  background-size:cover;
 }

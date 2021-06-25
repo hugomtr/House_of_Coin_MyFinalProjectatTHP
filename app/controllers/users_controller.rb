@@ -12,7 +12,11 @@ class UsersController < ApplicationController
 
   def update
     @user = find_user
-    @user.avatar.attach(params[:avatar])
+    unless params[:avatar].nil?
+      @user.avatar.attach(params[:avatar])
+    else
+      @user.avatar.purge
+    end
 
     if @user.update(permited_params)
       flash[:notice] = "User profile updated!"
