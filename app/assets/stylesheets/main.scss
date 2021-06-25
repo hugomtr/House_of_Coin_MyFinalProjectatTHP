@@ -35,3 +35,10 @@ table {
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: $pink;
 }
+
+.column {
+    @media screen and (min-width: 992px) {
+        column-count: 2;
+        column-gap: 4rem;
+    }
+}
