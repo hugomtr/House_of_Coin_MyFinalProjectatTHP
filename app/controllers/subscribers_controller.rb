@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
-      cookies[:saved_lead] = true
+      cookies[:saved_subscriber] = true
       flash[:notice] = "Saved Successfully!"
       redirect_to root_path
     else 
