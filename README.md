@@ -2,7 +2,6 @@
 
 Have you ever wondered where you could invest your money in a secure way for small investments ?
 
-There is a solution : PROJECT_NAME
 
 ## Project URL
 - Mermaid : https://mermaid-js.github.io/mermaid-live-editor/edit/#eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG5cbnBhcnRpY2lwYW50IGFwcC5yYlxuIiwibWVybWFpZCI6Int9IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ
